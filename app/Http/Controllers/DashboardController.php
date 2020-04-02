@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Odp;
+use App\Pdp;
+use App\Positif;
 
 class DashboardController extends Controller
 {
@@ -18,6 +21,19 @@ class DashboardController extends Controller
 
     public function index(Request $req)
     {
-        return view('dashboard.pages.dashboard');
+        return view('dashboard.pages.dashboard', [
+            'odp' => [
+                'kab' => Odp::getDataKab(),
+                'kota' => Odp::getDataKota()
+            ],
+            'pdp' => [
+                'kab' => Pdp::getDataKab(),
+                'kota' => Pdp::getDataKota()
+            ],
+            'positif' => [
+                'kab' => Positif::getDataKab(),
+                'kota' => Positif::getDataKota()
+            ]
+        ]);
     }
 }

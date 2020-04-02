@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Odp extends Model
 {
@@ -45,5 +46,15 @@ class Odp extends Model
     {
         $obj = new SELF;
         return $obj->where('prefix', 'kota');
+    }
+
+    public static function getDataKab()
+    {
+        return SELF::getkab()->where('tanggal', 'like', Carbon::now()->format('Y-m-d').'%')->first();
+    }
+
+    public static function getDataKota()
+    {
+        return SELF::getkota()->where('tanggal', 'like', Carbon::now()->format('Y-m-d').'%')->first();
     }
 }
