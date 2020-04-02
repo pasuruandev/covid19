@@ -2,6 +2,8 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
+set_locale(env('APP_LANG'));
+
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
     dirname(__DIR__)
 ))->bootstrap();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Kot;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PositifController extends Controller
 {

@@ -76,133 +76,139 @@ class Menus {
             'key'   => "kabupaten_odp",
             'name'  => "ODP",
             'icon'  => "fas fa-fw fa-diagnoses",
-            'sub'   => [
-                [
-                    'key'   => "grafik",
-                    'name'  => "Grafik",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "update",
-                    'name'  => "Update Data",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "history",
-                    'name'  => "History",
-                    'url'   => "admin.users.index"
-                ]
-            ]
+            'url'   => "kabupaten.odp.update"
+            // 'sub'   => [
+            //     [
+            //         'key'   => "grafik",
+            //         'name'  => "Grafik",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "update",
+            //         'name'  => "Update Data",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "history",
+            //         'name'  => "History",
+            //         'url'   => "admin.users.index"
+            //     ]
+            // ]
         ]);
         $this->add_menu("kabupaten_pdp", [
             'key'   => "kabupaten_pdp",
             'name'  => "PDP",
             'icon'  => "fas fa-fw fa-bed",
-            'sub'   => [
-                [
-                    'key'   => "grafik",
-                    'name'  => "Grafik",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "update",
-                    'name'  => "Update Data",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "history",
-                    'name'  => "History",
-                    'url'   => "admin.users.index"
-                ]
-            ]
+            'url'   => "kabupaten.pdp.update"
+            // 'sub'   => [
+            //     [
+            //         'key'   => "grafik",
+            //         'name'  => "Grafik",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "update",
+            //         'name'  => "Update Data",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "history",
+            //         'name'  => "History",
+            //         'url'   => "admin.users.index"
+            //     ]
+            // ]
         ]);
         $this->add_menu("kabupaten_positif", [
             'key'   => "kabupaten_positif",
             'name'  => "POSITIF",
             'icon'  => "fas fa-fw fa-biohazard",
-            'sub'   => [
-                [
-                    'key'   => "grafik",
-                    'name'  => "Grafik",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "update",
-                    'name'  => "Update Data",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "history",
-                    'name'  => "History",
-                    'url'   => "admin.users.index"
-                ]
-            ]
+            'url'   => "kabupaten.positif.update"
+            // 'sub'   => [
+            //     [
+            //         'key'   => "grafik",
+            //         'name'  => "Grafik",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "update",
+            //         'name'  => "Update Data",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "history",
+            //         'name'  => "History",
+            //         'url'   => "admin.users.index"
+            //     ]
+            // ]
         ]);
         $this->add_menu("kota_odp", [
             'key'   => "kota_odp",
             'name'  => "ODP",
             'icon'  => "fas fa-fw fa-diagnoses",
-            'sub'   => [
-                [
-                    'key'   => "grafik",
-                    'name'  => "Grafik",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "update",
-                    'name'  => "Update Data",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "history",
-                    'name'  => "History",
-                    'url'   => "admin.users.index"
-                ]
-            ]
+            'url'   => "kota.odp.update"
+            // 'sub'   => [
+            //     [
+            //         'key'   => "grafik",
+            //         'name'  => "Grafik",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "update",
+            //         'name'  => "Update Data",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "history",
+            //         'name'  => "History",
+            //         'url'   => "admin.users.index"
+            //     ]
+            // ]
         ]);
         $this->add_menu("kota_pdp", [
             'key'   => "kota_pdp",
             'name'  => "PDP",
             'icon'  => "fas fa-fw fa-bed",
-            'sub'   => [
-                [
-                    'key'   => "grafik",
-                    'name'  => "Grafik",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "update",
-                    'name'  => "Update Data",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "history",
-                    'name'  => "History",
-                    'url'   => "admin.users.index"
-                ]
-            ]
+            'url'   => "kota.pdp.update"
+            // 'sub'   => [
+            //     [
+            //         'key'   => "grafik",
+            //         'name'  => "Grafik",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "update",
+            //         'name'  => "Update Data",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "history",
+            //         'name'  => "History",
+            //         'url'   => "admin.users.index"
+            //     ]
+            // ]
         ]);
         $this->add_menu("kota_positif", [
             'key'   => "kota_positif",
             'name'  => "POSITIF",
             'icon'  => "fas fa-fw fa-biohazard",
-            'sub'   => [
-                [
-                    'key'   => "grafik",
-                    'name'  => "Grafik",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "update",
-                    'name'  => "Update Data",
-                    'url'   => "admin.users.index"
-                ],
-                [
-                    'key'   => "history",
-                    'name'  => "History",
-                    'url'   => "admin.users.index"
-                ]
-            ]
+            'url'   => "kota.positif.update"
+            // 'sub'   => [
+            //     [
+            //         'key'   => "grafik",
+            //         'name'  => "Grafik",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "update",
+            //         'name'  => "Update Data",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "history",
+            //         'name'  => "History",
+            //         'url'   => "admin.users.index"
+            //     ]
+            // ]
         ]);
         $this->add_menu("admin", [
             'key'   => "admin",
