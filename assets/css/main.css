@@ -1,0 +1,142 @@
+:root {
+	--main-bg-color: linear-gradient(122.53deg, #42B071 10.14%, #188A48 97.84%);
+}
+html *{
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: 400;
+}
+.home{
+	background: var(--main-bg-color);
+	padding-top: 50px;
+	padding-bottom: 200px
+}
+.bg-green{
+	background: var(--main-bg-color);
+}
+.bold{
+	font-weight: 700 !important;
+}
+.x-bold{
+	font-weight: 800 !important;
+}
+.text-white{
+	color: white;
+}
+.text-green{
+	color: #2C9B5B;
+}
+.text-orange{
+	color: #F2994A;
+}
+.text-red{
+	color: #EB5757;
+}
+.font-20{
+	font-size: 20px
+}
+.font-24{
+	font-size: 24px
+}
+.font-32{
+	font-size: 32px
+}
+.font-35{
+	font-size: 35px
+}
+.font-42{
+	font-size: 42px
+}
+.font-48{
+	font-size: 48px
+}
+.font-52{
+	font-size: 52px
+}
+.shadow{
+	box-shadow: 0px 4px 16px rgba(68, 68, 68, 0.25);
+}
+.circle{
+	border-radius: 100%
+}
+.box-info{
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 20px;
+	margin-top: 41px;
+	padding-bottom: 25px
+}
+.bg-white{
+	background: white
+}
+.info{
+	border-radius: 20px;
+	padding-bottom: 30px;
+	padding-right: 15px;
+	padding-left: 15px;
+	min-height: 400px
+}
+.info img{
+	width: 130px;
+	height: auto;
+	margin-top: -65px
+}
+.info .total-info{
+	margin-top: 50px;
+	font-size: 54px
+}
+.info .title-info{
+	margin-top: 40px
+}
+.alert{
+	margin-bottom: unset !important;
+}
+.rujukan{
+	border-radius: 20px;
+}
+.rujukan .box-rujukan{
+	padding: 35px 75px
+}
+#img-rs{
+	width: 90%
+}
+#rujukan-info{
+	margin-top: 50px
+}
+#resiko{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-top: 50px
+}
+@media only screen and (max-width: 768px) {
+	#title-home{
+		font-size: 20px
+	}
+	#judul{
+		line-height: unset !important;
+	}
+	#title-posko{
+		font-size: 20px
+	}
+	.mob-center{
+		text-align: center
+	}
+	.img-center{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.info{
+		margin-bottom: 100px
+	}
+	.last-info{
+		margin-bottom: 0px !important
+	}
+	.rujukan .box-rujukan{
+		padding: 35px 15px
+	}
+	.mob-title{
+		font-size: 35px
+	}
+	.mob-small{
+		font-size: 16px
+	}
+}
