@@ -2,6 +2,9 @@
 
 namespace Modul;
 
+use Illuminate\Support\Facades\Auth;
+use App\Permission;
+
 /**
  * Modul Menus untuk menghandel menu pada tampilan HTML
  * untuk show - hidden menu yang forbidden atau allows
@@ -9,6 +12,8 @@ namespace Modul;
  */
 
 class Menus {
+
+    protected static $admin = 'pasdev';
 
     /**
      *  Properti $generated berisi menu menu yang ada untuk di DOM ke view,
@@ -230,6 +235,22 @@ class Menus {
     }
 
     /**
+     * funsi untuk cek apakanh view di ijinkan untuk user yang terkait
+     * 
+     * Return: Boolead
+     */
+    public function cek_menu($key)
+    {
+        $user = Auth::user();
+
+        $admin = ($user->username == SELF::$admin);
+        if ($admin) return true;
+
+        $permission = Permission::get_from_menu($user, $key);
+        return $permission['view'];
+    }
+
+    /**
      * funsi pada saat pertama kali class dipanggil
      * berisi perintah untuk meng - initial property $menus dan $generated
      * 
@@ -238,20 +259,36 @@ class Menus {
     protected function boot()
     {
         $this->init_menus();
+
+        $admin = (Auth::user()->username == SELF::$admin);
+
         $this->generated[] = $this->menus['dashboard'];
         $this->generated[] = [];
-        $this->generated[] = ['name' => "Kabupaten"];
-        $this->generated[] = $this->menus['kabupaten_odp'];
-        $this->generated[] = $this->menus['kabupaten_pdp'];
-        $this->generated[] = $this->menus['kabupaten_positif'];
-        $this->generated[] = [];
-        $this->generated[] = ['name' => "Kota"];
-        $this->generated[] = $this->menus['kota_odp'];
-        $this->generated[] = $this->menus['kota_pdp'];
-        $this->generated[] = $this->menus['kota_positif'];
-        $this->generated[] = [];
-        $this->generated[] = ['name' => "Administrator"];
-        $this->generated[] = $this->menus['admin'];
+
+        $kabupaten_odp = $this->cek_menu('kabupaten_odp');
+        $kabupaten_pdp = $this->cek_menu('kabupaten_pdp');
+        $kabupaten_positif = $this->cek_menu('kabupaten_positif');
+        $kabupaten = ($kabupaten_odp || $kabupaten_pdp || $kabupaten_positif);
+
+        if ($kabupaten) $this->generated[] = ['name' => "Kabupaten"];
+        if ($kabupaten_odp) $this->generated[] = $this->menus['kabupaten_odp'];
+        if ($kabupaten_pdp) $this->generated[] = $this->menus['kabupaten_pdp'];
+        if ($kabupaten_positif) $this->generated[] = $this->menus['kabupaten_positif'];
+        if ($kabupaten) $this->generated[] = [];
+
+        $kota_odp = $this->cek_menu('kota_odp');
+        $kota_pdp = $this->cek_menu('kota_pdp');
+        $kota_positif = $this->cek_menu('kota_positif');
+        $kota = ($kota_odp || $kota_pdp || $kota_positif);
+
+        if ($kota) $this->generated[] = ['name' => "Kota"];
+        if ($kota_odp) $this->generated[] = $this->menus['kota_odp'];
+        if ($kota_pdp) $this->generated[] = $this->menus['kota_pdp'];
+        if ($kota_positif) $this->generated[] = $this->menus['kota_positif'];
+        if ($kota) $this->generated[] = [];
+
+        if ($admin) $this->generated[] = ['name' => "Administrator"];
+        if ($admin) $this->generated[] = $this->menus['admin'];
     }
 
     /**

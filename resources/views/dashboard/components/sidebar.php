@@ -16,6 +16,7 @@
     ?>
 
     <?php if(sizeof($menu) <= 0): ?>
+        <?php if (($key+1) == sizeof($MENUS)) break; ?>
         <!-- Divider -->
         <hr class="sidebar-divider">
     <?php continue;endif; ?>
