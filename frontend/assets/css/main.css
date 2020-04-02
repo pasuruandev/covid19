@@ -13,6 +13,9 @@ html *{
 .bg-green{
 	background: var(--main-bg-color);
 }
+.bg-grey{
+	background-color: #f1f1f1;
+}
 .bold{
 	font-weight: 700 !important;
 }
@@ -72,7 +75,7 @@ html *{
 	padding-bottom: 30px;
 	padding-right: 15px;
 	padding-left: 15px;
-	min-height: 400px
+	min-height: 480px
 }
 .info img{
 	width: 130px;
@@ -84,7 +87,7 @@ html *{
 	font-size: 54px
 }
 .info .title-info{
-	margin-top: 40px
+	margin-top: 10px
 }
 .alert{
 	margin-bottom: unset !important;
@@ -101,11 +104,60 @@ html *{
 #rujukan-info{
 	margin-top: 50px
 }
-#resiko{
+#resiko, #lockdown{
 	padding-top: 50px;
 	padding-bottom: 50px;
 	margin-top: 50px
 }
+
+.logo-head:nth-child(2){
+	margin-left: 25px;
+}
+.checkup-link{
+	padding-top: 20px;
+	padding-right: 5px;
+}
+.checkup-link a{
+	opacity: 0.85;
+}
+.checkup-link a:hover{
+	text-decoration: none;
+	opacity: 1;
+}
+.posko-call{
+	padding: 0px;
+}
+.posko-call p{
+	margin-top: 5px;
+}
+.sub-info{
+	width: 95%;
+	margin: auto;
+}
+.sub-info .bg-grey{
+	border-radius: 5px;
+	margin: auto;
+	padding: 10px;
+}
+.sub-info .bg-white{
+	padding-top: 20px;
+}
+.sub-info p{
+	margin-bottom: 0px;
+}
+#resiko .info, #lockdown .info{
+	min-height: 250px;
+}
+img.ld-icon{
+	width: 20px;
+}
+.lockdown-info div{
+	padding-bottom: 10px !important;
+}
+.head-margin{
+	margin-top: 100px;
+}
+
 @media only screen and (max-width: 768px) {
 	#title-home{
 		font-size: 20px
@@ -120,9 +172,17 @@ html *{
 		text-align: center
 	}
 	.img-center{
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
+		text-align: center;	
+	}
+	.checkup-link.text-right{
+		text-align: center !important;
+	}
+	.checkup-link a{
+		font-size: 16px !important;
+		margin: 0px;
+	}
+	.head-margin{
+		margin-top: 50px;
 	}
 	.info{
 		margin-bottom: 100px
