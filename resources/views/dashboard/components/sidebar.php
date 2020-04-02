@@ -12,8 +12,7 @@
     <hr class="sidebar-divider my-0">
 
     <?php
-        $menus = menus();
-        foreach($menus as $key => $menu):
+        foreach($MENUS as $key => $menu):
     ?>
 
     <?php if(sizeof($menu) <= 0): ?>

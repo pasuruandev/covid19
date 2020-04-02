@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Factory as Auth;
 
-class Authenticate
+class Guest
 {
     /**
      * The authentication guard factory instance.
@@ -35,12 +35,10 @@ class Authenticate
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if ($this->auth->guard($guard)->guest()) {
-            return redirect()->route('login.index');
+        if (!$this->auth->guard($guard)->guest()) {
+            return redirect()->route('dashboard.index');
         }
-        
-        view()->share('auth', $request->user());
-        view()->share('MENUS', generated_menus());
+
         return $next($request);
     }
 }
