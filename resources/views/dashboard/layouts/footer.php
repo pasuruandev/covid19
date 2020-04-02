@@ -35,6 +35,7 @@
 <!-- Core plugin JavaScript-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="<?= url('dist/js/sb-admin-2.min.js') ?>"></script>
