@@ -10584,9 +10584,10 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
+  background: url("https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/321/2020/03/09125752/Coronavirus.jpg");
   background-position: center;
   background-size: cover;
+  /* display: none !important; */
 }
 
 .bg-register-image {
