@@ -11,9 +11,13 @@
 |
 */
 
-
-
-
+/**
+ * CLIENT
+ */
+$router->get('/', [
+    'as' => "landing",
+    'uses' => 'LandingController@index'
+]);
 
 
 
