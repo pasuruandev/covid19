@@ -34,8 +34,11 @@ html *{
 .text-red{
 	color: #EB5757;
 }
-.font-20{
-	font-size: 20px
+.font-12{
+	font-size: 12px
+}
+.font-16{
+	font-size: 16px
 }
 .font-24{
 	font-size: 24px
@@ -97,6 +100,9 @@ html *{
 }
 .rujukan .box-rujukan{
 	padding: 35px 75px
+}
+.rujukan .btn{
+	margin-top: 15px;
 }
 #img-rs{
 	width: 90%
