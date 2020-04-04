@@ -50,11 +50,11 @@ class Pdp extends Model
 
     public static function getDataKab()
     {
-        return SELF::getkab()->where('tanggal', 'like', Carbon::now()->format('Y-m-d').'%')->first();
+        return SELF::getkab()->orderBy('tanggal', 'desc')->first();
     }
 
     public static function getDataKota()
     {
-        return SELF::getkota()->where('tanggal', 'like', Carbon::now()->format('Y-m-d').'%')->first();
+        return SELF::getkota()->orderBy('tanggal', 'desc')->first();
     }
 }
