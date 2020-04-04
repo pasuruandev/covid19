@@ -42,7 +42,7 @@
 					<div class="col-md-6 col-12">
 						<p>#DIRUMAHSAJA</p>
 						<p class="x-bold font-52 mob-title" id="judul" style="line-height: 71px">Data Pantauan <br> COVID-19 Pasuruan</p>
-						<p>Rabu, 1 April 2020</p>
+						<p class="date"><?= $tanggal_terakhir ?></p>
 					</div>
 					<div class="col-md-5 offset-md-1 col-12">
 						<div class="box-info text-white text-center">
