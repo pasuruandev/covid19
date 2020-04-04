@@ -5,3 +5,4 @@ Homestead.yaml
 .env
 covid19.code-workspace
 /storage/framework/sessions/*
+deploy.zip
