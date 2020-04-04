@@ -215,61 +215,64 @@
 				<div class="row" style="margin-top: 100px">
 					<div class="col-md-3 col-12">
 						<div class="bg-white shadow info text-center">
-							<img src="<?= url('assets/img/loc_shop.png') ?>" alt="imunitas" class="circle shadow">
-							<p class="x-bold font-20" style="margin-top: 20px;">Indomaret</p>
+							<img src="<?= url('assets/img/loc_cone.png') ?>" alt="imunitas" class="circle shadow">
+							<p class="x-bold font-20" style="margin-top: 20px;">Ruas Jalan Pandaan</p>
 							<div class="row text-left lockdown-info">
 								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Jl. Ahmad Yani</span></div>
+								<div class="col-md-9 col-8"><span class="font-18">Jl. A. Yani - Jl. RA Kartini</span></div>
 								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">06:00 - 20:00</span></div>
+								<div class="col-md-9 col-8"><span class="font-18">
+									Jum'at 09:00 - 23:00<br>
+									Sabtu 09:00 - 24:00<br>
+									Minggu 09:00 - 14:00
+								</span></div>
 								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Toko di tutup lebih cepat agar warga dapat diam dirumah</span></div>
+								<div class="col-md-9 col-8"><span class="font-18">Masih suka berkumpul? Awas ANCAMAN PIDANA.</span></div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-12">
 						<div class="bg-white shadow info text-center">
-							<img src="<?= url('assets/img/loc_mosque.png') ?>" alt="imunitas" class="circle shadow">
-							<p class="x-bold font-20" style="margin-top: 20px;">Masjid Cheng Ho</p>
+							<img src="<?= url('assets/img/loc_cone.png') ?>" alt="imunitas" class="circle shadow">
+							<p class="x-bold font-20" style="margin-top: 20px;">Ruas Jalan Sengon Bakalan</p>
 							<div class="row text-left lockdown-info">
 								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Jl. Ahmad Yani</span></div>
+								<div class="col-md-9 col-8"><span class="font-18">Simpang 4 Sengon - Simpang 3 Bakalan</span></div>
 								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Jum'at</span></div>
+								<div class="col-md-9 col-8"><span class="font-18">19.00 - 24.00</span></div>
 								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Toko di tutup lebih cepat agar warga dapat diam dirumah</span></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-12">
-						<div class="bg-white shadow info text-center">
-							<img src="<?= url('assets/img/loc_church.png') ?>" alt="imunitas" class="circle shadow">
-							<p class="x-bold font-20" style="margin-top: 20px;">GBIS Hosanna</p>
-							<div class="row text-left lockdown-info">
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Jl. Ahmad Yani</span></div>
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Minggu</span></div>
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Toko di tutup lebih cepat agar warga dapat diam dirumah</span></div>
+								<div class="col-md-9 col-8"><span class="font-18">Jika masih ada warga yang berkeliaran atau berkumpul, maka akan di terapkan tindakan hukum oleh aparat.</span></div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-12">
 						<div class="bg-white shadow info text-center">
 							<img src="<?= url('assets/img/loc_shop.png') ?>" alt="imunitas" class="circle shadow">
-							<p class="x-bold font-20" style="margin-top: 20px;">Indomaret</p>
+							<p class="x-bold font-20" style="margin-top: 20px;">Perum Griya Inti Permata</p>
 							<div class="row text-left lockdown-info">
 								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Jl. Ahmad Yani</span></div>
+								<div class="col-md-9 col-8"><span class="font-18">Donorejo, Martopuro, Purwosari</span></div>
 								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">06:00 - 20:00</span></div>
+								<div class="col-md-9 col-8"><span class="font-18">19.00 - 24.00</span></div>
 								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Toko di tutup lebih cepat agar warga dapat diam dirumah</span></div>
+								<div class="col-md-9 col-8"><span class="font-18">Jika masih ada warga yang berkeliaran atau berkumpul, maka akan di terapkan tindakan hukum oleh aparat.</span></div>
 							</div>
 						</div>
 					</div>
-					
+					<div class="col-md-3 col-12">
+						<div class="bg-white shadow info text-center">
+							<img src="<?= url('assets/img/loc_shop.png') ?>" alt="imunitas" class="circle shadow">
+							<p class="x-bold font-20" style="margin-top: 20px;">Alun-Alun Kota Pasuruan</p>
+							<div class="row text-left lockdown-info">
+								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
+								<div class="col-md-9 col-8"><span class="font-18">Kebonsari, Panggungrejo</span></div>
+								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
+								<div class="col-md-9 col-8"><span class="font-18">Setiap hari</span></div>
+								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
+								<div class="col-md-9 col-8"><span class="font-18">Kalau bandel akan dipaksa pulang oleh aparat. Ini demi kepentingan kita bersama.</span></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
