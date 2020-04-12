@@ -20,6 +20,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800&display=swap" rel="stylesheet">
 	<script src="https://use.fontawesome.com/34566f56b4.js"></script>
+
+	<!-- LEAFLET -->
+	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet-src.js"></script>
 </head>
 
 <body>
@@ -204,6 +208,348 @@
 			</div>
 			<div class="col-md-7 col-12">
 				<p class="font-24 mob-small" style="letter-spacing: 0.5px;line-height: 175%">Coronavirus Disease 2019 atau COVID-19 adalah penyakit baru yang dapat menyebabkan gangguan pernapasan dan radang paru. Penyakit ini disebabkan oleh infeksi Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2). Gejala klinis yang muncul beragam, mulai dari seperti gejala flu biasa (batuk, pilek, nyeri tenggorok, nyeri otot, nyeri kepala) sampai yang berkomplikasi berat (pneumonia atau sepsis).</p>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-green text-white" id="map-container">
+		<div class="row">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-12 text-center">
+						<span class="x-bold font-52 mob-title">Peta Sebaran Covid-19</span><br>
+						<p class="x-bold font-24 text-center">Kabupaten Pasuruan</p>
+					</div>
+					<div class="col-md-8">
+						<div id="map1" class="kab-map">
+							<script type="text/javascript">
+								var map = L.map('map1').setView([-7.72, 112.858215], 11);
+
+								L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+								    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+								}).addTo(map);
+
+								var newMarker = L.icon({
+						            iconUrl: 'assets/img/marker.png',
+
+						            iconSize:     [48, 48],
+						            iconAnchor:   [20, 50],
+						            popupAnchor:  [0, -60]
+						        });
+
+								var kec = [
+									["PURWODADI", -7.803544,112.7271303,0,0,0],
+									["TUTUR", -7.8996875,112.8224678,0,0,0],
+									["PUSPO", -7.8360402,112.870133,0,0,0],
+									["TOSARI", -7.8955854,112.8939647,0,0,0],
+									["LUMBANG", -7.7995045,112.9773703,0,0,0],
+									["PASREPAN", -7.7941107,112.8939647,0,0,0],
+									["KEJAYAN", -7.7359823,112.8463007,0,0,0],
+									["WONOREJO", -7.71972,112.7748002,0,0,0],
+									["PURWOSARI", -7.7629501,112.7271303,0,0,0],
+									["PRIGEN", -7.697172,112.627899,0,0,0],
+									["SUKOREJO", -7.7169176,112.7187595,0,0,0],
+									["PANDAAN", -7.6426348,112.7032945,0,0,0],
+									["GEMPOL", -7.6034421,112.6794582,0,0,0],
+									["BEJI", -7.5947854,112.7450068,0,0,0],
+									["BANGIL", -7.604976,112.775101,0,0,0],
+									["REMBANG", -7.6373665,112.7986343,0,0,0],
+									["KRATON", -7.6752088,112.8463007,0,0,0],
+									["POHJENTREK", -7.6786077,112.876091,0,0,0],
+									["GONDANG WETAN", -7.7117048,112.9177957,0,0,0],
+									["REJOSO", -7.6746075,112.9475835,0,0,0],
+									["WINONGAN", -7.7508715,112.941626,0,0,0],
+									["GRATI", -7.7468219,113.013113,0,0,0],
+									["LEKOK", -7.6658741,113.013113,0,0,0],
+									["NGULING", -7.7036431,113.0607675,0,0,0],
+								];
+								var markerpop = new Array();
+								var marker = new Array();
+
+								for (var i = 0; i <= kec.length; i++) {
+									markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i][0] +"</div>"+
+										"<p class='font-16 x-bold'>ODP : "+ kec[i][3] +"</p>" +
+										"<p class='font-16 x-bold'>PDP : "+ kec[i][4] +"</p>" +
+										"<p class='font-16 x-bold'>Positif : "+ kec[i][5] +"</p>";
+							        marker[i] = L.marker([kec[i][1], kec[i][2]], {icon: newMarker}).addTo(map)
+								    .bindPopup(markerpop[i], {minWidth:200});	
+								}
+
+							</script>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="table-responsive kab-table">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>No.</th>
+										<th>Kecamatan</th>
+										<th>ODP</th>
+										<th>PDP</th>
+										<th>Positif</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1.</td>
+										<td>PURWODADI</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>TUTUR</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>3.</td>
+										<td>PUSPO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>4.</td>
+										<td>TOSARI</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>5.</td>
+										<td>LUMBANG</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>6.</td>
+										<td>PASREPAN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>7.</td>
+										<td>KEJAYAN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>8.</td>
+										<td>WONOREJO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>9.</td>
+										<td>PURWOSARI</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>10.</td>
+										<td>PRIGEN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>11.</td>
+										<td>SUKOREJO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>12.</td>
+										<td>PANDAAN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>13.</td>
+										<td>GEMPOL</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>14.</td>
+										<td>BEJI</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>15.</td>
+										<td>BANGIL</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>16.</td>
+										<td>REMBANG</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>17.</td>
+										<td>KRATON</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>18.</td>
+										<td>POHJENTREK</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>19.</td>
+										<td>GONDANG WETAN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>20.</td>
+										<td>REJOSO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>21.</td>
+										<td>WINONGAN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>22.</td>
+										<td>GRATI</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>23.</td>
+										<td>LEKOK</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>24.</td>
+										<td>NGULING</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-12 col-12 text-center">
+						<p class="x-bold font-24 text-center mt-4">Kota Pasuruan</p>
+					</div>
+					<div class="col-md-8">
+						<div id="map2" class="kot-map">
+							<script type="text/javascript">
+								var map = L.map('map2').setView([-7.643130, 112.910461], 12);
+
+								L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+								    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+								}).addTo(map);
+
+								var newMarker = L.icon({
+						            iconUrl: 'assets/img/marker.png',
+
+						            iconSize:     [48, 48],
+						            iconAnchor:   [20, 50],
+						            popupAnchor:  [0, -60]
+						        });
+
+								var kec = [
+									["GADINGREJO", -7.6374665,112.8880068,0,0,0],
+									["PURWOREJO", -7.6647917,112.8969436,0,0,0],
+									["BUGULKIDUL", -7.6469193,112.8999225,0,0,0],
+									["PANGGUNGREJO", -7.630350,112.920998,0,0,0]
+								];
+								var markerpop = new Array();
+								var marker = new Array();
+
+								for (var i = 0; i <= kec.length; i++) {
+									markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i][0] +"</div>"+
+										"<p class='font-16 x-bold'>ODP : "+ kec[i][3] +"</p>" +
+										"<p class='font-16 x-bold'>PDP : "+ kec[i][4] +"</p>" +
+										"<p class='font-16 x-bold'>Positif : "+ kec[i][5] +"</p>";
+							        marker[i] = L.marker([kec[i][1], kec[i][2]], {icon: newMarker}).addTo(map)
+								    .bindPopup(markerpop[i], {minWidth:200});	
+								}
+
+							</script>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="table-responsive kot-table">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>No.</th>
+										<th>Kecamatan</th>
+										<th>ODP</th>
+										<th>PDP</th>
+										<th>Positif</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1.</td>
+										<td>GADINGREJO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>PURWOREJO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>3.</td>
+										<td>BUGULKIDUL</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>4.</td>
+										<td>PANGGUNGREJO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

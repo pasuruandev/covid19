@@ -110,10 +110,15 @@ html *{
 #rujukan-info{
 	margin-top: 50px
 }
-#resiko, #lockdown, #artikel{
+#resiko, #artikel, #map-container{
 	padding-top: 50px;
 	padding-bottom: 50px;
 	margin-top: 50px
+}
+#lockdown{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-top: 0px !important;
 }
 
 .logo-head:nth-child(2){
@@ -222,6 +227,24 @@ a.fa-arrow-left:hover{
 	padding: 8px;
 	left: 50px;
 	top: 20px;
+}
+.kab-map{
+	width: 100%;
+	height: 600px;
+}
+.kab-table, .kot-table{
+	overflow-y: scroll;
+	font-size: 12px !important
+}
+.kot-map{
+	width: 100%;
+	height: 250px;
+}
+.kab-table{
+	height: 600px;
+}
+.kot-table{
+	height: 250px;
 }
 
 @media only screen and (max-width: 768px) {
