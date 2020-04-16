@@ -46,14 +46,14 @@ $(function() {
                 comp.append($('<b>').html(tgl + ' ' + jam));
             }
             $self.append(comp);
-            $self.find('.hapus-waktu').click(function(e) {
-                const key = parseInt($(this).attr('data-key'));
-                const value = JSON.parse($input.val());
-                value.splice(key, 1);
-                $input.val(JSON.stringify(value));
-                $self.trigger('render');
-            });
         }
+        $self.find('.hapus-waktu').click(function(e) {
+            const key = parseInt($(this).attr('data-key'));
+            const value = JSON.parse($input.val());
+            value.splice(key, 1);
+            $input.val(JSON.stringify(value));
+            $self.trigger('render');
+        });
     });
     $('#addModal, #editModal').find('.bt-tambah-waktu').click(function () {
         const $modal = $(this).closest('.modal');
