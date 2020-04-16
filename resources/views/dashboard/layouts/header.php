@@ -17,9 +17,11 @@
 
   <!-- Custom styles for this template-->
   <link href="<?= url('dist/css/sb-admin-2.css') ?>" rel="stylesheet">
+  <link href="<?= url('dist/css/style.css') ?>" rel="stylesheet">
 
   <!-- Custom styles for this page -->
   <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
 
 </head>
 

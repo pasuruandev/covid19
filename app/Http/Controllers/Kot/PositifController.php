@@ -21,7 +21,7 @@ class PositifController extends Controller
 
     public function get()
     {
-        return Positif::getkab()->orderBy('tanggal', 'desc')->first();
+        return Positif::getkota()->orderBy('tanggal', 'desc')->first();
     }
 
     public function refresh(Request $req)
@@ -34,15 +34,15 @@ class PositifController extends Controller
     {
         return view('dashboard.pages.positif.update', [
             'data' => $this->get(),
-            'link_update' => route('kabupaten.positif.update'),
-            'link_refresh' => route('kabupaten.positif.refresh'),
+            'link_update' => route('kota.positif.update'),
+            'link_refresh' => route('kota.positif.refresh'),
         ]);
     }
 
     public function update(Request $req)
     {
         try {
-            $data = Positif::getkab()->where('tanggal', 'like', Carbon::now()->format('Y-m-d').'%')->first();
+            $data = Positif::getkota()->where('tanggal', 'like', Carbon::now()->format('Y-m-d').'%')->first();
             if ($data) {
                 $data->tanggal = Carbon::now();
                 $data->jumlah = $req->input('jumlah');
@@ -59,7 +59,7 @@ class PositifController extends Controller
                 ]);
             }
             if ($save) return response("Success", 200);
-            return response("Gaga Simpan!", 500);
+            return response("Gagal Simpan!", 500);
         } catch (\Exception $e) {
             return response($e->getMessage(), 500);
         }

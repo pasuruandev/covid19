@@ -215,6 +215,14 @@ class Menus {
             //     ]
             // ]
         ]);
+
+        $this->add_menu("lockdown", [
+            'key'   => "lockdown",
+            'name'  => "Lockdown",
+            'icon'  => "fas fa-fw fa-cogs",
+            'url'   => "content.lockdown.index"
+        ]);
+
         $this->add_menu("admin", [
             'key'   => "admin",
             'name'  => "Administrator",
@@ -264,6 +272,12 @@ class Menus {
 
         $this->generated[] = $this->menus['dashboard'];
         $this->generated[] = [];
+
+        $lockdown = $this->cek_menu('lockdown');
+
+        if ($lockdown) $this->generated[] = ['name' => "Content"];
+        if ($lockdown) $this->generated[] = $this->menus['lockdown'];
+        if ($lockdown) $this->generated[] = [];
 
         $kabupaten_odp = $this->cek_menu('kabupaten_odp');
         $kabupaten_pdp = $this->cek_menu('kabupaten_pdp');

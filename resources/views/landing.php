@@ -20,6 +20,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800&display=swap" rel="stylesheet">
 	<script src="https://use.fontawesome.com/34566f56b4.js"></script>
+
+	<!-- LEAFLET -->
+	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet-src.js"></script>
 </head>
 
 <body>
@@ -28,8 +32,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-2 col-12 img-center">
-						<img src="<?= url('assets/img/logo-kab.png') ?>" alt="logo-pasuruan" title="Pasuruan Covid-19" class="shadow circle logo-head">
-						<img src="<?= url('assets/img/logo-kot.png') ?>" alt="logo-pasuruan" title="Pasuruan Covid-19" class="shadow circle logo-head">
+						<img src="assets/img/logo-kab.png" alt="logo-pasuruan" title="Pasuruan Covid-19" class="shadow circle logo-head">
+						<img src="assets/img/logo-kot.png" alt="logo-pasuruan" title="Pasuruan Covid-19" class="shadow circle logo-head">
 					</div>
 					<div class="col-md-8 col-12 mob-center" style="margin-top: 15px">
 						<span class="text-white font-24 x-bold" id="title-home">PASURUAN TANGGAP COVID-19</span>
@@ -42,20 +46,22 @@
 					<div class="col-md-6 col-12">
 						<p>#DIRUMAHSAJA</p>
 						<p class="x-bold font-52 mob-title" id="judul" style="line-height: 71px">Data Pantauan <br> COVID-19 Pasuruan</p>
-						<p class="date"><?= $tanggal_terakhir ?></p>
+						<p data-content="data" data-entity="tanggal_terakhir" data-type="date">-</p>
 					</div>
 					<div class="col-md-5 offset-md-1 col-12">
 						<div class="box-info text-white text-center">
-							<img src="<?= url('assets/img/alert.png') ?>" alt="alert-icon" style="margin-top: -41px">
-							<p class="font-24" id="title-posko" style="margin-top: 15px">Posko Covid-19 Kabupaten Pasuruan</p>
+							<img src="assets/img/alert.png" alt="alert-icon" style="margin-top: -41px">
+							<p class="font-24" id="title-posko" style="margin-top: 15px">Posko Covid-19 Pasuruan</p>
 							<div class="row">
 								<div class="col-md-4 offset-md-2 col-6 posko-call">
-									<img src="<?= url('assets/img/posko_call.png') ?>">
+									<a href="tel:+6285718823889"><img src="assets/img/posko_call.png"></a>
 									<p class="x-bold font-16 text-white">Kab. Pasuruan</p>
+									<p class="x-bold font-16 text-white">(085334415276)</p>
 								</div>
 								<div class="col-md-4 col-6 posko-call">
-									<img src="<?= url('assets/img/posko_call.png') ?>">
+									<a href="tel:+6281357722870"><img src="assets/img/posko_call.png"></a>
 									<p class="x-bold font-16 text-white">Kota Pasuruan</p>
+									<p class="x-bold font-16 text-white">(081357722870)</p>
 								</div>
 							</div>
 						</div>
@@ -69,18 +75,18 @@
 		<div class="row">
 			<div class="col-md-4 col-12">
 				<div class="bg-white shadow info text-center">
-					<img src="<?= url('assets/img/odp.png') ?>" alt="odp" class="circle shadow">
-					<p class="x-bold text-green total-info"><?= $odp['kab']->jumlah + $odp['kota']->jumlah ?></p>
+					<img src="assets/img/odp.png" alt="odp" class="circle shadow">
+					<p class="x-bold text-green total-info" data-content="data" data-entity="odp.all.jumlah">0</p>
 					<p class="font-24 text-green x-bold title-info">ODP</p>
 					<p>(ORANG DALAM PEMANTAUAN)</p>
 					<div class="sub-info text-center">
 						<div class="row bg-grey">
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-20"><?= $odp['kab']->jumlah ?></span>
+								<span class="x-bold text-green font-20" data-content="data" data-entity="odp.kab.jumlah">0</span>
 								<p class="font-14">Kab. Pasuruan</p>
 							</div>
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-20"><?= $odp['kota']->jumlah ?></span>
+								<span class="x-bold text-green font-20" data-content="data" data-entity="odp.kota.jumlah">0</span>
 								<p class="font-14">Kota Pasuruan</p>
 							</div>
 						</div>
@@ -89,27 +95,27 @@
 			</div>
 			<div class="col-md-4 col-12">
 				<div class="bg-white shadow info text-center">
-					<img src="<?= url('assets/img/pdp.png') ?>" alt="pdp" class="circle shadow">
-					<p class="x-bold text-orange total-info"><?= $pdp['kab']->jumlah + $pdp['kota']->jumlah ?></p>
+					<img src="assets/img/pdp.png" alt="pdp" class="circle shadow">
+					<p class="x-bold text-orange total-info" data-content="data" data-entity="pdp.all.jumlah">0</p>
 					<p class="font-24 text-orange x-bold title-info">PDP</p>
 					<p>(PASIEN DALAM PENGAWASAN)</p>
 					<div class="sub-info text-center">
 						<div class="row bg-grey">
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-20"><?= $pdp['kab']->jumlah ?></span>
+								<span class="x-bold text-green font-20" data-content="data" data-entity="pdp.kab.jumlah">0</span>
 								<p class="font-14">Kab. Pasuruan</p>
 							</div>
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-20"><?= $pdp['kota']->jumlah ?></span>
+								<span class="x-bold text-green font-20" data-content="data" data-entity="pdp.kota.jumlah">0</span>
 								<p class="font-14">Kota Pasuruan</p>
 							</div>
 						</div>
 						<div class="row bg-white">
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-16"><?= $pdp['kab']->negatif ?> Negatif</span>
+								<span class="x-bold text-green font-16"><span class="x-bold" data-content="data" data-entity="pdp.kab.negatif">0</span> Negatif</span>
 							</div>
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-16"><?= $pdp['kota']->negatif ?> Negatif</span>
+								<span class="x-bold text-green font-16"><span class="x-bold" data-content="data" data-entity="pdp.kota.negatif">0</span> Negatif</span>
 							</div>
 						</div>
 					</div>
@@ -117,31 +123,30 @@
 			</div>
 			<div class="col-md-4 col-12">
 				<div class="bg-white shadow info last-info text-center">
-					<img src="<?= url('assets/img/positif.png') ?>" alt="positif" class="circle shadow">
-					<p class="x-bold text-red total-info"><?= $positif['kab']->jumlah + $positif['kota']->jumlah ?></p>
+					<img src="assets/img/positif.png" alt="positif" class="circle shadow">
+					<p class="x-bold text-red total-info" data-content="data" data-entity="positif.all.jumlah">0</p>
 					<p class="font-24 text-red x-bold title-info">POSITIF CORONA</p>
 					<p>(KONFIRMASI PASIEN POSITIF)</p>
 					<div class="sub-info text-center">
 						<div class="row bg-grey">
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-20"><?= $positif['kab']->jumlah ?></span>
+								<span class="x-bold text-green font-20" data-content="data" data-entity="positif.kab.jumlah">0</span>
 								<p class="font-14">Kab. Pasuruan</p>
 							</div>
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-20"><?= $positif['kota']->jumlah ?></span>
+								<span class="x-bold text-green font-20" data-content="data" data-entity="positif.kota.jumlah">0</span>
 								<p class="font-14">Kota Pasuruan</p>
 							</div>
 						</div>
 						<div class="row bg-white">
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-16"><?= $positif['kab']->sembuh ?> Sembuh</span><br>
-								<span class="x-bold font-16"><?= $positif['kab']->meninggal ?> Meninggal</span>
+								<span class="x-bold text-green font-16"><span class="xbold" data-content="data" data-entity="positif.kab.sembuh">0</span> Sembuh</span><br>
+								<span class="x-bold font-16"><span class="xbold" data-content="data" data-entity="positif.kab.meninggal">0</span> Meninggal</span>
 							</div>
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-16"><?= $positif['kota']->sembuh ?> Sembuh</span><br>
-								<span class="x-bold font-16"><?= $positif['kota']->meninggal ?> Meninggal</span>
+								<span class="x-bold text-green font-16"><span class="xbold" data-content="data" data-entity="positif.kota.sembuh">0</span> Sembuh</span><br>
+								<span class="x-bold font-16"><span class="xbold" data-content="data" data-entity="positif.kota.meninggal">0</span> Meninggal</span>
 							</div>
-							
 						</div>
 					</div>
 				</div>
@@ -152,7 +157,7 @@
 		<div class="row">
 			<div class="col-md-12 col-12" style="padding-top: 30px;padding-bottom: 30px">
 				<div class="alert alert-warning">
-					<i class="fa fa-exclamation-circle"></i> Data kasus terkonfirmasi secara resmi oleh Pemerintahan Provinsi Jawa Timur per <strong class="date"><?= $tanggal_terakhir ?></strong>
+					<i class="fa fa-exclamation-circle"></i> Data kasus terkonfirmasi secara resmi oleh Pemerintahan Provinsi Jawa Timur per <strong data-content="data" data-entity="tanggal_terakhir" data-type="date">Rabu, 1 April 2020</strong>
 				</div>
 			</div>
 		</div>
@@ -163,23 +168,26 @@
 				<div class="col-md-12 col-12 bg-green rujukan">
 					<div class="row box-rujukan">
 						<div class="col-md-5 col-12">
-							<img src="<?= url('assets/img/rs.png') ?>" alt="rumah sakit" class="img-center" id="img-rs">
+							<img src="assets/img/rs.png" alt="rumah sakit" class="img-center" id="img-rs">
 						</div>
 						<div class="col-md-7 col-12 text-white mob-center" id="rujukan-info">
 							<p class="font-20">Rumah Sakit Rujukan?</p>
 							<p class="font-42 x-bold">RSUD BANGIL</p>
 							<div class="row">
 								<div class="col-md-1 col-12">
-									<img src="<?= url('assets/img/address.png') ?>" alt="" class="img-center">
+									<img src="assets/img/address.png" alt="" class="img-center">
 								</div>
 								<div class="col-md-11 col-12" style="margin-top: 5px">
 									<address>Jl. Raya Raci - Bangil, Balungbendo, Masangan, Kec. Bangil, Pasuruan</address>
 								</div>
 								<div class="col-md-1 col-12">
-									<img src="<?= url('assets/img/phone.png') ?>" alt="" class="img-center">
+									<img src="assets/img/phone.png" alt="" class="img-center">
 								</div>
 								<div class="col-md-11 col-12" style="margin-top: 5px">
 									<span>(0343) 744900</span>
+								</div>
+								<div class="col-md-12" style="margin-top: 15px">
+									<a href="https://goo.gl/maps/43oSP6mJNjoVCUdd7" target="_blank" class="btn btn-light btn-lg">Lihat di Peta</a>
 								</div>
 							</div>
 						</div>
@@ -203,76 +211,377 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid bg-green" id="lockdown">
+	<div class="container-fluid bg-green text-white" id="map-container">
 		<div class="row">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12 col-12 text-white text-center">
-						<span class="x-bold">Informasi</span> <br>
-						<span class="x-bold font-52 mob-title">Lokasi Lockdown</span>
+					<div class="col-md-12 col-12 text-center">
+						<span class="x-bold font-52 mob-title">Peta Sebaran Covid-19</span><br>
+						<p class="x-bold font-24 text-center">Kabupaten Pasuruan</p>
+					</div>
+					<div class="col-md-8">
+						<div id="map1" class="kab-map">
+							<script type="text/javascript">
+								var map = L.map('map1').setView([-7.72, 112.858215], 11);
+
+								L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+								    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+								}).addTo(map);
+
+								var newMarker = L.icon({
+						            iconUrl: 'assets/img/marker.png',
+
+						            iconSize:     [48, 48],
+						            iconAnchor:   [20, 50],
+						            popupAnchor:  [0, -60]
+						        });
+
+								var kec = [
+									["PURWODADI", -7.803544,112.7271303,0,0,0],
+									["TUTUR", -7.8996875,112.8224678,0,0,0],
+									["PUSPO", -7.8360402,112.870133,0,0,0],
+									["TOSARI", -7.8955854,112.8939647,0,0,0],
+									["LUMBANG", -7.7995045,112.9773703,0,0,0],
+									["PASREPAN", -7.7941107,112.8939647,0,0,0],
+									["KEJAYAN", -7.7359823,112.8463007,0,0,0],
+									["WONOREJO", -7.71972,112.7748002,0,0,0],
+									["PURWOSARI", -7.7629501,112.7271303,0,0,0],
+									["PRIGEN", -7.697172,112.627899,0,0,0],
+									["SUKOREJO", -7.7169176,112.7187595,0,0,0],
+									["PANDAAN", -7.6426348,112.7032945,0,0,0],
+									["GEMPOL", -7.6034421,112.6794582,0,0,0],
+									["BEJI", -7.5947854,112.7450068,0,0,0],
+									["BANGIL", -7.604976,112.775101,0,0,0],
+									["REMBANG", -7.6373665,112.7986343,0,0,0],
+									["KRATON", -7.6752088,112.8463007,0,0,0],
+									["POHJENTREK", -7.6786077,112.876091,0,0,0],
+									["GONDANG WETAN", -7.7117048,112.9177957,0,0,0],
+									["REJOSO", -7.6746075,112.9475835,0,0,0],
+									["WINONGAN", -7.7508715,112.941626,0,0,0],
+									["GRATI", -7.7468219,113.013113,0,0,0],
+									["LEKOK", -7.6658741,113.013113,0,0,0],
+									["NGULING", -7.7036431,113.0607675,0,0,0],
+								];
+								var markerpop = new Array();
+								var marker = new Array();
+
+								for (var i = 0; i < kec.length; i++) {
+									markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i][0] +"</div>"+
+										"<p class='font-16 x-bold'>ODP : "+ kec[i][3] +"</p>" +
+										"<p class='font-16 x-bold'>PDP : "+ kec[i][4] +"</p>" +
+										"<p class='font-16 x-bold'>Positif : "+ kec[i][5] +"</p>";
+							        marker[i] = L.marker([kec[i][1], kec[i][2]], {icon: newMarker}).addTo(map)
+								    .bindPopup(markerpop[i], {minWidth:200});	
+								}
+
+							</script>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="table-responsive kab-table">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>No.</th>
+										<th>Kecamatan</th>
+										<th>ODP</th>
+										<th>PDP</th>
+										<th>Positif</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1.</td>
+										<td>PURWODADI</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>TUTUR</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>3.</td>
+										<td>PUSPO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>4.</td>
+										<td>TOSARI</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>5.</td>
+										<td>LUMBANG</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>6.</td>
+										<td>PASREPAN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>7.</td>
+										<td>KEJAYAN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>8.</td>
+										<td>WONOREJO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>9.</td>
+										<td>PURWOSARI</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>10.</td>
+										<td>PRIGEN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>11.</td>
+										<td>SUKOREJO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>12.</td>
+										<td>PANDAAN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>13.</td>
+										<td>GEMPOL</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>14.</td>
+										<td>BEJI</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>15.</td>
+										<td>BANGIL</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>16.</td>
+										<td>REMBANG</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>17.</td>
+										<td>KRATON</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>18.</td>
+										<td>POHJENTREK</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>19.</td>
+										<td>GONDANG WETAN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>20.</td>
+										<td>REJOSO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>21.</td>
+										<td>WINONGAN</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>22.</td>
+										<td>GRATI</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>23.</td>
+										<td>LEKOK</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>24.</td>
+										<td>NGULING</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-12 col-12 text-center">
+						<p class="x-bold font-24 text-center mt-4">Kota Pasuruan</p>
+					</div>
+					<div class="col-md-8">
+						<div id="map2" class="kot-map">
+							<script type="text/javascript">
+								var map = L.map('map2').setView([-7.643130, 112.910461], 12);
+
+								L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+								    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+								}).addTo(map);
+
+								var newMarker = L.icon({
+						            iconUrl: 'assets/img/marker.png',
+
+						            iconSize:     [48, 48],
+						            iconAnchor:   [20, 50],
+						            popupAnchor:  [0, -60]
+						        });
+
+								var kec = [
+									["GADINGREJO", -7.6374665,112.8880068,0,0,0],
+									["PURWOREJO", -7.6647917,112.8969436,0,0,0],
+									["BUGULKIDUL", -7.6469193,112.8999225,0,0,0],
+									["PANGGUNGREJO", -7.630350,112.920998,0,0,0]
+								];
+								var markerpop = new Array();
+								var marker = new Array();
+
+								for (var i = 0; i < kec.length; i++) {
+									markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i][0] +"</div>"+
+										"<p class='font-16 x-bold'>ODP : "+ kec[i][3] +"</p>" +
+										"<p class='font-16 x-bold'>PDP : "+ kec[i][4] +"</p>" +
+										"<p class='font-16 x-bold'>Positif : "+ kec[i][5] +"</p>";
+							        marker[i] = L.marker([kec[i][1], kec[i][2]], {icon: newMarker}).addTo(map)
+								    .bindPopup(markerpop[i], {minWidth:200});	
+								}
+
+							</script>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="table-responsive kot-table">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>No.</th>
+										<th>Kecamatan</th>
+										<th>ODP</th>
+										<th>PDP</th>
+										<th>Positif</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1.</td>
+										<td>GADINGREJO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>2.</td>
+										<td>PURWOREJO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>3.</td>
+										<td>BUGULKIDUL</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>4.</td>
+										<td>PANGGUNGREJO</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
-				<div class="row" style="margin-top: 100px">
-					<div class="col-md-3 col-12">
-						<div class="bg-white shadow info text-center">
-							<img src="<?= url('assets/img/loc_cone.png') ?>" alt="imunitas" class="circle shadow">
-							<p class="x-bold font-20" style="margin-top: 20px;">Ruas Jalan Pandaan</p>
-							<div class="row text-left lockdown-info">
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Jl. A. Yani - Jl. RA Kartini</span></div>
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">
-									Jum'at 09:00 - 23:00<br>
-									Sabtu 09:00 - 24:00<br>
-									Minggu 09:00 - 14:00
-								</span></div>
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Masih suka berkumpul? Awas ANCAMAN PIDANA.</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-green" id="lockdown" data-limit="4">
+		<div class="row">
+			<div class="container">
+				<div class="row mob-center">
+					<div class="col-md-6 col-12 text-white">
+						<span class="x-bold">Informasi</span> <br>
+						<span class="x-bold font-52 mob-title">Kawasan Physical Distancing</span>
+					</div>
+					<div class="col-md-6 col-12 text-right see-all">
+						<a href="/lockdown" class="btn btn-light btn-lg">Tampilkan Semua</a>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 100px" data-content="lockdown" data-template="#template-lockdown">
+					<template class="hidden" id="template-lockdown">
+						<div class="col-md-3 col-12">
+							<div class="bg-white shadow info text-center">
+								<img src="" alt="lockdown" class="circle shadow" data-entity="img">
+								<p class="x-bold font-20" style="margin-top: 20px;" data-entity="lokasi">Ruas Jalan Pandaan</p>
+								<div class="row text-left lockdown-info">
+									<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
+									<div class="col-md-9 col-8"><span class="font-18" data-entity="alamat">Jl. A. Yani - Jl. RA Kartini</span></div>
+									<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
+									<div class="col-md-9 col-8"><span class="font-18" data-entity="waktu"></span></div>
+									<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
+									<div class="col-md-9 col-8"><span class="font-18" data-entity="deskripsi">Masih suka berkumpul? Awas ANCAMAN PIDANA.</span></div>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-3 col-12">
-						<div class="bg-white shadow info text-center">
-							<img src="<?= url('assets/img/loc_cone.png') ?>" alt="imunitas" class="circle shadow">
-							<p class="x-bold font-20" style="margin-top: 20px;">Ruas Jalan Sengon Bakalan</p>
-							<div class="row text-left lockdown-info">
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Simpang 4 Sengon - Simpang 3 Bakalan</span></div>
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">19.00 - 24.00</span></div>
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Jika masih ada warga yang berkeliaran atau berkumpul, maka akan di terapkan tindakan hukum oleh aparat.</span></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-12">
-						<div class="bg-white shadow info text-center">
-							<img src="<?= url('assets/img/loc_shop.png') ?>" alt="imunitas" class="circle shadow">
-							<p class="x-bold font-20" style="margin-top: 20px;">Perum Griya Inti Permata</p>
-							<div class="row text-left lockdown-info">
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Donorejo, Martopuro, Purwosari</span></div>
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">19.00 - 24.00</span></div>
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Jika masih ada warga yang berkeliaran atau berkumpul, maka akan di terapkan tindakan hukum oleh aparat.</span></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-12">
-						<div class="bg-white shadow info text-center">
-							<img src="<?= url('assets/img/loc_shop.png') ?>" alt="imunitas" class="circle shadow">
-							<p class="x-bold font-20" style="margin-top: 20px;">Alun-Alun Kota Pasuruan</p>
-							<div class="row text-left lockdown-info">
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Kebonsari, Panggungrejo</span></div>
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Setiap hari</span></div>
-								<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
-								<div class="col-md-9 col-8"><span class="font-18">Kalau bandel akan dipaksa pulang oleh aparat. Ini demi kepentingan kita bersama.</span></div>
-							</div>
-						</div>
-					</div>
+					</template>
 				</div>
 			</div>
 		</div>
@@ -290,7 +599,7 @@
 					<div class="col-md-4 col-12">
 						<div class="bg-green text-white shadow info">
 							<center>
-								<img src="<?= url('assets/img/imun.png') ?>" alt="imunitas" class="circle shadow">
+								<img src="assets/img/imun.png" alt="imunitas" class="circle shadow">
 								<p class="x-bold font-35" style="margin-top: 50px">Tingkatkan Imunitas Tubuh</p>
 								<p class="font-20 title-info">Dengan mengkonsumsi makanan yang ber gizi, berolahraga dan istirahat yang cukup</p>
 							</center>
@@ -299,7 +608,7 @@
 					<div class="col-md-4 col-12">
 						<div class="bg-green text-white shadow info">
 							<center>
-								<img src="<?= url('assets/img/cuci.png') ?>" alt="cuci tangan" class="circle shadow">
+								<img src="assets/img/cuci.png" alt="cuci tangan" class="circle shadow">
 								<p class="x-bold font-35" style="margin-top: 50px">Jaga Selalu Kebersihan</p>
 								<p class="font-20 title-info">Dengan mencuci tangan pakai sabun selama 20 detik, gunakan masker dan handsanitizer</p>
 							</center>
@@ -308,12 +617,61 @@
 					<div class="col-md-4 col-12">
 						<div class="bg-green text-white shadow info last-info">
 							<center>
-								<img src="<?= url('assets/img/salam.png') ?>" alt="kontak langsung" class="circle shadow">
+								<img src="assets/img/salam.png" alt="kontak langsung" class="circle shadow">
 								<p class="x-bold font-35" style="margin-top: 50px">Kurangi Kontak Langsung</p>
 								<p class="font-20 title-info">Dengan hindari pertemuan besar (Lebih dari 10 orang) dan jaga jarak minimal 2 Meter</p>
 							</center>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-green" id="artikel">
+		<div class="row">
+			<div class="container">
+				<div class="row mob-center">
+					<div class="col-md-6 col-12 text-white">
+						<span class="x-bold">Informasi</span> <br>
+						<span class="x-bold font-52 mob-title">Artikel Covid-19</span>
+					</div>
+					<div class="col-md-6 col-12 text-right see-all">
+						<!-- <a href="artikel.html" class="btn btn-light btn-lg">Tampilkan Semua</a> -->
+					</div>
+					<div class="col-md-4 col-12">
+						<div class="card artikel-card">
+						  <img class="card-img-top" src="assets/img/article/1.jpg">
+						  <div class="card-body">
+						    <h5 class="card-title font-20 x-bold">Ullamcorper facilisis quisque molestie neque, cras</h5>
+						    <p class="card-text font-16">
+						    	<a href="artikel_detail.html" class="text-green">Baca Selengkapnya</a>
+						    </p>
+						  </div>
+						</div>
+					</div>
+					<div class="col-md-4 col-12">
+						<div class="card artikel-card">
+						  <img class="card-img-top" src="assets/img/article/1.jpg">
+						  <div class="card-body">
+						    <h5 class="card-title font-20 x-bold">Ullamcorper facilisis quisque molestie neque, cras</h5>
+						    <p class="card-text font-16">
+						    	<a href="artikel_detail.html" class="text-green">Baca Selengkapnya</a>
+						    </p>
+						  </div>
+						</div>
+					</div>
+					<div class="col-md-4 col-12">
+						<div class="card artikel-card">
+						  <img class="card-img-top" src="assets/img/article/1.jpg">
+						  <div class="card-body">
+						    <h5 class="card-title font-20 x-bold">Ullamcorper facilisis quisque molestie neque, cras</h5>
+						    <p class="card-text font-16">
+						    	<a href="artikel_detail.html" class="text-green">Baca Selengkapnya</a>
+						    </p>
+						  </div>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>

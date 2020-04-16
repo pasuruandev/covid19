@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Odp;
 use App\Pdp;
 use App\Positif;
+use App\Lockdown;
 
 class LandingController extends Controller
 {
@@ -20,6 +21,16 @@ class LandingController extends Controller
     }
 
     public function index(Request $req)
+    {
+        return view('landing');
+    }
+
+    public function lockdown_page(Request $req)
+    {
+        return view('pages.lockdown');
+    }
+
+    public function get_data(Request $req)
     {
         $odp_kab = Odp::getDataKab();
         $odp_kota = Odp::getDataKota();
@@ -42,7 +53,7 @@ class LandingController extends Controller
         $tanggal_terakhir = $tanggal_terakhir->max($date_positif_kota);
         $tanggal_terakhir = $tanggal_terakhir->format('Y-m-d H:i:s');
 
-        return view('landing', [
+        return response([
             'odp' => [
                 'kab' => $odp_kab,
                 'kota' => $odp_kota
@@ -57,5 +68,12 @@ class LandingController extends Controller
             ],
             'tanggal_terakhir' => $tanggal_terakhir
         ]);
+    }
+
+    public function get_lockdowns(Request $req, $limit = 0)
+    {
+        $query = Lockdown::with('waktu');
+        if ($limit > 0) $query = $query->orderBy('created_at', 'desc')->limit($limit);
+        return response($query->get());
     }
 }
