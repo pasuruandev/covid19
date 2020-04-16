@@ -308,4 +308,12 @@ a.fa-arrow-left:hover{
 		left: 10px;
 		top: 10px;
 	}
+	.kot-table,.kab-table{
+		height: auto !important;
+		overflow-y: visible;
+		margin-top: 20px;
+	}
+	.kot-map, .kab-map{
+		height: 300px;
+	}
 }
