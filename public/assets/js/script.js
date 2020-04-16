@@ -121,13 +121,13 @@ $(function() {
                     if (w.tipe == 'I') {
                         let hari = render_hari(w.hari);
                         let jam = "Seharian Penuh";
-                        if (w.jam_awal != null) jam = moment(w.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(w.jam_akhir, 'HH:mm:ss').format('HH:mm');
+                        if (w.jam_awal != null && w.jam_awal != "") jam = moment(w.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(w.jam_akhir, 'HH:mm:ss').format('HH:mm');
                         waktu.push(hari + ' ' + jam);
                     } else {
                         let tgl = moment(w.tgl_awal, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY');
                         if (w.tgl_awal != w.tgl_akhir) tgl += ' - ' + moment(w.tgl_akhir, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY');
                         let jam = "Seharian Penuh";
-                        if (w.jam_awal != null) jam = moment(w.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(w.jam_akhir, 'HH:mm:ss').format('HH:mm');
+                        if (w.jam_awal != null && w.jam_awal != "") jam = moment(w.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(w.jam_akhir, 'HH:mm:ss').format('HH:mm');
                         waktu.push(tgl + ' ' + jam);
                     }
                 }

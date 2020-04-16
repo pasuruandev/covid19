@@ -33,13 +33,13 @@ $(function() {
             if (v.tipe == 'I') {
                 let hari = render_hari(v.hari);
                 let jam = "Seharian Penuh";
-                if (v.jam_awal != null) jam = moment(v.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(v.jam_akhir, 'HH:mm:ss').format('HH:mm');
+                if (v.jam_awal != null && v.jam_awal != "") jam = moment(v.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(v.jam_akhir, 'HH:mm:ss').format('HH:mm');
                 comp.html($('<b>').html(hari + ' ' + jam));
             } else {
                 let tgl = moment(v.tgl_awal, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY');
                 if (v.tgl_awal != v.tgl_akhir) tgl += ' - ' + moment(v.tgl_akhir, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY');
                 let jam = "Seharian Penuh";
-                if (v.jam_awal != null) jam = moment(v.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(v.jam_akhir, 'HH:mm:ss').format('HH:mm');
+                if (v.jam_awal != null && v.jam_awal != "") jam = moment(v.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(v.jam_akhir, 'HH:mm:ss').format('HH:mm');
                 comp.html($('<b>').html(tgl + ' ' + jam));
             }
             $(this).append(comp);
