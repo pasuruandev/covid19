@@ -32,8 +32,7 @@ $(function() {
         for (let k in value) {
             let v = value[k];
             let comp = $("<li>").addClass('list-group-item')
-                        .attr('data-key', k)
-                        .html(`<a href="#" class="float-right text-danger hapus-waktu"><i class="fa fa-times"></i></a>`);
+                        .html(`<a href="#" class="float-right text-danger hapus-waktu" data-key="${key}"><i class="fa fa-times"></i></a>`);
             if (v.tipe == 'I') {
                 let hari = render_hari(v.hari);
                 let jam = "Seharian Penuh";
