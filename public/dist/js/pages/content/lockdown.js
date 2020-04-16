@@ -48,7 +48,7 @@ $(function() {
             }
             $self.append(comp);
             $self.find('.hapus-waktu').click(function(e) {
-                const key = $(this).attr('data-key');
+                const key = parseInt($(this).attr('data-key'));
                 const value = JSON.parse($input.val());
                 value.splice(key, 1);
                 $input.val(JSON.stringify(value));

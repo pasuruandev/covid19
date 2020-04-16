@@ -83,5 +83,6 @@ function render_hari(hari) {
             }
         }
     }
+    if (result[0] == result[1]) result.pop();
     return result.join(' - ');
 }
