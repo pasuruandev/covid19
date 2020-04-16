@@ -35,6 +35,9 @@ if (jQuery.fn.datetimepicker) {
             keepOpen: false
         });
     });
+    $('input[data-toggle="datetimepicker"]').focusout(function(e) {
+        $(this).datetimepicker('hide');
+    });
 }
 
 function render_hari(hari) {
