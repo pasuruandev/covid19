@@ -162,8 +162,8 @@ $(function () {
                             if (waktu.jam_awal != null) jam = moment(waktu.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(waktu.jam_akhir, 'HH:mm:ss').format('HH:mm');
                             comp.append($('<li>').html(tgl + ' ' + jam));
                         }
-                        return comp.prop('outerHTML');
                     }
+                    return comp.prop('outerHTML');
                 }
             },
             {
