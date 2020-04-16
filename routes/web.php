@@ -18,6 +18,18 @@ $router->get('/', [
     'as' => "landing",
     'uses' => 'LandingController@index'
 ]);
+$router->get('/lockdown', [
+    'as' => "landing.lockdown",
+    'uses' => 'LandingController@lockdown_page'
+]);
+$router->get('/data', [
+    'as' => "landing.data",
+    'uses' => 'LandingController@get_data'
+]);
+$router->get('/data/lockdown[/{limit}]', [
+    'as' => "landing.lockdowns",
+    'uses' => 'LandingController@get_lockdowns'
+]);
 
 
 
@@ -28,16 +40,16 @@ $router->get('/', [
 /**
  * AUTH
  */
-$router->get('/login', [
+$router->get('/dashboard/login', [
     'middleware' => 'guest',
     'as' => "login.index",
     'uses' => 'LoginController@index'
 ]);
-$router->post('/login[/{flag}]', [
+$router->post('/dashboard/login[/{flag}]', [
     'middleware' => 'guest',
     'uses' => 'LoginController@auth'
 ]);
-$router->get('/logout', [
+$router->get('/dashboard/logout', [
     'middleware' => 'auth',
     'as' => 'login.logout',
     'uses' => 'LoginController@logout'
@@ -50,6 +62,40 @@ $router->get('/dashboard', [
     'middleware' => 'auth',
     'as' => "dashboard.index",
     'uses' => 'DashboardController@index'
+]);
+
+/**
+ * CONTENT
+ */
+$router->get('/dashboard/content/lockdown', [
+    'middleware' => 'auth',
+    'as' => "content.lockdown.index",
+    'uses' => 'Content\LockdownController@index'
+]);
+$router->get('/dashboard/content/lockdown/get[/{key}]', [
+    'middleware' => 'auth',
+    'as' => "content.lockdown.get",
+    'uses' => 'Content\LockdownController@get'
+]);
+$router->get('/dashboard/content/lockdown/data', [
+    'middleware' => 'auth',
+    'as' => "content.lockdown.data",
+    'uses' => 'Content\LockdownController@data'
+]);
+$router->post('/dashboard/content/lockdown/insert', [
+    'middleware' => 'auth',
+    'as' => "content.lockdown.insert",
+    'uses' => 'Content\LockdownController@insert'
+]);
+$router->post('/dashboard/content/lockdown/update', [
+    'middleware' => 'auth',
+    'as' => "content.lockdown.update",
+    'uses' => 'Content\LockdownController@update'
+]);
+$router->post('/dashboard/content/lockdown/delete', [
+    'middleware' => 'auth',
+    'as' => "content.lockdown.delete",
+    'uses' => 'Content\LockdownController@delete'
 ]);
 
 /**

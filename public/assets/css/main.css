@@ -110,10 +110,15 @@ html *{
 #rujukan-info{
 	margin-top: 50px
 }
-#resiko, #lockdown{
+#resiko, #artikel, #map-container{
 	padding-top: 50px;
 	padding-bottom: 50px;
 	margin-top: 50px
+}
+#lockdown{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-top: 0px !important;
 }
 
 .logo-head:nth-child(2){
@@ -163,6 +168,84 @@ img.ld-icon{
 .head-margin{
 	margin-top: 100px;
 }
+.see-all{
+	padding-top: 35px !important;
+}
+.artikel-card.card{
+	border: none;
+	border-radius: 12px;
+	margin-top: 20px;
+}
+.artikel-card.card .card-img-top{
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+}
+.artikel-card a:hover{
+	color: #2C9B5B;
+}
+.artikel-card h5{
+	line-height: 40px;
+}
+#lockdown.ld-list{
+	margin-top: 0px !important;
+	min-height: 100vh;
+}
+#lockdown.ld-list .info{
+	margin: 50px 0;
+}
+a.fa-arrow-left{
+	color: #fff;
+	transition-duration: 0.25s;
+}
+a.fa-arrow-left:hover{
+	color: #fff;
+	text-decoration: none;
+	transform: translateX(-5px);
+}
+.detail-img{
+	width: 100%;
+	max-height: 40vh;
+	object-fit: cover;
+}
+.detail-text{
+	padding: 40px 0;
+}
+.detail-text p{
+	font-size: 16px;
+	line-height: 32px;
+}
+#share a:hover{
+	text-decoration: none !important;
+}
+.detail_back{
+	position: absolute;
+	width: 50px !important;
+	height: 50px !important;
+	padding: 8px;
+	left: 50px;
+	top: 20px;
+}
+.kab-map{
+	width: 100%;
+	height: 600px;
+}
+.kab-table, .kot-table{
+	overflow-y: scroll;
+	font-size: 12px !important
+}
+.kot-map{
+	width: 100%;
+	height: 250px;
+}
+.kab-table{
+	height: 600px;
+}
+.kot-table{
+	height: 250px;
+}
 
 @media only screen and (max-width: 768px) {
 	#title-home{
@@ -204,5 +287,25 @@ img.ld-icon{
 	}
 	.mob-small{
 		font-size: 16px
+	}
+	#lockdown .mob-center .col-12{
+		text-align: center !important;
+		padding: 2px !important;
+	}
+	.artikel-card .card-img-top{
+		height: 200px !important;
+	}
+	.ld-list .mob-title{
+		font-size: 22px !important;
+	}
+	.ld-list .mob-title a{
+		margin-right: 10px;
+	}
+	.ld-list .info{
+		margin: 15px 0;
+	}
+	.detail_back{
+		left: 10px;
+		top: 10px;
 	}
 }
