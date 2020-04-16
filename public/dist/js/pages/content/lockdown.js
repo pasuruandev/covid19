@@ -25,24 +25,35 @@ $(function() {
         $(this).find('input[type="text"], select').val('');
     });
     $('.list-waktu').on('render', function (e) {
-        const $input = $(this).closest('.modal').find('input[name="input_waktu"]');
+        const $self = $(this);
+        const $input = $self.closest('.modal').find('input[name="input_waktu"]');
         const value = JSON.parse($input.val());
-        $(this).html("");
-        for (let v of value) {
-            let comp = $("<li>").addClass('list-group-item');
+        $self.html("");
+        for (let k in value) {
+            let v = value[k];
+            let comp = $("<li>").addClass('list-group-item')
+                        .attr('data-key', k)
+                        .html(`<a href="#" class="float-right text-danger hapus-waktu"><i class="fa fa-times"></i></a>`);
             if (v.tipe == 'I') {
                 let hari = render_hari(v.hari);
                 let jam = "Seharian Penuh";
                 if (v.jam_awal != null && v.jam_awal != "") jam = moment(v.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(v.jam_akhir, 'HH:mm:ss').format('HH:mm');
-                comp.html($('<b>').html(hari + ' ' + jam));
+                comp.append($('<b>').html(hari + ' ' + jam));
             } else {
                 let tgl = moment(v.tgl_awal, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY');
                 if (v.tgl_awal != v.tgl_akhir) tgl += ' - ' + moment(v.tgl_akhir, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY');
                 let jam = "Seharian Penuh";
                 if (v.jam_awal != null && v.jam_awal != "") jam = moment(v.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(v.jam_akhir, 'HH:mm:ss').format('HH:mm');
-                comp.html($('<b>').html(tgl + ' ' + jam));
+                comp.append($('<b>').html(tgl + ' ' + jam));
             }
-            $(this).append(comp);
+            $self.append(comp);
+            $self.find('.hapus-waktu').click(function(e) {
+                const key = $(this).attr('data-key');
+                const value = JSON.parse($input.val());
+                value.splice(key, 1);
+                $input.val(JSON.stringify(value));
+                $self.trigger('render');
+            });
         }
     });
     $('#addModal, #editModal').find('.bt-tambah-waktu').click(function () {
@@ -172,7 +183,9 @@ $(function () {
     
     $('#addModal').on('hidden.bs.modal', function (e) {
         $(this).find('form').trigger('reset');
-        $('#add_').prop('checked', true).trigger('change');
+        $('#add_tipe_lockdown_i').prop('checked', true).trigger('change');
+        $('input[name="input_waktu"]').val('[]');
+        $(this).find('.list-waktu').trigger('render');
     });
     $('#addModal').on('simpan', function (e) {
         $(this).find('.modal-body > .alert').remove();
@@ -209,6 +222,8 @@ $(function () {
     $('#editModal').on('hidden.bs.modal', function (e) {
         $(this).find('form').trigger('reset');
         $('#edit_tipe_lockdown_i').prop('checked', true).trigger('change');
+        $('input[name="input_waktu"]').val('[]');
+        $(this).find('.list-waktu').trigger('render');
     });
     $('#editModal').on('simpan', function (e) {
         $(this).find('.modal-body > .alert').remove();
