@@ -246,6 +246,9 @@ a.fa-arrow-left:hover{
 .kot-table{
 	height: 250px;
 }
+.rujukan .col-md-10{
+	margin-left: 20px;
+}
 
 @media only screen and (max-width: 768px) {
 	#title-home{
@@ -315,5 +318,14 @@ a.fa-arrow-left:hover{
 	}
 	.kot-map, .kab-map{
 		height: 300px;
+	}
+
+	.footer div{
+		text-align: center;
+	}
+	.footer-logo{
+		float: none !important;
+		margin: auto !important;
+		width: 90% !important;
 	}
 }
