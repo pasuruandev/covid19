@@ -52,7 +52,7 @@ $(function() {
     moment.locale($('html').attr('lang'));
 
     // belum selesai remove dulu
-    $('#artikel').remove();
+    // $('#artikel').remove();
     $('#map-container').remove();
 
     // ambil data dinamis
@@ -137,6 +137,27 @@ $(function() {
                 component.find('[data-entity="alamat"]').html(lockdown.alamat);
                 component.find('[data-entity="waktu"]').html(waktu.join('<br>'));
                 component.find('[data-entity="deskripsi"]').html(lockdown.deskripsi);
+                $container.append(component);
+            }
+        });
+    });
+    // end ambil data dinamis
+
+    $('#artikel').ready(function() {
+        const limit = $(this).attr('data-limit');
+        $.get('/data/article' + (limit ? `/${limit}` : ''))
+        .done(data => {
+            const $container = $('[data-content="artikel"]');
+            const $template  = $($container.attr('data-template'));
+            const $html      = $($template.html());
+            for(let article of data) {
+                let component = $html.clone();
+                let url = 'article/' + article.id;
+                let header = '/assets/img/article/1.jpg';
+                if (article.header) header = '/assets/img/article/' + article.header;
+                component.find('[data-entity="header"]').attr('src', header);
+                component.find('[data-entity="title"]').html(article.title);
+                component.find('[data-entity="link"]').attr('href', url);
                 $container.append(component);
             }
         });
