@@ -64,7 +64,6 @@ class ArticleController extends Controller
             if (!$model) throw new Exception("Error", 500);
             return response('Success', 200);
         } catch (\Exception $e) {
-            if ($model) $model->delete();
             return response($e->getMessage(), 500);
         }
     }

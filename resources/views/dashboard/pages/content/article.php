@@ -12,7 +12,7 @@
             <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>No</th>
                         <th>Judul</th>
                         <th>Content</th>
                         <th>Log Time</th>
@@ -28,7 +28,7 @@
 
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
     aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <form id="addForm" enctype="multipart/form-data">
                 <div class="modal-header">
@@ -79,7 +79,7 @@
                     </div>
                     <div class="form-group">
                         <label for="content">Konten</label>
-                        <textarea class="form-control editor" id="content" required></textarea>
+                        <textarea class="form-control editor-edit" id="content" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="header">Header</label>

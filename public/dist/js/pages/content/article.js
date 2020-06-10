@@ -1,11 +1,15 @@
 $(function () {
-    /*
-    $('.editor').summernote({
+    var editor = $('textarea.editor').summernote({
         placeholder: '',
         tabsize: 2,
-        height: 100
+        height: 300
     });
-    */
+
+    var editorEdit = $('textarea.editor-edit').summernote({
+        placeholder: '',
+        tabsize: 2,
+        height: 300
+    });
 
     const table = $('#dataTable').DataTable({
         processing: true,
@@ -57,20 +61,19 @@ $(function () {
             }
         ]
     });
+
+    table.on( 'order.dt search.dt', function () {
+        table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    } ).draw();
     
     $('#addModal').on('hidden.bs.modal', function (e) {
         $(this).find('form').trigger('reset');
         $('#add_tipe_lockdown_i').prop('checked', true).trigger('change');
         $('input[name="input_waktu"]').val('[]');
         $(this).find('.list-waktu').trigger('render');
-    });
-
-    $('#addModal').on('show.bs.modal', function (e) {
-        ($(this).find('textarea#content')).summernote({
-            placeholder: '',
-            tabsize: 2,
-            height: 100
-        });
+        editor.summernote('reset');
     });
 
     $('#addModal').on('simpan', function (e) {
@@ -116,6 +119,7 @@ $(function () {
         $('#edit_tipe_lockdown_i').prop('checked', true).trigger('change');
         $('input[name="input_waktu"]').val('[]');
         $(this).find('.list-waktu').trigger('render');
+        editorEdit.summernote('reset');
     });
 
     $('#editModal').on('simpan', function (e) {
@@ -196,12 +200,8 @@ $(function () {
                 modal.find('input#edit_key').val(key);
                 modal.find('input#title').val(res.title);
                 modal.find('textarea#content').html(res.content);
+                editorEdit.summernote('pasteHTML', res.content);
                 modal.modal('show');
-                (modal.find('textarea#content')).summernote({
-                    placeholder: '',
-                    tabsize: 2,
-                    height: 500
-                });
             })
             .always(() => {
                 $(this).loading(false);
