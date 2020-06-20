@@ -627,7 +627,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid bg-green" id="artikel">
+	<div class="container-fluid bg-green" id="artikel" data-limit="3">
 		<div class="row">
 			<div class="container">
 				<div class="row mob-center">
@@ -638,40 +638,21 @@
 					<div class="col-md-6 col-12 text-right see-all">
 						<!-- <a href="artikel.html" class="btn btn-light btn-lg">Tampilkan Semua</a> -->
 					</div>
-					<div class="col-md-4 col-12">
-						<div class="card artikel-card">
-						  <img class="card-img-top" src="assets/img/article/1.jpg">
-						  <div class="card-body">
-						    <h5 class="card-title font-20 x-bold">Ullamcorper facilisis quisque molestie neque, cras</h5>
-						    <p class="card-text font-16">
-						    	<a href="artikel_detail.html" class="text-green">Baca Selengkapnya</a>
-						    </p>
-						  </div>
-						</div>
-					</div>
-					<div class="col-md-4 col-12">
-						<div class="card artikel-card">
-						  <img class="card-img-top" src="assets/img/article/1.jpg">
-						  <div class="card-body">
-						    <h5 class="card-title font-20 x-bold">Ullamcorper facilisis quisque molestie neque, cras</h5>
-						    <p class="card-text font-16">
-						    	<a href="artikel_detail.html" class="text-green">Baca Selengkapnya</a>
-						    </p>
-						  </div>
-						</div>
-					</div>
-					<div class="col-md-4 col-12">
-						<div class="card artikel-card">
-						  <img class="card-img-top" src="assets/img/article/1.jpg">
-						  <div class="card-body">
-						    <h5 class="card-title font-20 x-bold">Ullamcorper facilisis quisque molestie neque, cras</h5>
-						    <p class="card-text font-16">
-						    	<a href="artikel_detail.html" class="text-green">Baca Selengkapnya</a>
-						    </p>
-						  </div>
-						</div>
-					</div>
-					
+				</div>
+				<div class="row" data-content="artikel" data-template="#template-artikel">
+					<template class="hidden" id="template-artikel">
+                        <div class="col-md-4 col-12">
+                            <div class="card artikel-card">
+                                <img class="card-img-top" src="" data-entity="header">
+                                <div class="card-body">
+                                    <h5 class="card-title font-20 x-bold" data-entity="title">Ullamcorper facilisis quisque molestie neque, cras</h5>
+                                    <p class="card-text font-16">
+                                        <a href="" class="text-green" data-entity="link">Baca Selengkapnya</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+					</template>
 				</div>
 			</div>
 		</div>

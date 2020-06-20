@@ -7,6 +7,7 @@ use App\Odp;
 use App\Pdp;
 use App\Positif;
 use App\Lockdown;
+use App\Article;
 
 class LandingController extends Controller
 {
@@ -28,6 +29,12 @@ class LandingController extends Controller
     public function lockdown_page(Request $req)
     {
         return view('pages.lockdown');
+    }
+
+    public function article_page(Request $req, $key)
+    {
+        $article = Article::findOrFail($key);
+        return view('pages.article', ['article' => $article]);
     }
 
     public function get_data(Request $req)
@@ -73,6 +80,13 @@ class LandingController extends Controller
     public function get_lockdowns(Request $req, $limit = 0)
     {
         $query = Lockdown::with('waktu');
+        if ($limit > 0) $query = $query->orderBy('created_at', 'desc')->limit($limit);
+        return response($query->get());
+    }
+
+    public function get_articles(Request $req, $limit = 0)
+    {
+        $query = new Article;
         if ($limit > 0) $query = $query->orderBy('created_at', 'desc')->limit($limit);
         return response($query->get());
     }

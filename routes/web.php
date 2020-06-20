@@ -22,6 +22,10 @@ $router->get('/lockdown', [
     'as' => "landing.lockdown",
     'uses' => 'LandingController@lockdown_page'
 ]);
+$router->get('/article/{id}', [
+    'as' => "landing.article",
+    'uses' => 'LandingController@article_page'
+]);
 $router->get('/data', [
     'as' => "landing.data",
     'uses' => 'LandingController@get_data'
@@ -29,6 +33,10 @@ $router->get('/data', [
 $router->get('/data/lockdown[/{limit}]', [
     'as' => "landing.lockdowns",
     'uses' => 'LandingController@get_lockdowns'
+]);
+$router->get('/data/article[/{limit}]', [
+    'as' => "landing.articles",
+    'uses' => 'LandingController@get_articles'
 ]);
 
 
@@ -96,6 +104,37 @@ $router->post('/dashboard/content/lockdown/delete', [
     'middleware' => 'auth',
     'as' => "content.lockdown.delete",
     'uses' => 'Content\LockdownController@delete'
+]);
+
+$router->get('/dashboard/content/article', [
+    'middleware' => 'auth',
+    'as' => "content.article.index",
+    'uses' => 'Content\ArticleController@index'
+]);
+$router->get('/dashboard/content/article/get[/{key}]', [
+    'middleware' => 'auth',
+    'as' => "content.article.get",
+    'uses' => 'Content\ArticleController@get'
+]);
+$router->get('/dashboard/content/article/data', [
+    'middleware' => 'auth',
+    'as' => "content.article.data",
+    'uses' => 'Content\ArticleController@data'
+]);
+$router->post('/dashboard/content/article/insert', [
+    'middleware' => 'auth',
+    'as' => "content.article.insert",
+    'uses' => 'Content\ArticleController@insert'
+]);
+$router->post('/dashboard/content/article/update', [
+    'middleware' => 'auth',
+    'as' => "content.article.update",
+    'uses' => 'Content\ArticleController@update'
+]);
+$router->post('/dashboard/content/article/delete', [
+    'middleware' => 'auth',
+    'as' => "content.article.delete",
+    'uses' => 'Content\ArticleController@delete'
 ]);
 
 /**
