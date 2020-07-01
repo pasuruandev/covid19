@@ -221,7 +221,7 @@
 					</div>
 					<div class="col-md-8">
 						<div id="map1" class="kab-map">
-							<script type="text/javascript">
+							<!-- <script type="text/javascript">
 								var map = L.map('map1').setView([-7.72, 112.858215], 11);
 
 								L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -274,7 +274,7 @@
 								    .bindPopup(markerpop[i], {minWidth:200});	
 								}
 
-							</script>
+							</script> -->
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -289,175 +289,8 @@
 										<th>Positif</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<td>1.</td>
-										<td>PURWODADI</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>2.</td>
-										<td>TUTUR</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>3.</td>
-										<td>PUSPO</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>4.</td>
-										<td>TOSARI</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>5.</td>
-										<td>LUMBANG</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>6.</td>
-										<td>PASREPAN</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>7.</td>
-										<td>KEJAYAN</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>8.</td>
-										<td>WONOREJO</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>9.</td>
-										<td>PURWOSARI</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>10.</td>
-										<td>PRIGEN</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>11.</td>
-										<td>SUKOREJO</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>12.</td>
-										<td>PANDAAN</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>13.</td>
-										<td>GEMPOL</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>14.</td>
-										<td>BEJI</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>15.</td>
-										<td>BANGIL</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>16.</td>
-										<td>REMBANG</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>17.</td>
-										<td>KRATON</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>18.</td>
-										<td>POHJENTREK</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>19.</td>
-										<td>GONDANG WETAN</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>20.</td>
-										<td>REJOSO</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>21.</td>
-										<td>WINONGAN</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>22.</td>
-										<td>GRATI</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>23.</td>
-										<td>LEKOK</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>24.</td>
-										<td>NGULING</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
+								<tbody id="tabel-kecam1">
+								
 								</tbody>
 							</table>
 						</div>
@@ -467,7 +300,7 @@
 					</div>
 					<div class="col-md-8">
 						<div id="map2" class="kot-map">
-							<script type="text/javascript">
+							<!-- <script type="text/javascript">
 								var map = L.map('map2').setView([-7.643130, 112.910461], 12);
 
 								L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -500,7 +333,7 @@
 								    .bindPopup(markerpop[i], {minWidth:200});	
 								}
 
-							</script>
+							</script> -->
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -515,35 +348,7 @@
 										<th>Positif</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<td>1.</td>
-										<td>GADINGREJO</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>2.</td>
-										<td>PURWOREJO</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>3.</td>
-										<td>BUGULKIDUL</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>4.</td>
-										<td>PANGGUNGREJO</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-									</tr>
+								<tbody id="tabel-kecam2">
 									
 								</tbody>
 							</table>

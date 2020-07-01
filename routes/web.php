@@ -31,6 +31,10 @@ $router->get('/data/lockdown[/{limit}]', [
     'uses' => 'LandingController@get_lockdowns'
 ]);
 
+$router->get('/data/maps/{id_kab}', [
+    'as' => "landing.map",
+    'uses' => 'LandingController@get_spesific_map'
+]);
 
 
 /**
@@ -98,6 +102,30 @@ $router->post('/dashboard/content/lockdown/delete', [
     'uses' => 'Content\LockdownController@delete'
 ]);
 
+$router->get('/dashboard/content/maps/update', [
+    'middleware' => 'auth',
+    'as' => "content.maps.update",
+    'uses' => 'Kot\MapsController@get_map'
+]);
+
+$router->get('/dashboard/content/maps/hapus_maps/{id}', [
+    'middleware' => 'auth',
+    'as' => "content.maps.hapus",
+    'uses' => 'Kot\MapsController@hapusMaps'
+]);
+
+$router->post('/dashboard/content/maps/edit_maps',[
+    'middleware' => 'auth',
+    'as'    => "content.maps.perbarui",
+    'uses'  => 'Kot\MapsController@updateMaps' 
+]);
+
+$router->post('/dashboard/content/maps/add_maps',[
+    'middleware' => 'auth',
+    'as'    => "content.maps.tambah",
+    'uses'  => 'Kot\MapsController@tambah_map' 
+]);
+
 /**
  * KABUPATEN
  */
@@ -151,6 +179,7 @@ $router->get('/dashboard/kota/odp/update', [
     'as' => "kota.odp.update",
     'uses' => 'Kot\OdpController@edit'
 ]);
+
 $router->post('/dashboard/kota/odp/update', [
     'middleware' => 'auth',
     'uses' => 'Kot\OdpController@update'
@@ -188,6 +217,8 @@ $router->get('/dashboard/kota/positif/refresh', [
     'as' => "kota.positif.refresh",
     'uses' => 'Kot\PositifController@refresh'
 ]);
+
+
 /**
  * ADMIN
  */
