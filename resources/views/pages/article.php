@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Data Pantauan COVID-19 Kabupaten Pasuruan</title>
-	
+<head>
+    <!-- Primary Meta Tags -->
+    <title>Artikel - <?= $article->title ?></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="theme-color" content="#2C9B5B" />
-	<meta property="og:description" content="Situs informasi terkini tentang covid 19 di Pasuruan">
-	<meta property="og:title" content="Data Pantauan COVID-19 Pasuruan" />
-	<meta property="og:image" content="<?= url('assets/img/meta-img.png') ?>">
-	<meta property="og:image:type" content="image/png , image/jpg">
-	<meta property="og:image:width" content="180" />
-	<meta property="og:image:height" content="180" />
-	<meta property="og:type" content="information" />
-	<meta property="og:url" content="<?= url('/') ?>" />
-	<meta property="og:site_name" content="Data Pantauan COVID-19 Pasuruan" />
+    <meta name="title" content="Artikel - <?= $article->title ?>">
+    <meta name="description" content="<?= strip_tags($article->content) ?>">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?= url('/') ?>">
+    <meta property="og:title" content="Artikel - <?= $article->title ?>">
+    <meta property="og:description" content="<?= strip_tags($article->content) ?>">
+    <meta property="og:image" content="<?= url('/') ?>/assets/img/article/<?= !empty($article->header) ? $article->header : '1.jpg' ?>">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="<?= url('/') ?>">
+    <meta property="twitter:title" content="Artikel - <?= $article->title ?>">
+    <meta property="twitter:description" content="<?= strip_tags($article->content) ?>">
+    <meta property="twitter:image" content="<?= url('/') ?>/assets/img/article/<?= !empty($article->header) ? $article->header : '1.jpg' ?>">
+
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="/assets/css/main.css">

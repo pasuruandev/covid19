@@ -31,8 +31,10 @@ class LandingController extends Controller
         return view('pages.lockdown');
     }
 
-    public function article_page(Request $req, $key)
+    public function article_page(Request $req, $slug)
     {
+        $str = explode('_', $slug);
+        $key = base64_decode($str[(sizeof($str) - 1)]);
         $article = Article::findOrFail($key);
         return view('pages.article', ['article' => $article]);
     }
