@@ -8,6 +8,8 @@ use App\Pdp;
 use App\Positif;
 use App\Lockdown;
 use App\Article;
+use App\Map;
+use DB;
 
 class LandingController extends Controller
 {
@@ -89,5 +91,22 @@ class LandingController extends Controller
         $query = new Article;
         if ($limit > 0) $query = $query->orderBy('created_at', 'desc')->limit($limit);
         return response($query->get());
+    }    
+
+    public function get_map(){
+        $data = DB::table('maps AS m')
+        ->join('kecamatan AS k','m.id_kecamatan','=','k.id')
+        ->select('k.nama','k.latitude','k.longitude','m.odp','m.pdp','m.positif')
+        ->get();        
+        return response($data);
+    }
+    
+    public function get_spesific_map($id_kab){
+        $mapdata = DB::table('maps AS m')
+        ->join('kecamatan AS k','m.id_kecamatan','=','k.id')
+        ->select('k.nama','k.latitude','k.longitude','m.odp','m.pdp','m.positif','m.id AS idmap','m.update_at AS last_up')
+        ->where('k.kabupaten_id',$id_kab)
+        ->get();
+        return response($mapdata);
     }
 }
