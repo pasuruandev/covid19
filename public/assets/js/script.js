@@ -56,7 +56,7 @@ $(function() {
     //$('#map-container').remove();
 
     // ambil data dinamis
-    $.get('/covid19-master/covid19/public/data')
+    $.get('/data')
     .done(data => {
         
         data.odp.all = {};
@@ -92,7 +92,7 @@ $(function() {
 
     $('#lockdown').ready(function() {
         const limit = $(this).attr('data-limit');
-        $.get('/covid19-master/covid19/public/data/lockdown' + (limit ? `/${limit}` : ''))
+        $.get('/data/lockdown' + (limit ? `/${limit}` : ''))
         .done(data => {
             const $container = $('[data-content="lockdown"]');
             const $template  = $($container.attr('data-template'));
@@ -144,7 +144,7 @@ $(function() {
 
     // map code
     $('#map1').ready(function(){
-        $.get('/covid19-master/covid19/public/data/maps/3514')
+        $.get('/data/maps/3514')
             .done(data => {
                 var map = L.map('map1').setView([-7.643130, 112.910461], 12);
 
@@ -210,7 +210,7 @@ $(function() {
 
     // table code
     $('#tabel-kecam1').ready(function(){
-        $.get('/covid19-master/covid19/public/data/maps/3514')
+        $.get('/data/maps/3514')
             .done(data => {                
                 var tabkec = [];
                 for(var i in data) {
@@ -227,7 +227,7 @@ $(function() {
 
     // map code
     $('#map2').ready(function(){
-        $.get('/covid19-master/covid19/public/data/maps/3575')
+        $.get('/data/maps/3575')
             .done(data => {
                 var map = L.map('map2').setView([-7.643130, 112.910461], 12);
 
@@ -266,7 +266,7 @@ $(function() {
     
         // table code
     $('#tabel-kecam2').ready(function(){
-        $.get('/covid19-master/covid19/public/data/maps/3575')
+        $.get('/data/maps/3575')
             .done(data => {                
                 var tabkec = [];
                 for(var i in data) {
