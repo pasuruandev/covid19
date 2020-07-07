@@ -221,60 +221,7 @@
 					</div>
 					<div class="col-md-8">
 						<div id="map1" class="kab-map">
-							<!-- <script type="text/javascript">
-								var map = L.map('map1').setView([-7.72, 112.858215], 11);
 
-								L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-								    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-								}).addTo(map);
-
-								var newMarker = L.icon({
-						            iconUrl: 'assets/img/marker.png',
-
-						            iconSize:     [48, 48],
-						            iconAnchor:   [20, 50],
-						            popupAnchor:  [0, -60]
-						        });
-
-								var kec = [
-									["PURWODADI", -7.803544,112.7271303,0,0,0],
-									["TUTUR", -7.8996875,112.8224678,0,0,0],
-									["PUSPO", -7.8360402,112.870133,0,0,0],
-									["TOSARI", -7.8955854,112.8939647,0,0,0],
-									["LUMBANG", -7.7995045,112.9773703,0,0,0],
-									["PASREPAN", -7.7941107,112.8939647,0,0,0],
-									["KEJAYAN", -7.7359823,112.8463007,0,0,0],
-									["WONOREJO", -7.71972,112.7748002,0,0,0],
-									["PURWOSARI", -7.7629501,112.7271303,0,0,0],
-									["PRIGEN", -7.697172,112.627899,0,0,0],
-									["SUKOREJO", -7.7169176,112.7187595,0,0,0],
-									["PANDAAN", -7.6426348,112.7032945,0,0,0],
-									["GEMPOL", -7.6034421,112.6794582,0,0,0],
-									["BEJI", -7.5947854,112.7450068,0,0,0],
-									["BANGIL", -7.604976,112.775101,0,0,0],
-									["REMBANG", -7.6373665,112.7986343,0,0,0],
-									["KRATON", -7.6752088,112.8463007,0,0,0],
-									["POHJENTREK", -7.6786077,112.876091,0,0,0],
-									["GONDANG WETAN", -7.7117048,112.9177957,0,0,0],
-									["REJOSO", -7.6746075,112.9475835,0,0,0],
-									["WINONGAN", -7.7508715,112.941626,0,0,0],
-									["GRATI", -7.7468219,113.013113,0,0,0],
-									["LEKOK", -7.6658741,113.013113,0,0,0],
-									["NGULING", -7.7036431,113.0607675,0,0,0],
-								];
-								var markerpop = new Array();
-								var marker = new Array();
-
-								for (var i = 0; i < kec.length; i++) {
-									markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i][0] +"</div>"+
-										"<p class='font-16 x-bold'>ODP : "+ kec[i][3] +"</p>" +
-										"<p class='font-16 x-bold'>PDP : "+ kec[i][4] +"</p>" +
-										"<p class='font-16 x-bold'>Positif : "+ kec[i][5] +"</p>";
-							        marker[i] = L.marker([kec[i][1], kec[i][2]], {icon: newMarker}).addTo(map)
-								    .bindPopup(markerpop[i], {minWidth:200});	
-								}
-
-							</script> -->
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -300,40 +247,6 @@
 					</div>
 					<div class="col-md-8">
 						<div id="map2" class="kot-map">
-							<!-- <script type="text/javascript">
-								var map = L.map('map2').setView([-7.643130, 112.910461], 12);
-
-								L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-								    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-								}).addTo(map);
-
-								var newMarker = L.icon({
-						            iconUrl: 'assets/img/marker.png',
-
-						            iconSize:     [48, 48],
-						            iconAnchor:   [20, 50],
-						            popupAnchor:  [0, -60]
-						        });
-
-								var kec = [
-									["GADINGREJO", -7.6374665,112.8880068,0,0,0],
-									["PURWOREJO", -7.6647917,112.8969436,0,0,0],
-									["BUGULKIDUL", -7.6469193,112.8999225,0,0,0],
-									["PANGGUNGREJO", -7.630350,112.920998,0,0,0]
-								];
-								var markerpop = new Array();
-								var marker = new Array();
-
-								for (var i = 0; i < kec.length; i++) {
-									markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i][0] +"</div>"+
-										"<p class='font-16 x-bold'>ODP : "+ kec[i][3] +"</p>" +
-										"<p class='font-16 x-bold'>PDP : "+ kec[i][4] +"</p>" +
-										"<p class='font-16 x-bold'>Positif : "+ kec[i][5] +"</p>";
-							        marker[i] = L.marker([kec[i][1], kec[i][2]], {icon: newMarker}).addTo(map)
-								    .bindPopup(markerpop[i], {minWidth:200});	
-								}
-
-							</script> -->
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -347,8 +260,7 @@
 										<th>PDP</th>
 										<th>Positif</th>
 									</tr>
-								</thead>
-								<tbody id="tabel-kecam2">
+								</thead> <tbody id="tabel-kecam2">
 									
 								</tbody>
 							</table>

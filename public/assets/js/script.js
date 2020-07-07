@@ -51,10 +51,6 @@ function render_hari(hari) {
 $(function() {
     moment.locale($('html').attr('lang'));
 
-    // belum selesai remove dulu
-    $('#map-container').remove();
-    $('#artikel').remove();
-
     // ambil data dinamis
     $.get('/data')
     .done(data => {
@@ -160,40 +156,11 @@ $(function() {
                     popupAnchor:  [0, -60]
                 });
         
-                
                 var kec = [];
                 for(var i in data) {
                     kec.push(data[i]);
                 };
-                
-                
-                // var kec = [
-                //     ["PURWODADI", -7.803544,112.7271303,0,0,0],
-                //     ["TUTUR", -7.8996875,112.8224678,0,0,0],
-                //     ["PUSPO", -7.8360402,112.870133,0,0,0],
-                //     ["TOSARI", -7.8955854,112.8939647,0,0,0],
-                //     ["LUMBANG", -7.7995045,112.9773703,0,0,0],
-                //     ["PASREPAN", -7.7941107,112.8939647,0,0,0],
-                //     ["KEJAYAN", -7.7359823,112.8463007,0,0,0],
-                //     ["WONOREJO", -7.71972,112.7748002,0,0,0],
-                //     ["PURWOSARI", -7.7629501,112.7271303,0,0,0],
-                //     ["PRIGEN", -7.697172,112.627899,0,0,0],
-                //     ["SUKOREJO", -7.7169176,112.7187595,0,0,0],
-                //     ["PANDAAN", -7.6426348,112.7032945,0,0,0],
-                //     ["GEMPOL", -7.6034421,112.6794582,0,0,0],
-                //     ["BEJI", -7.5947854,112.7450068,0,0,0],
-                //     ["BANGIL", -7.604976,112.775101,0,0,0],
-                //     ["REMBANG", -7.6373665,112.7986343,0,0,0],
-                //     ["KRATON", -7.6752088,112.8463007,0,0,0],
-                //     ["POHJENTREK", -7.6786077,112.876091,0,0,0],
-                //     ["GONDANG WETAN", -7.7117048,112.9177957,0,0,0],
-                //     ["REJOSO", -7.6746075,112.9475835,0,0,0],
-                //     ["WINONGAN", -7.7508715,112.941626,0,0,0],
-                //     ["GRATI", -7.7468219,113.013113,0,0,0],
-                //     ["LEKOK", -7.6658741,113.013113,0,0,0],
-                //     ["NGULING", -7.7036431,113.0607675,0,0,0],
-                // ];
-                console.log(kec);
+
                 var markerpop = new Array();
                 var marker = new Array();
             
@@ -243,13 +210,11 @@ $(function() {
                     popupAnchor:  [0, -60]
                 });
         
-                
                 var kec = [];
                 for(var i in data) {
                     kec.push(data[i]);
                 };
 
-                console.log(kec);
                 var markerpop = new Array();
                 var marker = new Array();
             
