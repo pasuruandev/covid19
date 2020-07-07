@@ -139,7 +139,7 @@ $router->post('/dashboard/content/article/delete', [
     'middleware' => 'auth',
     'as' => "content.article.delete",
     'uses' => 'Content\ArticleController@delete'
-=======
+]);
 $router->get('/dashboard/content/maps/update', [
     'middleware' => 'auth',
     'as' => "content.maps.update",
