@@ -7,6 +7,9 @@ use App\Odp;
 use App\Pdp;
 use App\Positif;
 use App\Lockdown;
+use App\Article;
+use App\Map;
+use DB;
 
 class LandingController extends Controller
 {
@@ -28,6 +31,12 @@ class LandingController extends Controller
     public function lockdown_page(Request $req)
     {
         return view('pages.lockdown');
+    }
+
+    public function article_page(Request $req, $key)
+    {
+        $article = Article::findOrFail($key);
+        return view('pages.article', ['article' => $article]);
     }
 
     public function get_data(Request $req)
@@ -75,5 +84,29 @@ class LandingController extends Controller
         $query = Lockdown::with('waktu');
         if ($limit > 0) $query = $query->orderBy('created_at', 'desc')->limit($limit);
         return response($query->get());
+    }
+
+    public function get_articles(Request $req, $limit = 0)
+    {
+        $query = new Article;
+        if ($limit > 0) $query = $query->orderBy('created_at', 'desc')->limit($limit);
+        return response($query->get());
+    }    
+
+    public function get_map(){
+        $data = DB::table('maps AS m')
+        ->join('kecamatan AS k','m.id_kecamatan','=','k.id')
+        ->select('k.nama','k.latitude','k.longitude','m.odp','m.pdp','m.positif')
+        ->get();        
+        return response($data);
+    }
+    
+    public function get_spesific_map($id_kab){
+        $mapdata = DB::table('maps AS m')
+        ->join('kecamatan AS k','m.id_kecamatan','=','k.id')
+        ->select('k.nama','k.latitude','k.longitude','m.odp','m.pdp','m.positif','m.id AS idmap','m.update_at AS last_up')
+        ->where('k.kabupaten_id',$id_kab)
+        ->get();
+        return response($mapdata);
     }
 }

@@ -146,6 +146,7 @@ class Menus {
             //     ]
             // ]
         ]);
+
         $this->add_menu("kota_odp", [
             'key'   => "kota_odp",
             'name'  => "ODP",
@@ -222,6 +223,21 @@ class Menus {
             'icon'  => "fas fa-fw fa-cogs",
             'url'   => "content.lockdown.index"
         ]);
+        
+        $this->add_menu("maps", [
+            'key'   => "maps",
+            'name'  => "MAP",
+            'icon'  => "fas fa-fw fa-map",
+            'url'   => "content.maps.update"            
+        ]);
+        
+
+        $this->add_menu("article", [
+            'key'   => "article",
+            'name'  => "Article",
+            'icon'  => "fas fa-fw fa-newspaper",
+            'url'   => "content.article.index"
+        ]);
 
         $this->add_menu("admin", [
             'key'   => "admin",
@@ -274,19 +290,25 @@ class Menus {
         $this->generated[] = [];
 
         $lockdown = $this->cek_menu('lockdown');
+        $article = $this->cek_menu('article');
+        $maps = $this->cek_menu('maps');
+        $content = ($lockdown || $article || $maps);
 
-        if ($lockdown) $this->generated[] = ['name' => "Content"];
+        if ($content) $this->generated[] = ['name' => "Content"];
         if ($lockdown) $this->generated[] = $this->menus['lockdown'];
+        if ($article) $this->generated[] = $this->menus['article'];
+        if ($maps) $this->generated[] = $this->menus['maps'];
+        if ($content) $this->generated[] = [];
         if ($lockdown) $this->generated[] = [];
 
         $kabupaten_odp = $this->cek_menu('kabupaten_odp');
-        $kabupaten_pdp = $this->cek_menu('kabupaten_pdp');
+        $kabupaten_pdp = $this->cek_menu('kabupaten_pdp');        
         $kabupaten_positif = $this->cek_menu('kabupaten_positif');
         $kabupaten = ($kabupaten_odp || $kabupaten_pdp || $kabupaten_positif);
 
         if ($kabupaten) $this->generated[] = ['name' => "Kabupaten"];
         if ($kabupaten_odp) $this->generated[] = $this->menus['kabupaten_odp'];
-        if ($kabupaten_pdp) $this->generated[] = $this->menus['kabupaten_pdp'];
+        if ($kabupaten_pdp) $this->generated[] = $this->menus['kabupaten_pdp'];        
         if ($kabupaten_positif) $this->generated[] = $this->menus['kabupaten_positif'];
         if ($kabupaten) $this->generated[] = [];
 
