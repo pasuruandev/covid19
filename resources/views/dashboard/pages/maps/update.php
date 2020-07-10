@@ -175,7 +175,7 @@
     $(".btnEdit").click(function(){
         let kecam = $(this).data('kecamatan');
         let odp = $(this).data("odp");
-        let pdp = $(this).data("odp");
+        let pdp = $(this).data("pdp");
         let positif = $(this).data("positif");
         let myid = $(this).data("id");
         $("#namaDaerah").text(kecam);
