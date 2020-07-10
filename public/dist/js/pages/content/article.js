@@ -27,7 +27,7 @@ $(function () {
             {
                 data: (row, type, val, meta) => {
                     const content = row.content;
-                    return content.substring(1, 150);
+                    return content.substring(0, 150);
                 },
                 name: 'content'
             },
@@ -52,7 +52,7 @@ $(function () {
                 targets: 4,
                 render: function (data, type, row, meta) {
                     let html = ``;
-                    html += `<button data-id="` + row.id + `" class="btn btn-sm btn-primary bt-view"><i class="fa fa-eye"  data-toggle="tooltip" data-placement="top" title="View Data"></i></button>`
+                    html += `<button data-id="` + row.slug + `" class="btn btn-sm btn-primary bt-view"><i class="fa fa-eye"  data-toggle="tooltip" data-placement="top" title="View Data"></i></button>`
                     html += `<button data-id="` + row.key + `" class="btn btn-sm btn-warning bt-edit"><i class="fa fa-edit"  data-toggle="tooltip" data-placement="top" title="Edit Data"></i></button>`
                     html += `<button data-id="` + row.key + `" class="btn btn-sm btn-danger bt-delete"><i class="fa fa-trash"  data-toggle="tooltip" data-placement="top" title="Delete Data"></i></button>`
                     html = `<div class="btn-group">` + html + `</div>`;
