@@ -186,7 +186,7 @@ $(function() {
                 
                 for(var i = 0; i < tabkec.length; i++){
                     var no = i+1;
-                    $("#tabel-kecam1").append("<tr><td>"+no+"</td>"+"<td>"+tabkec[i]['nama']+"</td><td>"+tabkec[i]['odp']+"</td><td>"+tabkec[i]['pdp']+"</td><td>"+tabkec[i]['pdp']+"</td></tr>");                    
+                    $("#tabel-kecam1").append("<tr><td>"+no+"</td>"+"<td>"+tabkec[i]['nama']+"</td><td>"+tabkec[i]['odp']+"</td><td>"+tabkec[i]['pdp']+"</td><td>"+tabkec[i]['positif']+"</td></tr>");                    
                 }
 
             });
@@ -240,7 +240,7 @@ $(function() {
                 
                 for(var i = 0; i < tabkec.length; i++){
                     var no = i+1;
-                    $("#tabel-kecam2").append("<tr><td>"+no+"</td>"+"<td>"+tabkec[i]['nama']+"</td><td>"+tabkec[i]['odp']+"</td><td>"+tabkec[i]['pdp']+"</td><td>"+tabkec[i]['pdp']+"</td></tr>");                    
+                    $("#tabel-kecam2").append("<tr><td>"+no+"</td>"+"<td>"+tabkec[i]['nama']+"</td><td>"+tabkec[i]['odp']+"</td><td>"+tabkec[i]['pdp']+"</td><td>"+tabkec[i]['positif']+"</td></tr>");                    
                 }
 
         });
