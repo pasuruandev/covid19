@@ -142,7 +142,7 @@ $(function() {
     $('#map1').ready(function(){
         $.get('/data/maps/3514')
             .done(data => {
-                var map = L.map('map1').setView([-7.643130, 112.910461], 12);
+                var map = L.map('map1').setView([-7.72, 112.858215], 11);
 
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
