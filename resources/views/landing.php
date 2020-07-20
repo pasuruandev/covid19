@@ -344,7 +344,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid bg-green" id="artikel" data-limit="3">
+	<div id="artikel" class="container-fluid bg-green">
 		<div class="row">
 			<div class="container">
 				<div class="row mob-center">

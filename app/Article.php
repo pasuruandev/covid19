@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Article extends Model
 {
@@ -24,4 +25,11 @@ class Article extends Model
      */
     protected $hidden = [
     ];
+
+    protected $appends = ['slug'];
+
+    public function getSlugAttribute()
+    {
+        return Str::slug($this->title, '-') . '_' . base64_encode($this->id);
+    }
 }

@@ -248,7 +248,7 @@ $(function() {
     
     // end ambil data dinamis
     $('#artikel').ready(function() {
-        const limit = $(this).attr('data-limit');
+        const limit = 3;
         $.get('/data/article' + (limit ? `/${limit}` : ''))
         .done(data => {
             const $container = $('[data-content="artikel"]');
@@ -256,7 +256,7 @@ $(function() {
             const $html      = $($template.html());
             for(let article of data) {
                 let component = $html.clone();
-                let url = 'article/' + article.id;
+                let url = 'article/' + article.slug;
                 let header = '/assets/img/article/1.jpg';
                 if (article.header) header = '/assets/img/article/' + article.header;
                 component.find('[data-entity="header"]').attr('src', header);
