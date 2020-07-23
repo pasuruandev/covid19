@@ -270,7 +270,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid bg-green" id="lockdown" data-limit="4">
+	<div class="container-fluid bg-green ld-list" id="lockdown" data-limit="4">
 		<div class="row">
 			<div class="container">
 				<div class="row mob-center">
@@ -344,7 +344,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid bg-green" id="artikel" data-limit="3">
+	<div id="artikel" class="container-fluid bg-green">
 		<div class="row">
 			<div class="container">
 				<div class="row mob-center">
@@ -370,6 +370,34 @@
                             </div>
                         </div>
 					</template>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container bg-white text-green pt-5 pb-5 footer">
+		<div class="row">
+			<div class="col-md-6 col-12">
+				<h5 class="font-20 x-bold">Tentang Project Covid</h5>
+				<p class="font-16">
+					Website ini dibangun oleh<br>
+					Komunitas pegiat IT<br>
+					PasuruanDev
+				</p>
+
+				<div class="mt-5">
+					<h5 class="font-20 x-bold">Follow Us</h5>
+					<a href="https://github.com/pasuruandev" class="text-green mr-2" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+					<a href="https://medium.com/pasuruandev" class="text-green mr-2" target="_blank"><i class="fa fa-medium fa-2x"></i></a>
+					<a href="https://www.instagram.com/pasuruan.dev/" class="text-green mr-2" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+					<a href="https://www.facebook.com/PasuruanDev/" class="text-green mr-2" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+					<a href="https://telegram.me/PasuruanDev" class="text-green mr-2" target="_blank"><i class="fa fa-telegram fa-2x"></i></a>
+				</div>
+			</div>
+			<div class="col-md-6 col-12 text-right">
+				<div class="mt-5 text-center footer-logo" style="width: 40%; float: right;">
+					<h5 class="font-20 x-bold">Make with Love</h5>
+					<img src="assets/img/pasdev.png" style="width: 100%">
 				</div>
 			</div>
 		</div>

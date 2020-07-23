@@ -27,6 +27,7 @@ class ArticleController extends Controller
     public function data(Request $req)
     {
         return Datatables::of(Article::get())
+                ->editColumn('content', '{{ strip_tags($content) }}')
                 ->editColumn('key', '{{ encrypt($id) }}')
                 ->make(true);
     }
