@@ -165,29 +165,71 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-12">
-				<div class="col-md-12 col-12 bg-green rujukan">
+				<div class="col-md-12 col-12 bg-green rujukan  text-white">
 					<div class="row box-rujukan">
-						<div class="col-md-5 col-12">
-							<img src="assets/img/rs.png" alt="rumah sakit" class="img-center" id="img-rs">
+						<div class="col-12 text-center">
+							<p class="font-42 x-bold">Rumah Sakit Rujukan?</p>
 						</div>
-						<div class="col-md-7 col-12 text-white mob-center" id="rujukan-info">
-							<p class="font-20">Rumah Sakit Rujukan?</p>
-							<p class="font-42 x-bold">RSUD BANGIL</p>
+						<div class="col-md-4 col-12 pt-4 pb-4">
+							<img src="assets/img/rs.png" alt="rumah sakit" width="25%">
+							<p class="font-24 x-bold">RSUD Bangil</p>
 							<div class="row">
-								<div class="col-md-1 col-12">
+								<div class="col-md-1 col-1">
 									<img src="assets/img/address.png" alt="" class="img-center">
 								</div>
-								<div class="col-md-11 col-12" style="margin-top: 5px">
+								<div class="col-md-10 col-10" style="margin-top: 5px">
 									<address>Jl. Raya Raci - Bangil, Balungbendo, Masangan, Kec. Bangil, Pasuruan</address>
 								</div>
-								<div class="col-md-1 col-12">
+								<div class="col-md-1 col-1">
 									<img src="assets/img/phone.png" alt="" class="img-center">
 								</div>
-								<div class="col-md-11 col-12" style="margin-top: 5px">
+								<div class="col-md-10 col-10" style="margin-top: 5px">
 									<span>(0343) 744900</span>
 								</div>
 								<div class="col-md-12" style="margin-top: 15px">
-									<a href="https://goo.gl/maps/43oSP6mJNjoVCUdd7" target="_blank" class="btn btn-light btn-lg">Lihat di Peta</a>
+									<a href="https://goo.gl/maps/43oSP6mJNjoVCUdd7" target="_blank" class="btn btn-light">Lihat di Peta</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-12 pt-4 pb-4">
+							<img src="assets/img/rs.png" alt="rumah sakit" width="25%">
+							<p class="font-24 x-bold">RSUD Dr. Soedarsono</p>
+							<div class="row">
+								<div class="col-md-1 col-1">
+									<img src="assets/img/address.png" alt="" class="img-center">
+								</div>
+								<div class="col-md-10 col-10" style="margin-top: 5px">
+									<address>Jl. Dr. Wahidin Sudiro Husodo No. 1-4, Purutrejo, Kec. Purworejo, Kota Pasuruan</address>
+								</div>
+								<div class="col-md-1 col-1">
+									<img src="assets/img/phone.png" alt="" class="img-center">
+								</div>
+								<div class="col-md-10 col-10" style="margin-top: 5px">
+									<span>(0343) 421073</span>
+								</div>
+								<div class="col-md-12" style="margin-top: 15px">
+									<a href="https://goo.gl/maps/eyM3xSe4DMddgEz5A" target="_blank" class="btn btn-light">Lihat di Peta</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-12 pt-4 pb-4">
+							<img src="assets/img/rs.png" alt="rumah sakit" width="25%">
+							<p class="font-24 x-bold">RSUD Prima Husada</p>
+							<div class="row">
+								<div class="col-md-1 col-1">
+									<img src="assets/img/address.png" alt="" class="img-center">
+								</div>
+								<div class="col-md-10 col-10" style="margin-top: 5px">
+									<address>Jl. Raya Surabaya-Malang KM 54, Palang, Lemahbang, Kec. Sukorejo, Kab. Pasuruan</address>
+								</div>
+								<div class="col-md-1 col-1">
+									<img src="assets/img/phone.png" alt="" class="img-center">
+								</div>
+								<div class="col-md-10 col-10" style="margin-top: 5px">
+									<span>(0343) 67450000</span>
+								</div>
+								<div class="col-md-12" style="margin-top: 15px">
+									<a href="https://goo.gl/maps/CxFXKyiVU1VxadWM8" target="_blank" class="btn btn-light">Lihat di Peta</a>
 								</div>
 							</div>
 						</div>
