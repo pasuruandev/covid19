@@ -140,12 +140,12 @@
 						</div>
 						<div class="row bg-white">
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-16"><span class="xbold" data-content="data" data-entity="positif.kab.sembuh">0</span> Sembuh</span><br>
-								<span class="x-bold font-16"><span class="xbold" data-content="data" data-entity="positif.kab.meninggal">0</span> Meninggal</span>
+								<span class="x-bold text-green font-16"><span class="x-bold" data-content="data" data-entity="positif.kab.sembuh">0</span> Sembuh</span><br>
+								<span class="x-bold font-16"><span class="x-bold" data-content="data" data-entity="positif.kab.meninggal">0</span> Meninggal</span>
 							</div>
 							<div class="col-md-6 col-6">
-								<span class="x-bold text-green font-16"><span class="xbold" data-content="data" data-entity="positif.kota.sembuh">0</span> Sembuh</span><br>
-								<span class="x-bold font-16"><span class="xbold" data-content="data" data-entity="positif.kota.meninggal">0</span> Meninggal</span>
+								<span class="x-bold text-green font-16"><span class="x-bold" data-content="data" data-entity="positif.kota.sembuh">0</span> Sembuh</span><br>
+								<span class="x-bold font-16"><span class="x-bold" data-content="data" data-entity="positif.kota.meninggal">0</span> Meninggal</span>
 							</div>
 						</div>
 					</div>
@@ -262,9 +262,7 @@
 						<p class="x-bold font-24 text-center">Kabupaten Pasuruan</p>
 					</div>
 					<div class="col-md-8">
-						<div id="map1" class="kab-map">
-
-						</div>
+						<div id="map1" class="kab-map"></div>
 					</div>
 					<div class="col-md-4">
 						<div class="table-responsive kab-table">
@@ -278,9 +276,7 @@
 										<th>Positif</th>
 									</tr>
 								</thead>
-								<tbody id="tabel-kecam1">
-								
-								</tbody>
+								<tbody id="tabel-kecam1"></tbody>
 							</table>
 						</div>
 					</div>
@@ -302,9 +298,8 @@
 										<th>PDP</th>
 										<th>Positif</th>
 									</tr>
-								</thead> <tbody id="tabel-kecam2">
-									
-								</tbody>
+								</thead>
+								<tbody id="tabel-kecam2"></tbody>
 							</table>
 						</div>
 					</div>
