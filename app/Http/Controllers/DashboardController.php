@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Odp;
 use App\Pdp;
 use App\Positif;
+use App\Suspek;
+use App\Konfirmasi;
 
 class DashboardController extends Controller
 {
@@ -33,6 +35,20 @@ class DashboardController extends Controller
             'positif' => [
                 'kab' => Positif::getDataKab(),
                 'kota' => Positif::getDataKota()
+            ]
+        ]);
+    }
+
+    public function index2(Request $req)
+    {
+        return view('dashboard.pages.dashboard2', [
+            'suspek' => [
+                'kab' => Suspek::getDataKab(),
+                'kota' => Suspek::getDataKota()
+            ],
+            'konfirmasi' => [
+                'kab' => Konfirmasi::getDataKab(),
+                'kota' => Konfirmasi::getDataKota()
             ]
         ]);
     }

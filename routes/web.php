@@ -28,7 +28,7 @@ $router->get('/article/{id}', [
 ]);
 $router->get('/data', [
     'as' => "landing.data",
-    'uses' => 'LandingController@get_data'
+    'uses' => 'LandingController@get_data2'
 ]);
 $router->get('/data/lockdown[/{limit}]', [
     'as' => "landing.lockdowns",
@@ -73,7 +73,7 @@ $router->get('/dashboard/logout', [
 $router->get('/dashboard', [
     'middleware' => 'auth',
     'as' => "dashboard.index",
-    'uses' => 'DashboardController@index'
+    'uses' => 'DashboardController@index2'
 ]);
 
 /**
@@ -209,6 +209,37 @@ $router->get('/dashboard/kab/positif/refresh', [
     'as' => "kabupaten.positif.refresh",
     'uses' => 'Kab\PositifController@refresh'
 ]);
+// =============================================================
+// ISTILAH BARU
+// =============================================================
+$router->get('/dashboard/kab/suspek/update', [
+    'middleware' => 'auth',
+    'as' => "kabupaten.suspek.update",
+    'uses' => 'Kab\SuspekController@edit'
+]);
+$router->post('/dashboard/kab/suspek/update', [
+    'middleware' => 'auth',
+    'uses' => 'Kab\SuspekController@update'
+]);
+$router->get('/dashboard/kab/suspek/refresh', [
+    'middleware' => 'auth',
+    'as' => "kabupaten.suspek.refresh",
+    'uses' => 'Kab\SuspekController@refresh'
+]);
+$router->get('/dashboard/kab/konfirmasi/update', [
+    'middleware' => 'auth',
+    'as' => "kabupaten.konfirmasi.update",
+    'uses' => 'Kab\KonfirmasiController@edit'
+]);
+$router->post('/dashboard/kab/konfirmasi/update', [
+    'middleware' => 'auth',
+    'uses' => 'Kab\KonfirmasiController@update'
+]);
+$router->get('/dashboard/kab/konfirmasi/refresh', [
+    'middleware' => 'auth',
+    'as' => "kabupaten.konfirmasi.refresh",
+    'uses' => 'Kab\KonfirmasiController@refresh'
+]);
  /**
  * KOTA
  */
@@ -255,7 +286,37 @@ $router->get('/dashboard/kota/positif/refresh', [
     'as' => "kota.positif.refresh",
     'uses' => 'Kot\PositifController@refresh'
 ]);
-
+// =============================================================
+// ISTILAH BARU
+// =============================================================
+$router->get('/dashboard/kota/suspek/update', [
+    'middleware' => 'auth',
+    'as' => "kota.suspek.update",
+    'uses' => 'Kot\SuspekController@edit'
+]);
+$router->post('/dashboard/kota/suspek/update', [
+    'middleware' => 'auth',
+    'uses' => 'Kot\SuspekController@update'
+]);
+$router->get('/dashboard/kota/suspek/refresh', [
+    'middleware' => 'auth',
+    'as' => "kota.suspek.refresh",
+    'uses' => 'Kot\SuspekController@refresh'
+]);
+$router->get('/dashboard/kota/konfirmasi/update', [
+    'middleware' => 'auth',
+    'as' => "kota.konfirmasi.update",
+    'uses' => 'Kot\KonfirmasiController@edit'
+]);
+$router->post('/dashboard/kota/konfirmasi/update', [
+    'middleware' => 'auth',
+    'uses' => 'Kot\KonfirmasiController@update'
+]);
+$router->get('/dashboard/kota/konfirmasi/refresh', [
+    'middleware' => 'auth',
+    'as' => "kota.konfirmasi.refresh",
+    'uses' => 'Kot\KonfirmasiController@refresh'
+]);
 
 /**
  * ADMIN

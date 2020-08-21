@@ -55,14 +55,11 @@ $(function() {
     $.get('/data')
     .done(data => {
         
-        data.odp.all = {};
-        data.odp.all.jumlah = data.odp.kab.jumlah + data.odp.kota.jumlah;
+        data.suspek.all = {};
+        data.suspek.all.jumlah = data.suspek.kab.jumlah + data.suspek.kota.jumlah;
         
-        data.pdp.all = {};
-        data.pdp.all.jumlah = data.pdp.kab.jumlah + data.pdp.kota.jumlah;
-
-        data.positif.all = {};
-        data.positif.all.jumlah = data.positif.kab.jumlah + data.positif.kota.jumlah;
+        data.konfirmasi.all = {};
+        data.konfirmasi.all.jumlah = data.konfirmasi.kab.jumlah + data.konfirmasi.kota.jumlah;
 
         $('[data-content="data"]').each(function() {
             const $this = $(this);

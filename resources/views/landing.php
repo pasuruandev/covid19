@@ -72,6 +72,122 @@
 	</div>
 
 	<div class="container" style="margin-top: -80px">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="bg-white shadow info text-center mb-5 mt-2">
+                    <img src="<?= url('assets/img/logo-kab.png') ?>" alt="kab.pasuruan" class="circle shadow">
+                    <h3 class="text-green mt-3 mb-5"><b>Kabupaten Pasuruan</b></h3>
+                    <div class="sub-info text-center">
+                        <div class="row mt-4 bg-grey">
+                            <div class="col-md-12 col-xs-12">
+                                <table class="table_data" style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold text-orange total-info" data-content="data" data-entity="suspek.kab.jumlah">0</span> <br>
+                                            <span class="text-orange x-bold title-info">SUSPEK</span>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="suspek.kab.dirawat">0</span>
+                                            <p class="font-14">dirawat</p>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="suspek.kab.sembuh">0</span>
+                                            <p class="font-14">sembuh</p>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="suspek.kab.meninggal">0</span>
+                                            <p class="font-14">meninggal</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row mt-4 bg-grey">
+                            <div class="col-md-12 col-xs-12">
+                                <table class="table_data" style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold text-red total-info" data-content="data" data-entity="konfirmasi.kab.jumlah">0</span> <br>
+                                            <span class="text-red x-bold title-info">KONFIRMASI</span>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kab.dirawat">0</span>
+                                            <p class="font-14">dirawat</p>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kab.sembuh">0</span>
+                                            <p class="font-14">sembuh</p>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kab.meninggal">0</span>
+                                            <p class="font-14">meninggal</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="bg-white shadow info text-center mb-5 mt-2">
+                    <img src="<?= url('assets/img/logo-kot.png') ?>" alt="kota pasuruan" class="circle shadow">
+                    <h3 class="text-green mt-3 mb-5"><b>Kota Pasuruan</b></h3>
+                    <div class="sub-info text-center">
+                        <div class="row mt-4 bg-grey">
+                            <div class="col-md-12 col-xs-12">
+                                <table class="table_data" style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold text-orange total-info" data-content="data" data-entity="suspek.kota.jumlah">0</span> <br>
+                                            <span class="text-orange x-bold title-info">SUSPEK</span>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="suspek.kota.dirawat">0</span>
+                                            <p class="font-14">dirawat</p>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="suspek.kota.sembuh">0</span>
+                                            <p class="font-14">sembuh</p>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="suspek.kota.meninggal">0</span>
+                                            <p class="font-14">meninggal</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row mt-4 bg-grey">
+                            <div class="col-md-12 col-xs-12">
+                                <table class="table_data" style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold text-red total-info" data-content="data" data-entity="konfirmasi.kota.jumlah">0</span> <br>
+                                            <span class="text-red x-bold title-info">KONFIRMASI</span>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kota.dirawat">0</span>
+                                            <p class="font-14">dirawat</p>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kota.sembuh">0</span>
+                                            <p class="font-14">sembuh</p>
+                                        </td>
+                                        <td style="width: 25%;">
+                                            <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kota.meninggal">0</span>
+                                            <p class="font-14">meninggal</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- <div class="container" style="margin-top: -80px">
 		<div class="row">
 			<div class="col-md-4 col-12">
 				<div class="bg-white shadow info text-center">
@@ -152,7 +268,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-12" style="padding-top: 30px;padding-bottom: 30px">

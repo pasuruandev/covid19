@@ -82,29 +82,47 @@ class Menus {
             'name'  => "ODP",
             'icon'  => "fas fa-fw fa-diagnoses",
             'url'   => "kabupaten.odp.update"
-            // 'sub'   => [
-            //     [
-            //         'key'   => "grafik",
-            //         'name'  => "Grafik",
-            //         'url'   => "admin.users.index"
-            //     ],
-            //     [
-            //         'key'   => "update",
-            //         'name'  => "Update Data",
-            //         'url'   => "admin.users.index"
-            //     ],
-            //     [
-            //         'key'   => "history",
-            //         'name'  => "History",
-            //         'url'   => "admin.users.index"
-            //     ]
-            // ]
         ]);
         $this->add_menu("kabupaten_pdp", [
             'key'   => "kabupaten_pdp",
             'name'  => "PDP",
             'icon'  => "fas fa-fw fa-bed",
             'url'   => "kabupaten.pdp.update"
+        ]);
+        $this->add_menu("kabupaten_positif", [
+            'key'   => "kabupaten_positif",
+            'name'  => "POSITIF",
+            'icon'  => "fas fa-fw fa-biohazard",
+            'url'   => "kabupaten.positif.update"
+        ]);
+
+        $this->add_menu("kota_odp", [
+            'key'   => "kota_odp",
+            'name'  => "ODP",
+            'icon'  => "fas fa-fw fa-diagnoses",
+            'url'   => "kota.odp.update"
+        ]);
+        $this->add_menu("kota_pdp", [
+            'key'   => "kota_pdp",
+            'name'  => "PDP",
+            'icon'  => "fas fa-fw fa-bed",
+            'url'   => "kota.pdp.update"
+        ]);
+        $this->add_menu("kota_positif", [
+            'key'   => "kota_positif",
+            'name'  => "POSITIF",
+            'icon'  => "fas fa-fw fa-biohazard",
+            'url'   => "kota.positif.update"
+        ]);
+
+        // =============================================================
+        // ISTILAH BARU
+        // =============================================================
+        $this->add_menu("kabupaten_suspek", [
+            'key'   => "kabupaten_suspek",
+            'name'  => "Suspek",
+            'icon'  => "fas fa-fw fa-biohazard",
+            'url'   => "kabupaten.suspek.update"
             // 'sub'   => [
             //     [
             //         'key'   => "grafik",
@@ -123,11 +141,11 @@ class Menus {
             //     ]
             // ]
         ]);
-        $this->add_menu("kabupaten_positif", [
-            'key'   => "kabupaten_positif",
-            'name'  => "POSITIF",
+        $this->add_menu("kota_suspek", [
+            'key'   => "kota_suspek",
+            'name'  => "Suspek",
             'icon'  => "fas fa-fw fa-biohazard",
-            'url'   => "kabupaten.positif.update"
+            'url'   => "kota.suspek.update"
             // 'sub'   => [
             //     [
             //         'key'   => "grafik",
@@ -147,57 +165,11 @@ class Menus {
             // ]
         ]);
 
-        $this->add_menu("kota_odp", [
-            'key'   => "kota_odp",
-            'name'  => "ODP",
-            'icon'  => "fas fa-fw fa-diagnoses",
-            'url'   => "kota.odp.update"
-            // 'sub'   => [
-            //     [
-            //         'key'   => "grafik",
-            //         'name'  => "Grafik",
-            //         'url'   => "admin.users.index"
-            //     ],
-            //     [
-            //         'key'   => "update",
-            //         'name'  => "Update Data",
-            //         'url'   => "admin.users.index"
-            //     ],
-            //     [
-            //         'key'   => "history",
-            //         'name'  => "History",
-            //         'url'   => "admin.users.index"
-            //     ]
-            // ]
-        ]);
-        $this->add_menu("kota_pdp", [
-            'key'   => "kota_pdp",
-            'name'  => "PDP",
-            'icon'  => "fas fa-fw fa-bed",
-            'url'   => "kota.pdp.update"
-            // 'sub'   => [
-            //     [
-            //         'key'   => "grafik",
-            //         'name'  => "Grafik",
-            //         'url'   => "admin.users.index"
-            //     ],
-            //     [
-            //         'key'   => "update",
-            //         'name'  => "Update Data",
-            //         'url'   => "admin.users.index"
-            //     ],
-            //     [
-            //         'key'   => "history",
-            //         'name'  => "History",
-            //         'url'   => "admin.users.index"
-            //     ]
-            // ]
-        ]);
-        $this->add_menu("kota_positif", [
-            'key'   => "kota_positif",
-            'name'  => "POSITIF",
+        $this->add_menu("kabupaten_konfirmasi", [
+            'key'   => "kabupaten_konfirmasi",
+            'name'  => "Konfirmasi",
             'icon'  => "fas fa-fw fa-biohazard",
-            'url'   => "kota.positif.update"
+            'url'   => "kabupaten.konfirmasi.update"
             // 'sub'   => [
             //     [
             //         'key'   => "grafik",
@@ -216,6 +188,30 @@ class Menus {
             //     ]
             // ]
         ]);
+        $this->add_menu("kota_konfirmasi", [
+            'key'   => "kota_konfirmasi",
+            'name'  => "Konfirmasi",
+            'icon'  => "fas fa-fw fa-biohazard",
+            'url'   => "kota.konfirmasi.update"
+            // 'sub'   => [
+            //     [
+            //         'key'   => "grafik",
+            //         'name'  => "Grafik",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "update",
+            //         'name'  => "Update Data",
+            //         'url'   => "admin.users.index"
+            //     ],
+            //     [
+            //         'key'   => "history",
+            //         'name'  => "History",
+            //         'url'   => "admin.users.index"
+            //     ]
+            // ]
+        ]);
+
 
         $this->add_menu("lockdown", [
             'key'   => "lockdown",
@@ -301,26 +297,47 @@ class Menus {
         if ($content) $this->generated[] = [];
         if ($lockdown) $this->generated[] = [];
 
-        $kabupaten_odp = $this->cek_menu('kabupaten_odp');
-        $kabupaten_pdp = $this->cek_menu('kabupaten_pdp');        
-        $kabupaten_positif = $this->cek_menu('kabupaten_positif');
-        $kabupaten = ($kabupaten_odp || $kabupaten_pdp || $kabupaten_positif);
+        // $kabupaten_odp = $this->cek_menu('kabupaten_odp');
+        // $kabupaten_pdp = $this->cek_menu('kabupaten_pdp');        
+        // $kabupaten_positif = $this->cek_menu('kabupaten_positif');
+        // $kabupaten = ($kabupaten_odp || $kabupaten_pdp || $kabupaten_positif);
+
+        // if ($kabupaten) $this->generated[] = ['name' => "Kabupaten"];
+        // if ($kabupaten_odp) $this->generated[] = $this->menus['kabupaten_odp'];
+        // if ($kabupaten_pdp) $this->generated[] = $this->menus['kabupaten_pdp'];        
+        // if ($kabupaten_positif) $this->generated[] = $this->menus['kabupaten_positif'];
+        // if ($kabupaten) $this->generated[] = [];
+
+        // $kota_odp = $this->cek_menu('kota_odp');
+        // $kota_pdp = $this->cek_menu('kota_pdp');
+        // $kota_positif = $this->cek_menu('kota_positif');
+        // $kota = ($kota_odp || $kota_pdp || $kota_positif);
+
+        // if ($kota) $this->generated[] = ['name' => "Kota"];
+        // if ($kota_odp) $this->generated[] = $this->menus['kota_odp'];
+        // if ($kota_pdp) $this->generated[] = $this->menus['kota_pdp'];
+        // if ($kota_positif) $this->generated[] = $this->menus['kota_positif'];
+        // if ($kota) $this->generated[] = [];
+
+        // =============================================================
+        // ISTILAH BARU
+        // =============================================================
+        $kabupaten_suspek = $this->cek_menu('kabupaten_suspek');
+        $kabupaten_konfirmasi = $this->cek_menu('kabupaten_konfirmasi');
+        $kabupaten = ($kabupaten_suspek || $kabupaten_konfirmasi);
 
         if ($kabupaten) $this->generated[] = ['name' => "Kabupaten"];
-        if ($kabupaten_odp) $this->generated[] = $this->menus['kabupaten_odp'];
-        if ($kabupaten_pdp) $this->generated[] = $this->menus['kabupaten_pdp'];        
-        if ($kabupaten_positif) $this->generated[] = $this->menus['kabupaten_positif'];
+        if ($kabupaten_suspek) $this->generated[] = $this->menus['kabupaten_suspek'];
+        if ($kabupaten_konfirmasi) $this->generated[] = $this->menus['kabupaten_konfirmasi'];
         if ($kabupaten) $this->generated[] = [];
 
-        $kota_odp = $this->cek_menu('kota_odp');
-        $kota_pdp = $this->cek_menu('kota_pdp');
-        $kota_positif = $this->cek_menu('kota_positif');
-        $kota = ($kota_odp || $kota_pdp || $kota_positif);
+        $kota_suspek = $this->cek_menu('kota_suspek');
+        $kota_konfirmasi = $this->cek_menu('kota_konfirmasi');
+        $kota = ($kota_suspek || $kota_konfirmasi);
 
         if ($kota) $this->generated[] = ['name' => "Kota"];
-        if ($kota_odp) $this->generated[] = $this->menus['kota_odp'];
-        if ($kota_pdp) $this->generated[] = $this->menus['kota_pdp'];
-        if ($kota_positif) $this->generated[] = $this->menus['kota_positif'];
+        if ($kota_suspek) $this->generated[] = $this->menus['kota_suspek'];
+        if ($kota_konfirmasi) $this->generated[] = $this->menus['kota_konfirmasi'];
         if ($kota) $this->generated[] = [];
 
         if ($admin) $this->generated[] = ['name' => "Administrator"];
