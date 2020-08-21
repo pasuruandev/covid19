@@ -1,311 +1,412 @@
 :root {
-	--main-bg-color: linear-gradient(122.53deg, #42B071 10.14%, #188A48 97.84%);
-}
-html *{
-	font-family: 'Nunito Sans', sans-serif;
-	font-weight: 400;
-}
-.home{
-	background: var(--main-bg-color);
-	padding-top: 50px;
-	padding-bottom: 200px
-}
-.bg-green{
-	background: var(--main-bg-color);
-}
-.bg-grey{
-	background-color: #f1f1f1;
-}
-.bold{
-	font-weight: 700 !important;
-}
-.x-bold{
-	font-weight: 800 !important;
-}
-.text-white{
-	color: white;
-}
-.text-green{
-	color: #2C9B5B;
-}
-.text-orange{
-	color: #F2994A;
-}
-.text-red{
-	color: #EB5757;
-}
-.font-12{
-	font-size: 12px
-}
-.font-16{
-	font-size: 16px
-}
-.font-24{
-	font-size: 24px
-}
-.font-32{
-	font-size: 32px
-}
-.font-35{
-	font-size: 35px
-}
-.font-42{
-	font-size: 42px
-}
-.font-48{
-	font-size: 48px
-}
-.font-52{
-	font-size: 52px
-}
-.shadow{
-	box-shadow: 0px 4px 16px rgba(68, 68, 68, 0.25);
-}
-.circle{
-	border-radius: 100%
-}
-.box-info{
-	background: rgba(255, 255, 255, 0.2);
-	border-radius: 20px;
-	margin-top: 41px;
-	padding-bottom: 25px
-}
-.bg-white{
-	background: white
-}
-.info{
-	border-radius: 20px;
-	padding-bottom: 30px;
-	padding-right: 15px;
-	padding-left: 15px;
-	min-height: 480px
-}
-.info img{
-	width: 130px;
-	height: auto;
-	margin-top: -65px
-}
-.info .total-info{
-	margin-top: 50px;
-	font-size: 54px
-}
-.info .title-info{
-	margin-top: 10px
-}
-.alert{
-	margin-bottom: unset !important;
-}
-.rujukan{
-	border-radius: 20px;
-}
-.rujukan .box-rujukan{
-	padding: 35px 75px
-}
-.rujukan .btn{
-	margin-top: 15px;
-}
-#img-rs{
-	width: 90%
-}
-#rujukan-info{
-	margin-top: 50px
-}
-#resiko, #artikel, #map-container{
-	padding-top: 50px;
-	padding-bottom: 50px;
-	margin-top: 50px
-}
-#lockdown{
-	padding-top: 50px;
-	padding-bottom: 50px;
-	margin-top: 0px !important;
+    --main-bg-color: linear-gradient(122.53deg, #42B071 10.14%, #188A48 97.84%);
 }
 
-.logo-head:nth-child(2){
-	margin-left: 25px;
+html * {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
 }
-.checkup-link{
-	padding-top: 20px;
-	padding-right: 5px;
+
+.home {
+    background: var(--main-bg-color);
+    padding-top: 50px;
+    padding-bottom: 200px
 }
-.checkup-link a{
-	opacity: 0.85;
+
+.bg-green {
+    background: var(--main-bg-color);
 }
-.checkup-link a:hover{
-	text-decoration: none;
-	opacity: 1;
+
+.bg-grey {
+    background-color: #f1f1f1;
 }
-.posko-call{
-	padding: 0px;
+
+.bold {
+    font-weight: 700 !important;
 }
-.posko-call p{
-	margin-top: 5px;
+
+.x-bold {
+    font-weight: 800 !important;
 }
-.sub-info{
-	width: 95%;
-	margin: auto;
+
+.text-white {
+    color: white;
 }
-.sub-info .bg-grey{
-	border-radius: 5px;
-	margin: auto;
-	padding: 10px;
+
+.text-green {
+    color: #2C9B5B;
 }
-.sub-info .bg-white{
-	padding-top: 20px;
+
+.text-orange {
+    color: #F2994A;
 }
-.sub-info p{
-	margin-bottom: 0px;
+
+.text-red {
+    color: #EB5757;
 }
-#resiko .info, #lockdown .info{
-	min-height: 250px;
+
+.font-12 {
+    font-size: 12px
 }
-img.ld-icon{
-	width: 20px;
+
+.font-16 {
+    font-size: 16px
 }
-.lockdown-info div{
-	padding-bottom: 10px !important;
+
+.font-18 {
+    font-size: 18px
 }
-.head-margin{
-	margin-top: 100px;
+
+.font-24 {
+    font-size: 24px
 }
-.see-all{
-	padding-top: 35px !important;
+
+.font-32 {
+    font-size: 32px
 }
-.artikel-card.card{
-	border: none;
-	border-radius: 12px;
-	margin-top: 20px;
+
+.font-35 {
+    font-size: 35px
 }
-.artikel-card.card .card-img-top{
-	border-top-left-radius: 12px;
-	border-top-right-radius: 12px;
-	width: 100%;
-	height: 300px;
-	object-fit: cover;
+
+.font-42 {
+    font-size: 42px
 }
-.artikel-card a:hover{
-	color: #2C9B5B;
+
+.font-48 {
+    font-size: 48px
 }
-.artikel-card h5{
-	line-height: 40px;
+
+.font-52 {
+    font-size: 52px
 }
-#lockdown.ld-list{
-	margin-top: 0px !important;
-	min-height: 100vh;
+
+.shadow {
+    box-shadow: 0px 4px 16px rgba(68, 68, 68, 0.25);
 }
-#lockdown.ld-list .info{
-	margin: 50px 0;
+
+.circle {
+    border-radius: 100%
 }
-a.fa-arrow-left{
-	color: #fff;
-	transition-duration: 0.25s;
+
+.box-info {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    margin-top: 41px;
+    padding-bottom: 25px
 }
-a.fa-arrow-left:hover{
-	color: #fff;
-	text-decoration: none;
-	transform: translateX(-5px);
+
+.bg-white {
+    background: white
 }
-.detail-img{
-	width: 100%;
-	max-height: 40vh;
-	object-fit: cover;
+
+.info {
+    border-radius: 20px;
+    padding-bottom: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
-.detail-text{
-	padding: 40px 0;
+
+.info img {
+    width: 130px;
+    height: auto;
+    margin-top: -65px
 }
-.detail-text p{
-	font-size: 16px;
-	line-height: 32px;
+
+.info .total-info {
+    font-size: 48px
 }
-#share a:hover{
-	text-decoration: none !important;
+
+.sub-info .bg-grey {
+    margin-top: 30px;
 }
-.detail_back{
-	position: absolute;
-	width: 50px !important;
-	height: 50px !important;
-	padding: 8px;
-	left: 50px;
-	top: 20px;
+
+.alert {
+    margin-bottom: unset !important;
 }
-.kab-map{
-	width: 100%;
-	height: 600px;
+
+.rujukan {
+    border-radius: 20px;
 }
-.kab-table, .kot-table{
-	overflow-y: scroll;
-	font-size: 12px !important
+
+.rujukan .box-rujukan {
+    padding: 35px 75px
 }
-.kot-map{
-	width: 100%;
-	height: 250px;
+
+.rujukan .btn {
+    margin-top: 15px;
 }
-.kab-table{
-	height: 600px;
+
+#img-rs {
+    width: 90%
 }
-.kot-table{
-	height: 250px;
+
+#rujukan-info {
+    margin-top: 50px
+}
+
+#resiko,
+#artikel,
+#map-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px
+}
+
+#lockdown {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 0px !important;
+}
+
+.logo-head:nth-child(2) {
+    margin-left: 25px;
+}
+
+.checkup-link {
+    padding-top: 20px;
+    padding-right: 5px;
+}
+
+.checkup-link a {
+    opacity: 0.85;
+}
+
+.checkup-link a:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
+.posko-call {
+    padding: 0px;
+}
+
+.posko-call p {
+    margin-top: 5px;
+}
+
+.sub-info {
+    width: 95%;
+    margin: auto;
+}
+
+.sub-info .bg-grey {
+    border-radius: 5px;
+    margin: auto;
+    padding: 10px;
+}
+
+.sub-info .bg-white {
+    padding-top: 20px;
+}
+
+.sub-info p {
+    margin-bottom: 0px;
+}
+
+#resiko .info,
+#lockdown .info {
+    min-height: 250px;
+}
+
+img.ld-icon {
+    width: 20px;
+}
+
+.lockdown-info div {
+    padding-bottom: 10px !important;
+}
+
+.head-margin {
+    margin-top: 100px;
+}
+
+.see-all {
+    padding-top: 35px !important;
+}
+
+.artikel-card.card {
+    border: none;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.artikel-card.card .card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.artikel-card a:hover {
+    color: #2C9B5B;
+}
+
+.artikel-card h5 {
+    line-height: 40px;
+}
+
+#lockdown.ld-list {
+    margin-top: 0px !important;
+    min-height: 100vh;
+}
+
+#lockdown.ld-list .info {
+    margin: 50px 0;
+}
+
+a.fa-arrow-left {
+    color: #fff;
+    transition-duration: 0.25s;
+}
+
+a.fa-arrow-left:hover {
+    color: #fff;
+    text-decoration: none;
+    transform: translateX(-5px);
+}
+
+.detail-img {
+    width: 100%;
+    max-height: 40vh;
+    object-fit: cover;
+}
+
+.detail-text {
+    padding: 40px 0;
+}
+
+.detail-text p {
+    font-size: 16px;
+    line-height: 32px;
+}
+
+#share a:hover {
+    text-decoration: none !important;
+}
+
+.detail_back {
+    position: absolute;
+    width: 50px !important;
+    height: 50px !important;
+    padding: 8px;
+    left: 50px;
+    top: 20px;
+}
+
+.kab-map {
+    width: 100%;
+    height: 600px;
+}
+
+.kab-table,
+.kot-table {
+    overflow-y: scroll;
+    font-size: 12px !important
+}
+
+.kot-map {
+    width: 100%;
+    height: 250px;
+}
+
+.kab-table {
+    height: 600px;
+}
+
+.kot-table {
+    height: 250px;
+}
+
+.rujukan .col-md-10 {
+    margin-left: 20px;
 }
 
 @media only screen and (max-width: 768px) {
-	#title-home{
-		font-size: 20px
-	}
-	#judul{
-		line-height: unset !important;
-	}
-	#title-posko{
-		font-size: 20px
-	}
-	.mob-center{
-		text-align: center
-	}
-	.img-center{
-		text-align: center;	
-	}
-	.checkup-link.text-right{
-		text-align: center !important;
-	}
-	.checkup-link a{
-		font-size: 16px !important;
-		margin: 0px;
-	}
-	.head-margin{
-		margin-top: 50px;
-	}
-	.info{
-		margin-bottom: 100px
-	}
-	.last-info{
-		margin-bottom: 0px !important
-	}
-	.rujukan .box-rujukan{
-		padding: 35px 15px
-	}
-	.mob-title{
-		font-size: 35px
-	}
-	.mob-small{
-		font-size: 16px
-	}
-	#lockdown .mob-center .col-12{
-		text-align: center !important;
-		padding: 2px !important;
-	}
-	.artikel-card .card-img-top{
-		height: 200px !important;
-	}
-	.ld-list .mob-title{
-		font-size: 22px !important;
-	}
-	.ld-list .mob-title a{
-		margin-right: 10px;
-	}
-	.ld-list .info{
-		margin: 15px 0;
-	}
-	.detail_back{
-		left: 10px;
-		top: 10px;
-	}
+    #title-home {
+        font-size: 20px
+    }
+    #judul {
+        line-height: unset !important;
+    }
+    #title-posko {
+        font-size: 20px
+    }
+    .mob-center {
+        text-align: center
+    }
+    .img-center {
+        text-align: center;
+    }
+    .checkup-link.text-right {
+        text-align: center !important;
+    }
+    .checkup-link a {
+        font-size: 16px !important;
+        margin: 0px;
+    }
+    .head-margin {
+        margin-top: 50px;
+    }
+    .info {
+        margin-bottom: 100px
+    }
+    .last-info {
+        margin-bottom: 0px !important
+    }
+    .rujukan .box-rujukan {
+        padding: 35px 15px
+    }
+    .mob-title {
+        font-size: 35px
+    }
+    .mob-small {
+        font-size: 16px
+    }
+    #lockdown .mob-center .col-12 {
+        text-align: center !important;
+        padding: 2px !important;
+    }
+    .artikel-card .card-img-top {
+        height: 200px !important;
+    }
+    .ld-list .mob-title {
+        font-size: 22px !important;
+    }
+    .ld-list .mob-title a {
+        margin-right: 10px;
+    }
+    .ld-list .info {
+        margin: 15px 0;
+    }
+    .detail_back {
+        left: 10px;
+        top: 10px;
+    }
+    .kot-table,
+    .kab-table {
+        height: auto !important;
+        overflow-y: visible;
+        margin-top: 20px;
+    }
+    .kot-map,
+    .kab-map {
+        height: 300px;
+    }
+    .footer div {
+        text-align: center;
+    }
+    .footer-logo {
+        float: none !important;
+        margin: auto !important;
+        width: 90% !important;
+    }
+    .table_data tr {
+        display: table-cell !important;
+    }
+    .table_data td {
+        display: block !important;
+        width: 100% !important;
+    }
 }

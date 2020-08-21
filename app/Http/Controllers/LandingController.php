@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Odp;
 use App\Pdp;
 use App\Positif;
+use App\Suspek;
+use App\Konfirmasi;
 use App\Lockdown;
 use App\Article;
 use App\Map;
@@ -76,6 +78,36 @@ class LandingController extends Controller
             'positif' => [
                 'kab' => $positif_kab,
                 'kota' => $positif_kota
+            ],
+            'tanggal_terakhir' => $tanggal_terakhir
+        ]);
+    }
+
+    public function get_data2(Request $req)
+    {
+        $suspek_kab = Suspek::getDataKab();
+        $suspek_kota = Suspek::getDataKota();
+        $konfirmasi_kab = Konfirmasi::getDataKab();
+        $konfirmasi_kota = Konfirmasi::getDataKota();
+
+        $date_suspek_kab = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $suspek_kab->tanggal);
+        $date_suspek_kota = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $suspek_kota->tanggal);
+        $date_konfirmasi_kab = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $konfirmasi_kab->tanggal);
+        $date_konfirmasi_kota = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $konfirmasi_kota->tanggal);
+
+        $tanggal_terakhir = $date_suspek_kab->max($date_suspek_kota);
+        $tanggal_terakhir = $tanggal_terakhir->max($date_konfirmasi_kab);
+        $tanggal_terakhir = $tanggal_terakhir->max($date_konfirmasi_kota);
+        $tanggal_terakhir = $tanggal_terakhir->format('Y-m-d H:i:s');
+
+        return response([
+            'suspek' => [
+                'kab' => $suspek_kab,
+                'kota' => $suspek_kota
+            ],
+            'konfirmasi' => [
+                'kab' => $konfirmasi_kab,
+                'kota' => $konfirmasi_kota
             ],
             'tanggal_terakhir' => $tanggal_terakhir
         ]);
