@@ -100,6 +100,11 @@ class LandingController extends Controller
         $tanggal_terakhir = $tanggal_terakhir->max($date_konfirmasi_kota);
         $tanggal_terakhir = $tanggal_terakhir->format('Y-m-d H:i:s');
 
+        $suspek_kab->jumlah();
+        $suspek_kota->jumlah();
+        $konfirmasi_kab->jumlah();
+        $konfirmasi_kota->jumlah();
+        
         return response([
             'suspek' => [
                 'kab' => $suspek_kab,
