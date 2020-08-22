@@ -111,8 +111,8 @@
                                             <span class="text-red x-bold title-info">KONFIRMASI</span>
                                         </td>
                                         <td style="width: 25%;">
-                                            <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kab.dirawat">0</span>
-                                            <p class="font-14">dirawat</p>
+                                            <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kab.isolasi">0</span>
+                                            <p class="font-14">isolasi</p>
                                         </td>
                                         <td style="width: 25%;">
                                             <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kab.sembuh">0</span>
@@ -167,8 +167,8 @@
                                             <span class="text-red x-bold title-info">KONFIRMASI</span>
                                         </td>
                                         <td style="width: 25%;">
-                                            <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kota.dirawat">0</span>
-                                            <p class="font-14">dirawat</p>
+                                            <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kota.isolasi">0</span>
+                                            <p class="font-14">isolasi</p>
                                         </td>
                                         <td style="width: 25%;">
                                             <span class="x-bold font-20" data-content="data" data-entity="konfirmasi.kota.sembuh">0</span>
