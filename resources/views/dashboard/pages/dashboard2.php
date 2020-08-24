@@ -179,9 +179,9 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase">Dirawat Terakhir</div>
+                                <div class="text-xs font-weight-bold text-warning text-uppercase">Isolasi Terakhir</div>
                                 <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $konfirmasi['kab']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-dirawat"><?= $konfirmasi['kab']->dirawat ?></span> Orang</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-dirawat"><?= $konfirmasi['kab']->isolasi ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -250,9 +250,9 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase">Dirawat Terakhir</div>
+                                <div class="text-xs font-weight-bold text-warning text-uppercase">Isolasi Terakhir</div>
                                 <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $konfirmasi['kota']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-dirawat"><?= $konfirmasi['kota']->dirawat ?></span> Orang</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-dirawat"><?= $konfirmasi['kota']->isolasi ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
