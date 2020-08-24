@@ -387,9 +387,8 @@
 									<tr>
 										<th>No.</th>
 										<th>Kecamatan</th>
-										<th>ODP</th>
-										<th>PDP</th>
-										<th>Positif</th>
+										<th>Suspek</th>
+										<th>Konfirmasi</th>
 									</tr>
 								</thead>
 								<tbody id="tabel-kecam1"></tbody>
@@ -410,9 +409,8 @@
 									<tr>
 										<th>No.</th>
 										<th>Kecamatan</th>
-										<th>ODP</th>
-										<th>PDP</th>
-										<th>Positif</th>
+										<th>Suspek</th>
+										<th>Konfirmasi</th>
 									</tr>
 								</thead>
 								<tbody id="tabel-kecam2"></tbody>

@@ -137,7 +137,7 @@ $(function() {
 
     // map code
     $('#map1').ready(function(){
-        $.get('/data/maps/3514')
+        $.get('/data/maps/kab')
             .done(data => {
                 var map = L.map('map1').setView([-7.72, 112.858215], 11);
 
@@ -162,11 +162,10 @@ $(function() {
                 var marker = new Array();
             
                 for (var i = 0; i < kec.length; i++) {                    
-                    markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i]['nama'] +"</div>"+
-                        "<p class='font-16 x-bold'>ODP : "+ kec[i]['odp'] +"</p>" +
-                        "<p class='font-16 x-bold'>PDP : "+ kec[i]['pdp'] +"</p>" +
-                        "<p class='font-16 x-bold'>Positif : "+ kec[i]['positif'] +"</p>";                        
-                    marker[i] = L.marker([kec[i]['latitude'], kec[i]['longitude']], {icon: newMarker}).addTo(map)
+                    markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i]['kecamatan']['nama'] +"</div>"+
+                        "<p class='font-16 x-bold'>Suspek : "+ kec[i]['suspek'] +"</p>" +
+                        "<p class='font-16 x-bold'>Konfirmasi : "+ kec[i]['konfirmasi'] +"</p>";
+                    marker[i] = L.marker([kec[i]['kecamatan']['latitude'], kec[i]['kecamatan']['longitude']], {icon: newMarker}).addTo(map)
                     .bindPopup(markerpop[i], {minWidth:200});	
                 }
             });
@@ -174,7 +173,7 @@ $(function() {
 
     // table code
     $('#tabel-kecam1').ready(function(){
-        $.get('/data/maps/3514')
+        $.get('/data/maps/kab')
             .done(data => {                
                 var tabkec = [];
                 for(var i in data) {
@@ -183,7 +182,14 @@ $(function() {
                 
                 for(var i = 0; i < tabkec.length; i++){
                     var no = i+1;
-                    $("#tabel-kecam1").append("<tr><td>"+no+"</td>"+"<td>"+tabkec[i]['nama']+"</td><td>"+tabkec[i]['odp']+"</td><td>"+tabkec[i]['pdp']+"</td><td>"+tabkec[i]['positif']+"</td></tr>");                    
+                    $("#tabel-kecam1").append(
+                        `<tr>`+
+                            `<td>${no}</td>`+
+                            `<td>${tabkec[i]['kecamatan']['nama']}</td>`+
+                            `<td>${tabkec[i]['suspek']}</td>`+
+                            `<td>${tabkec[i]['konfirmasi']}</td>`+
+                        `</tr>`
+                    );
                 }
 
             });
@@ -191,7 +197,7 @@ $(function() {
 
     // map code
     $('#map2').ready(function(){
-        $.get('/data/maps/3575')
+        $.get('/data/maps/kota')
             .done(data => {
                 var map = L.map('map2').setView([-7.643130, 112.910461], 12);
 
@@ -216,11 +222,10 @@ $(function() {
                 var marker = new Array();
             
                 for (var i = 0; i < kec.length; i++) {                    
-                    markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i]['nama'] +"</div>"+
-                        "<p class='font-16 x-bold'>ODP : "+ kec[i]['odp'] +"</p>" +
-                        "<p class='font-16 x-bold'>PDP : "+ kec[i]['pdp'] +"</p>" +
-                        "<p class='font-16 x-bold'>Positif : "+ kec[i]['positif'] +"</p>";                        
-                    marker[i] = L.marker([kec[i]['latitude'], kec[i]['longitude']], {icon: newMarker}).addTo(map)
+                    markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i]['kecamatan']['nama'] +"</div>"+
+                        "<p class='font-16 x-bold'>Suspek : "+ kec[i]['suspek'] +"</p>" +
+                        "<p class='font-16 x-bold'>Konfirmasi : "+ kec[i]['konfirmasi'] +"</p>";
+                    marker[i] = L.marker([kec[i]['kecamatan']['latitude'], kec[i]['kecamatan']['longitude']], {icon: newMarker}).addTo(map)
                     .bindPopup(markerpop[i], {minWidth:200});	
                 }
             });
@@ -228,7 +233,7 @@ $(function() {
     
         // table code
     $('#tabel-kecam2').ready(function(){
-        $.get('/data/maps/3575')
+        $.get('/data/maps/kota')
             .done(data => {                
                 var tabkec = [];
                 for(var i in data) {
@@ -237,7 +242,14 @@ $(function() {
                 
                 for(var i = 0; i < tabkec.length; i++){
                     var no = i+1;
-                    $("#tabel-kecam2").append("<tr><td>"+no+"</td>"+"<td>"+tabkec[i]['nama']+"</td><td>"+tabkec[i]['odp']+"</td><td>"+tabkec[i]['pdp']+"</td><td>"+tabkec[i]['positif']+"</td></tr>");                    
+                    $("#tabel-kecam2").append(
+                        `<tr>`+
+                            `<td>${no}</td>`+
+                            `<td>${tabkec[i]['kecamatan']['nama']}</td>`+
+                            `<td>${tabkec[i]['suspek']}</td>`+
+                            `<td>${tabkec[i]['konfirmasi']}</td>`+
+                        `</tr>`
+                    );
                 }
 
         });
