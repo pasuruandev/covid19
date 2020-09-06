@@ -13,8 +13,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase">Jumlah Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $suspek['kab']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek"><?= $suspek['kab']->jumlah() ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($suspek['kab']) ? $suspek['kab']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek"><?= is_object($suspek['kab']) ? $suspek['kab']->jumlah() : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -30,8 +30,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase">Dirawat Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $suspek['kab']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-dirawat"><?= $suspek['kab']->dirawat ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($suspek['kab']) ? $suspek['kab']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-dirawat"><?= is_object($suspek['kab']) ? $suspek['kab']->dirawat : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -47,8 +47,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase">Sembuh Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $suspek['kab']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-sembuh"><?= $suspek['kab']->sembuh ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($suspek['kab']) ? $suspek['kab']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-sembuh"><?= is_object($suspek['kab']) ? $suspek['kab']->sembuh : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -64,8 +64,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-danger text-uppercase">Meninggal Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $suspek['kab']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-meninggal"><?= $suspek['kab']->meninggal ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($suspek['kab']) ? $suspek['kab']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-meninggal"><?= is_object($suspek['kab']) ? $suspek['kab']->meninggal : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -84,8 +84,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase">Jumlah Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $suspek['kota']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek"><?= $suspek['kota']->jumlah() ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($suspek['kota']) ? $suspek['kota']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek"><?= is_object($suspek['kota']) ? $suspek['kota']->jumlah() : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -101,8 +101,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase">Dirawat Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $suspek['kota']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-dirawat"><?= $suspek['kota']->dirawat ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($suspek['kota']) ? $suspek['kota']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-dirawat"><?= is_object($suspek['kota']) ? $suspek['kota']->dirawat : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -118,8 +118,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase">Sembuh Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $suspek['kota']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-sembuh"><?= $suspek['kota']->sembuh ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($suspek['kota']) ? $suspek['kota']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-sembuh"><?= is_object($suspek['kota']) ? $suspek['kota']->sembuh : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -135,8 +135,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-danger text-uppercase">Meninggal Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $suspek['kota']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-meninggal"><?= $suspek['kota']->meninggal ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($suspek['kota']) ? $suspek['kota']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="suspek-meninggal"><?= is_object($suspek['kota']) ? $suspek['kota']->meninggal : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -163,8 +163,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase">Jumlah Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $konfirmasi['kab']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi"><?= $konfirmasi['kab']->jumlah() ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($konfirmasi['kab']) ? $konfirmasi['kab']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi"><?= is_object($konfirmasi['kab']) ? $konfirmasi['kab']->jumlah() : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -180,8 +180,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase">Isolasi Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $konfirmasi['kab']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-dirawat"><?= $konfirmasi['kab']->isolasi ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($konfirmasi['kab']) ? $konfirmasi['kab']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-dirawat"><?= is_object($konfirmasi['kab']) ? $konfirmasi['kab']->isolasi : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -197,8 +197,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase">Sembuh Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $konfirmasi['kab']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-sembuh"><?= $konfirmasi['kab']->sembuh ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($konfirmasi['kab']) ? $konfirmasi['kab']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-sembuh"><?= is_object($konfirmasi['kab']) ? $konfirmasi['kab']->sembuh : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -214,8 +214,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-danger text-uppercase">Meninggal Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $konfirmasi['kab']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-meninggal"><?= $konfirmasi['kab']->meninggal ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($konfirmasi['kab']) ? $konfirmasi['kab']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-meninggal"><?= is_object($konfirmasi['kab']) ? $konfirmasi['kab']->meninggal : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -234,8 +234,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase">Jumlah Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $konfirmasi['kota']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi"><?= $konfirmasi['kota']->jumlah() ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($konfirmasi['kota']) ? $konfirmasi['kota']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi"><?= is_object($konfirmasi['kota']) ? $konfirmasi['kota']->jumlah() : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -251,8 +251,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase">Isolasi Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $konfirmasi['kota']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-dirawat"><?= $konfirmasi['kota']->isolasi ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($konfirmasi['kota']) ? $konfirmasi['kota']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-dirawat"><?= is_object($konfirmasi['kota']) ? $konfirmasi['kota']->isolasi : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -268,8 +268,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase">Sembuh Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $konfirmasi['kota']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-sembuh"><?= $konfirmasi['kota']->sembuh ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($konfirmasi['kota']) ? $konfirmasi['kota']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-sembuh"><?= is_object($konfirmasi['kota']) ? $konfirmasi['kota']->sembuh : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -285,8 +285,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-danger text-uppercase">Meninggal Terakhir</div>
-                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $konfirmasi['kota']->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-meninggal"><?= $konfirmasi['kota']->meninggal ?></span> Orang</div>
+                                <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= is_object($konfirmasi['kota']) ? $konfirmasi['kota']->tanggal : 0 ?></span></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-meninggal"><?= is_object($konfirmasi['kota']) ? $konfirmasi['kota']->meninggal : 0 ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
