@@ -136,4 +136,40 @@ class LandingController extends Controller
         $mapdata = Map::where('prefix', $prefix)->with('kecamatan')->get();
         return response($mapdata);
     }
+
+    public function get_chart_data(Request $req, $day = 7)
+    {
+        $day_start = \Carbon\Carbon::now()->subDays(1 + $day)->setTime(0, 0, 0);
+        $day_end = \Carbon\Carbon::now()->subDays(1)->setTime(23, 59, 59);
+
+        $suspek_kab = Suspek::getLastDatasByDayKab($day_start, $day_end);
+        $suspek_kota = Suspek::getLastDatasByDayKota($day_start, $day_end);
+        $konfirmasi_kab = Konfirmasi::getLastDatasByDayKab($day_start, $day_end);
+        $konfirmasi_kota = Konfirmasi::getLastDatasByDayKota($day_start, $day_end);
+
+        $dates = $suspek_kab->map(function($el) {
+            return $el->tanggal;
+        });
+
+        $suspek_kab = $suspek_kab->map(function($el) {
+            return $el->jumlah();
+        });
+        $suspek_kota = $suspek_kota->map(function($el) {
+            return $el->jumlah();
+        });
+        $konfirmasi_kab = $konfirmasi_kab->map(function($el) {
+            return $el->jumlah();
+        });
+        $konfirmasi_kota = $konfirmasi_kota->map(function($el) {
+            return $el->jumlah();
+        });
+
+        return response([
+            'dates' => $dates,
+            'suspek_kab' => $suspek_kab,
+            'suspek_kota' => $suspek_kota,
+            'konfirmasi_kab' => $konfirmasi_kab,
+            'konfirmasi_kota' => $konfirmasi_kota
+        ]);
+    }
 }

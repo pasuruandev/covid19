@@ -44,6 +44,11 @@ $router->get('/data/maps/{prefix}', [
     'uses' => 'LandingController@get_map'
 ]);
 
+$router->get('/data/chart[/{day}]', [
+    'as' => "landing.chart",
+    'uses' => 'LandingController@get_chart_data'
+]);
+
 
 /**
  * DASHBOARD
