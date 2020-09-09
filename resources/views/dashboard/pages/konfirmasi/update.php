@@ -30,7 +30,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase">Isolasi Terakhir</div>
                                 <div class="text-xs font-weight-bold text-dark mb-1"><span class="date"><?= $data->tanggal ?></span></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-isolasi"><?= $data->jumlah() ?></span> Orang</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="konfirmasi-isolasi"><?= $data->isolasi ?></span> Orang</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
