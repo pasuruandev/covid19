@@ -224,4 +224,105 @@ $(function() {
         });
     });
     // end ambil data dinamis
+
+
+    // chart / graph ===================================================
+    // getdata
+    $('#chart-container').ready(function() {
+        $.get('/data/chart')
+            .done(res => {
+
+                const chart_date = (function () {
+                    return res.dates.map(el => moment(el, 'DD-MM-YYYY HH:mm:ss'));
+                })();
+                // kabupaten
+                var chart_kab = document.getElementById('chart-kab');
+                var ChartKab = new Chart(chart_kab, {
+                    type: 'line',
+                    data: {
+                        labels: chart_date.map(el => el.format('ddd DD-MM')),
+                        datasets: [
+                            {
+                                label: 'Suspek',
+                                data: res.suspek_kab,
+                                backgroundColor: '#F2994A',
+                                borderColor: '#F2994A',
+                                pointBackgroundColor: '#F2994A',
+                                borderWidth: 1.5,
+                                pointBorderWidth: 3.5,
+                                fill: false,
+                                tension: .1
+                            },
+                            {
+                                label: 'Konfirmasi',
+                                data: res.konfirmasi_kab,
+                                backgroundColor: '#EB5757',
+                                borderColor: '#EB5757',
+                                pointBackgroundColor: '#EB5757',
+                                borderWidth: 1.5,
+                                pointBorderWidth: 3.5,
+                                fill: false,
+                                tension: .1
+                            }
+                        ]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [
+                                {
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                });
+
+                // kota
+                var chart_kota = document.getElementById('chart-kota');
+                var ChartKab = new Chart(chart_kota, {
+                    type: 'line',
+                    data: {
+                        labels: chart_date.map(el => el.format('ddd DD-MM')),
+                        datasets: [
+                            {
+                                label: 'Suspek',
+                                data: res.suspek_kota,
+                                backgroundColor: '#F2994A',
+                                borderColor: '#F2994A',
+                                pointBackgroundColor: '#F2994A',
+                                borderWidth: 1.5,
+                                pointBorderWidth: 3.5,
+                                fill: false,
+                                tension: .1
+                            },
+                            {
+                                label: 'Konfirmasi',
+                                data: res.konfirmasi_kota,
+                                backgroundColor: '#EB5757',
+                                borderColor: '#EB5757',
+                                pointBackgroundColor: '#EB5757',
+                                borderWidth: 1.5,
+                                pointBorderWidth: 3.5,
+                                fill: false,
+                                tension: .1
+                            }
+                        ]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+
+            })
+    })
+
+    // end of chart / graph ===================================================
 });

@@ -62,4 +62,18 @@ class Konfirmasi extends Model
     {
         return SELF::getkota()->orderBy('tanggal', 'desc')->first();
     }
+
+    public static function getLastDatasByDayKab($day_start, $day_end)
+    {
+        return SELF::getkab()->where('tanggal', '>=', $day_start)
+                    ->where('tanggal', '<=', $day_end)
+                    ->get();
+    }
+
+    public static function getLastDatasByDayKota($day_start, $day_end)
+    {
+        return SELF::getkota()->where('tanggal', '>=', $day_start)
+                    ->where('tanggal', '<=', $day_end)
+                    ->get();
+    }
 }
