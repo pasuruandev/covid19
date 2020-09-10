@@ -83,58 +83,6 @@ $(function() {
         })
     })
 
-    $('#lockdown').ready(function() {
-        const limit = $(this).attr('data-limit');
-        $.get('/data/lockdown' + (limit ? `/${limit}` : ''))
-        .done(data => {
-            const $container = $('[data-content="lockdown"]');
-            const $template  = $($container.attr('data-template'));
-            const $html      = $($template.html());
-            for(let lockdown of data) {
-                let component = $html.clone();
-                switch (lockdown.tipe_lokasi) {
-                    case 'U':
-                        lockdown.img = 'assets/img/loc_shop.png';
-                        break;
-                    case 'M':
-                        lockdown.img = 'assets/img/loc_mosque.png';
-                        break;
-                    case 'J':
-                        lockdown.img = 'assets/img/loc_cone.png';
-                        break;
-                    case 'G':
-                        lockdown.img = 'assets/img/loc_church.png';
-                        break;
-                    default:
-                        lockdown.img = 'assets/img/loc_cone.png';
-                        break;
-                }
-                
-                let waktu = [];
-                for (let w of lockdown.waktu) {
-                    if (w.tipe == 'I') {
-                        let hari = render_hari(w.hari);
-                        let jam = "Seharian Penuh";
-                        if (w.jam_awal != null && w.jam_awal != "") jam = moment(w.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(w.jam_akhir, 'HH:mm:ss').format('HH:mm');
-                        waktu.push(hari + ' ' + jam);
-                    } else {
-                        let tgl = moment(w.tgl_awal, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY');
-                        if (w.tgl_awal != w.tgl_akhir) tgl += ' - ' + moment(w.tgl_akhir, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY');
-                        let jam = "Seharian Penuh";
-                        if (w.jam_awal != null && w.jam_awal != "") jam = moment(w.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(w.jam_akhir, 'HH:mm:ss').format('HH:mm');
-                        waktu.push(tgl + ' ' + jam);
-                    }
-                }
-                component.find('[data-entity="img"]').attr('src', lockdown.img);
-                component.find('[data-entity="lokasi"]').html(lockdown.lokasi);
-                component.find('[data-entity="alamat"]').html(lockdown.alamat);
-                component.find('[data-entity="waktu"]').html(waktu.join('<br>'));
-                component.find('[data-entity="deskripsi"]').html(lockdown.deskripsi);
-                $container.append(component);
-            }
-        });
-    });
-
     // map code
     $('#map1').ready(function(){
         $.get('/data/maps/kab')

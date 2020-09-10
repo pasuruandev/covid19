@@ -69,7 +69,25 @@ class DatabaseSeeder extends Seeder
         DB::table('article')->insert([
             'title' => 'Judul',
             'content' => 'Lorep ipsum dolor sit amet',
-            'header' => 'header.jpg'
+            'header' => 'header.jpg',
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('suspek')->insert([
+            'prefix' => 'kota',
+            'tanggal' => date('Y-m-d'),
+            'dirawat' => 5,
+            'sembuh' => 5,
+            'meninggal' => 0,
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('suspek')->insert([
+            'prefix' => 'kab',
+            'tanggal' => date('Y-m-d'),
+            'dirawat' => 2,
+            'sembuh' => 2,
+            'meninggal' => 0,
             'created_at' => date('Y-m-d H:i:s')
         ]);
     }

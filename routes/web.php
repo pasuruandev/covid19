@@ -18,10 +18,6 @@ $router->get('/', [
     'as' => "landing",
     'uses' => 'LandingController@index'
 ]);
-$router->get('/lockdown', [
-    'as' => "landing.lockdown",
-    'uses' => 'LandingController@lockdown_page'
-]);
 $router->get('/article/{id}', [
     'as' => "landing.article",
     'uses' => 'LandingController@article_page'
@@ -29,10 +25,6 @@ $router->get('/article/{id}', [
 $router->get('/data', [
     'as' => "landing.data",
     'uses' => 'LandingController@get_data2'
-]);
-$router->get('/data/lockdown[/{limit}]', [
-    'as' => "landing.lockdowns",
-    'uses' => 'LandingController@get_lockdowns'
 ]);
 $router->get('/data/article[/{limit}]', [
     'as' => "landing.articles",
@@ -79,37 +71,6 @@ $router->get('/dashboard', [
 /**
  * CONTENT
  */
-$router->get('/dashboard/content/lockdown', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.index",
-    'uses' => 'Content\LockdownController@index'
-]);
-$router->get('/dashboard/content/lockdown/get[/{key}]', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.get",
-    'uses' => 'Content\LockdownController@get'
-]);
-$router->get('/dashboard/content/lockdown/data', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.data",
-    'uses' => 'Content\LockdownController@data'
-]);
-$router->post('/dashboard/content/lockdown/insert', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.insert",
-    'uses' => 'Content\LockdownController@insert'
-]);
-$router->post('/dashboard/content/lockdown/update', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.update",
-    'uses' => 'Content\LockdownController@update'
-]);
-$router->post('/dashboard/content/lockdown/delete', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.delete",
-    'uses' => 'Content\LockdownController@delete'
-]);
-
 $router->get('/dashboard/content/article', [
     'middleware' => 'auth',
     'as' => "content.article.index",
@@ -140,11 +101,6 @@ $router->post('/dashboard/content/article/delete', [
     'as' => "content.article.delete",
     'uses' => 'Content\ArticleController@delete'
 ]);
-
-
-
-
-
 
 /**
  * KABUPATEN

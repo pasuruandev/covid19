@@ -421,39 +421,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid bg-green ld-list" id="lockdown" data-limit="4">
-		<div class="row">
-			<div class="container">
-				<div class="row mob-center">
-					<div class="col-md-6 col-12 text-white">
-						<span class="x-bold">Informasi</span> <br>
-						<span class="x-bold font-52 mob-title">Kawasan Physical Distancing</span>
-					</div>
-					<div class="col-md-6 col-12 text-right see-all">
-						<a href="/lockdown" class="btn btn-light btn-lg">Tampilkan Semua</a>
-					</div>
-				</div>
-				<div class="row" style="margin-top: 100px" data-content="lockdown" data-template="#template-lockdown">
-					<template class="hidden" id="template-lockdown">
-						<div class="col-md-3 col-12">
-							<div class="bg-white shadow info text-center">
-								<img src="" alt="lockdown" class="circle shadow" data-entity="img">
-								<p class="x-bold font-20" style="margin-top: 20px;" data-entity="lokasi">Ruas Jalan Pandaan</p>
-								<div class="row text-left lockdown-info">
-									<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
-									<div class="col-md-9 col-8"><span class="font-18" data-entity="alamat">Jl. A. Yani - Jl. RA Kartini</span></div>
-									<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
-									<div class="col-md-9 col-8"><span class="font-18" data-entity="waktu"></span></div>
-									<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
-									<div class="col-md-9 col-8"><span class="font-18" data-entity="deskripsi">Masih suka berkumpul? Awas ANCAMAN PIDANA.</span></div>
-								</div>
-							</div>
-						</div>
-					</template>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="container-fluid bg-white" id="resiko">
 		<div class="row">
 			<div class="container">

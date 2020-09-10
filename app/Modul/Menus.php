@@ -225,14 +225,6 @@ class Menus {
             'icon'  => "fas fa-fw fa-map",
             'url'   => "kota.map.index"            
         ]);
-
-
-        $this->add_menu("lockdown", [
-            'key'   => "lockdown",
-            'name'  => "Lockdown",
-            'icon'  => "fas fa-fw fa-cogs",
-            'url'   => "content.lockdown.index"
-        ]);
         
         $this->add_menu("maps", [
             'key'   => "maps",
@@ -299,12 +291,10 @@ class Menus {
         $this->generated[] = $this->menus['dashboard'];
         $this->generated[] = [];
 
-        $lockdown = $this->cek_menu('lockdown');
         $article = $this->cek_menu('article');
-        $content = ($lockdown || $article || $maps);
+        $content = ($article || $maps);
 
         if ($content) $this->generated[] = ['name' => "Content"];
-        if ($lockdown) $this->generated[] = $this->menus['lockdown'];
         if ($article) $this->generated[] = $this->menus['article'];
         if ($content) $this->generated[] = [];
 
