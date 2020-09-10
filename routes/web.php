@@ -18,10 +18,6 @@ $router->get('/', [
     'as' => "landing",
     'uses' => 'LandingController@index'
 ]);
-$router->get('/lockdown', [
-    'as' => "landing.lockdown",
-    'uses' => 'LandingController@lockdown_page'
-]);
 $router->get('/article/{id}', [
     'as' => "landing.article",
     'uses' => 'LandingController@article_page'
@@ -30,18 +26,19 @@ $router->get('/data', [
     'as' => "landing.data",
     'uses' => 'LandingController@get_data2'
 ]);
-$router->get('/data/lockdown[/{limit}]', [
-    'as' => "landing.lockdowns",
-    'uses' => 'LandingController@get_lockdowns'
-]);
 $router->get('/data/article[/{limit}]', [
     'as' => "landing.articles",
     'uses' => 'LandingController@get_articles'
 ]);
 
-$router->get('/data/maps/{id_kab}', [
+$router->get('/data/maps/{prefix}', [
     'as' => "landing.map",
-    'uses' => 'LandingController@get_spesific_map'
+    'uses' => 'LandingController@get_map'
+]);
+
+$router->get('/data/chart[/{day}]', [
+    'as' => "landing.chart",
+    'uses' => 'LandingController@get_chart_data'
 ]);
 
 
@@ -79,37 +76,6 @@ $router->get('/dashboard', [
 /**
  * CONTENT
  */
-$router->get('/dashboard/content/lockdown', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.index",
-    'uses' => 'Content\LockdownController@index'
-]);
-$router->get('/dashboard/content/lockdown/get[/{key}]', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.get",
-    'uses' => 'Content\LockdownController@get'
-]);
-$router->get('/dashboard/content/lockdown/data', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.data",
-    'uses' => 'Content\LockdownController@data'
-]);
-$router->post('/dashboard/content/lockdown/insert', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.insert",
-    'uses' => 'Content\LockdownController@insert'
-]);
-$router->post('/dashboard/content/lockdown/update', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.update",
-    'uses' => 'Content\LockdownController@update'
-]);
-$router->post('/dashboard/content/lockdown/delete', [
-    'middleware' => 'auth',
-    'as' => "content.lockdown.delete",
-    'uses' => 'Content\LockdownController@delete'
-]);
-
 $router->get('/dashboard/content/article', [
     'middleware' => 'auth',
     'as' => "content.article.index",
@@ -139,29 +105,6 @@ $router->post('/dashboard/content/article/delete', [
     'middleware' => 'auth',
     'as' => "content.article.delete",
     'uses' => 'Content\ArticleController@delete'
-]);
-$router->get('/dashboard/content/maps/update', [
-    'middleware' => 'auth',
-    'as' => "content.maps.update",
-    'uses' => 'Kot\MapsController@get_map'
-]);
-
-$router->get('/dashboard/content/maps/hapus_maps/{id}', [
-    'middleware' => 'auth',
-    'as' => "content.maps.hapus",
-    'uses' => 'Kot\MapsController@hapusMaps'
-]);
-
-$router->post('/dashboard/content/maps/edit_maps',[
-    'middleware' => 'auth',
-    'as'    => "content.maps.perbarui",
-    'uses'  => 'Kot\MapsController@updateMaps' 
-]);
-
-$router->post('/dashboard/content/maps/add_maps',[
-    'middleware' => 'auth',
-    'as'    => "content.maps.tambah",
-    'uses'  => 'Kot\MapsController@tambah_map' 
 ]);
 
 /**
@@ -240,6 +183,44 @@ $router->get('/dashboard/kab/konfirmasi/refresh', [
     'as' => "kabupaten.konfirmasi.refresh",
     'uses' => 'Kab\KonfirmasiController@refresh'
 ]);
+
+$router->get('/dashboard/kab/map', [
+    'middleware' => 'auth',
+    'as' => "kabupaten.map.index",
+    'uses' => 'Kab\MapController@index'
+]);
+$router->get('/dashboard/kab/map/get[/{key}]', [
+    'middleware' => 'auth',
+    'as' => "kabupaten.map.get",
+    'uses' => 'Kab\MapController@get'
+]);
+$router->get('/dashboard/kab/map/data', [
+    'middleware' => 'auth',
+    'as' => "kabupaten.map.data",
+    'uses' => 'Kab\MapController@data'
+]);
+$router->post('/dashboard/kab/map/insert', [
+    'middleware' => 'auth',
+    'as' => "kabupaten.map.insert",
+    'uses' => 'Kab\MapController@insert'
+]);
+$router->post('/dashboard/kab/map/update', [
+    'middleware' => 'auth',
+    'as' => "kabupaten.map.update",
+    'uses' => 'Kab\MapController@update'
+]);
+$router->post('/dashboard/kab/map/delete', [
+    'middleware' => 'auth',
+    'as' => "kabupaten.map.delete",
+    'uses' => 'Kab\MapController@delete'
+]);
+
+
+
+
+
+
+
  /**
  * KOTA
  */
@@ -317,6 +298,50 @@ $router->get('/dashboard/kota/konfirmasi/refresh', [
     'as' => "kota.konfirmasi.refresh",
     'uses' => 'Kot\KonfirmasiController@refresh'
 ]);
+
+$router->get('/dashboard/kota/map', [
+    'middleware' => 'auth',
+    'as' => "kota.map.index",
+    'uses' => 'Kot\MapController@index'
+]);
+$router->get('/dashboard/kota/map/get[/{key}]', [
+    'middleware' => 'auth',
+    'as' => "kota.map.get",
+    'uses' => 'Kot\MapController@get'
+]);
+$router->get('/dashboard/kota/map/data', [
+    'middleware' => 'auth',
+    'as' => "kota.map.data",
+    'uses' => 'Kot\MapController@data'
+]);
+$router->post('/dashboard/kota/map/insert', [
+    'middleware' => 'auth',
+    'as' => "kota.map.insert",
+    'uses' => 'Kot\MapController@insert'
+]);
+$router->post('/dashboard/kota/map/update', [
+    'middleware' => 'auth',
+    'as' => "kota.map.update",
+    'uses' => 'Kot\MapController@update'
+]);
+$router->post('/dashboard/kota/map/delete', [
+    'middleware' => 'auth',
+    'as' => "kota.map.delete",
+    'uses' => 'Kot\MapController@delete'
+]);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * ADMIN

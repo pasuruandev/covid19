@@ -83,61 +83,9 @@ $(function() {
         })
     })
 
-    $('#lockdown').ready(function() {
-        const limit = $(this).attr('data-limit');
-        $.get('/data/lockdown' + (limit ? `/${limit}` : ''))
-        .done(data => {
-            const $container = $('[data-content="lockdown"]');
-            const $template  = $($container.attr('data-template'));
-            const $html      = $($template.html());
-            for(let lockdown of data) {
-                let component = $html.clone();
-                switch (lockdown.tipe_lokasi) {
-                    case 'U':
-                        lockdown.img = 'assets/img/loc_shop.png';
-                        break;
-                    case 'M':
-                        lockdown.img = 'assets/img/loc_mosque.png';
-                        break;
-                    case 'J':
-                        lockdown.img = 'assets/img/loc_cone.png';
-                        break;
-                    case 'G':
-                        lockdown.img = 'assets/img/loc_church.png';
-                        break;
-                    default:
-                        lockdown.img = 'assets/img/loc_cone.png';
-                        break;
-                }
-                
-                let waktu = [];
-                for (let w of lockdown.waktu) {
-                    if (w.tipe == 'I') {
-                        let hari = render_hari(w.hari);
-                        let jam = "Seharian Penuh";
-                        if (w.jam_awal != null && w.jam_awal != "") jam = moment(w.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(w.jam_akhir, 'HH:mm:ss').format('HH:mm');
-                        waktu.push(hari + ' ' + jam);
-                    } else {
-                        let tgl = moment(w.tgl_awal, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY');
-                        if (w.tgl_awal != w.tgl_akhir) tgl += ' - ' + moment(w.tgl_akhir, 'YYYY-MM-DD').format('dddd, DD MMMM YYYY');
-                        let jam = "Seharian Penuh";
-                        if (w.jam_awal != null && w.jam_awal != "") jam = moment(w.jam_awal, 'HH:mm:ss').format('HH:mm') + ' - ' + moment(w.jam_akhir, 'HH:mm:ss').format('HH:mm');
-                        waktu.push(tgl + ' ' + jam);
-                    }
-                }
-                component.find('[data-entity="img"]').attr('src', lockdown.img);
-                component.find('[data-entity="lokasi"]').html(lockdown.lokasi);
-                component.find('[data-entity="alamat"]').html(lockdown.alamat);
-                component.find('[data-entity="waktu"]').html(waktu.join('<br>'));
-                component.find('[data-entity="deskripsi"]').html(lockdown.deskripsi);
-                $container.append(component);
-            }
-        });
-    });
-
     // map code
     $('#map1').ready(function(){
-        $.get('/data/maps/3514')
+        $.get('/data/maps/kab')
             .done(data => {
                 var map = L.map('map1').setView([-7.72, 112.858215], 11);
 
@@ -162,11 +110,10 @@ $(function() {
                 var marker = new Array();
             
                 for (var i = 0; i < kec.length; i++) {                    
-                    markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i]['nama'] +"</div>"+
-                        "<p class='font-16 x-bold'>ODP : "+ kec[i]['odp'] +"</p>" +
-                        "<p class='font-16 x-bold'>PDP : "+ kec[i]['pdp'] +"</p>" +
-                        "<p class='font-16 x-bold'>Positif : "+ kec[i]['positif'] +"</p>";                        
-                    marker[i] = L.marker([kec[i]['latitude'], kec[i]['longitude']], {icon: newMarker}).addTo(map)
+                    markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i]['kecamatan']['nama'] +"</div>"+
+                        "<p class='font-16 x-bold'>Suspek : "+ kec[i]['suspek'] +"</p>" +
+                        "<p class='font-16 x-bold'>Konfirmasi : "+ kec[i]['konfirmasi'] +"</p>";
+                    marker[i] = L.marker([kec[i]['kecamatan']['latitude'], kec[i]['kecamatan']['longitude']], {icon: newMarker}).addTo(map)
                     .bindPopup(markerpop[i], {minWidth:200});	
                 }
             });
@@ -174,7 +121,7 @@ $(function() {
 
     // table code
     $('#tabel-kecam1').ready(function(){
-        $.get('/data/maps/3514')
+        $.get('/data/maps/kab')
             .done(data => {                
                 var tabkec = [];
                 for(var i in data) {
@@ -183,7 +130,14 @@ $(function() {
                 
                 for(var i = 0; i < tabkec.length; i++){
                     var no = i+1;
-                    $("#tabel-kecam1").append("<tr><td>"+no+"</td>"+"<td>"+tabkec[i]['nama']+"</td><td>"+tabkec[i]['odp']+"</td><td>"+tabkec[i]['pdp']+"</td><td>"+tabkec[i]['positif']+"</td></tr>");                    
+                    $("#tabel-kecam1").append(
+                        `<tr>`+
+                            `<td>${no}</td>`+
+                            `<td>${tabkec[i]['kecamatan']['nama']}</td>`+
+                            `<td>${tabkec[i]['suspek']}</td>`+
+                            `<td>${tabkec[i]['konfirmasi']}</td>`+
+                        `</tr>`
+                    );
                 }
 
             });
@@ -191,7 +145,7 @@ $(function() {
 
     // map code
     $('#map2').ready(function(){
-        $.get('/data/maps/3575')
+        $.get('/data/maps/kota')
             .done(data => {
                 var map = L.map('map2').setView([-7.643130, 112.910461], 12);
 
@@ -216,11 +170,10 @@ $(function() {
                 var marker = new Array();
             
                 for (var i = 0; i < kec.length; i++) {                    
-                    markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i]['nama'] +"</div>"+
-                        "<p class='font-16 x-bold'>ODP : "+ kec[i]['odp'] +"</p>" +
-                        "<p class='font-16 x-bold'>PDP : "+ kec[i]['pdp'] +"</p>" +
-                        "<p class='font-16 x-bold'>Positif : "+ kec[i]['positif'] +"</p>";                        
-                    marker[i] = L.marker([kec[i]['latitude'], kec[i]['longitude']], {icon: newMarker}).addTo(map)
+                    markerpop[i] = "<div class='bg-green text-white x-bold font-16 p-1 popup-head text-center'>"+ kec[i]['kecamatan']['nama'] +"</div>"+
+                        "<p class='font-16 x-bold'>Suspek : "+ kec[i]['suspek'] +"</p>" +
+                        "<p class='font-16 x-bold'>Konfirmasi : "+ kec[i]['konfirmasi'] +"</p>";
+                    marker[i] = L.marker([kec[i]['kecamatan']['latitude'], kec[i]['kecamatan']['longitude']], {icon: newMarker}).addTo(map)
                     .bindPopup(markerpop[i], {minWidth:200});	
                 }
             });
@@ -228,7 +181,7 @@ $(function() {
     
         // table code
     $('#tabel-kecam2').ready(function(){
-        $.get('/data/maps/3575')
+        $.get('/data/maps/kota')
             .done(data => {                
                 var tabkec = [];
                 for(var i in data) {
@@ -237,7 +190,14 @@ $(function() {
                 
                 for(var i = 0; i < tabkec.length; i++){
                     var no = i+1;
-                    $("#tabel-kecam2").append("<tr><td>"+no+"</td>"+"<td>"+tabkec[i]['nama']+"</td><td>"+tabkec[i]['odp']+"</td><td>"+tabkec[i]['pdp']+"</td><td>"+tabkec[i]['positif']+"</td></tr>");                    
+                    $("#tabel-kecam2").append(
+                        `<tr>`+
+                            `<td>${no}</td>`+
+                            `<td>${tabkec[i]['kecamatan']['nama']}</td>`+
+                            `<td>${tabkec[i]['suspek']}</td>`+
+                            `<td>${tabkec[i]['konfirmasi']}</td>`+
+                        `</tr>`
+                    );
                 }
 
         });
@@ -264,4 +224,105 @@ $(function() {
         });
     });
     // end ambil data dinamis
+
+
+    // chart / graph ===================================================
+    // getdata
+    $('#chart-container').ready(function() {
+        $.get('/data/chart')
+            .done(res => {
+
+                const chart_date = (function () {
+                    return res.dates.map(el => moment(el, 'DD-MM-YYYY HH:mm:ss'));
+                })();
+                // kabupaten
+                var chart_kab = document.getElementById('chart-kab');
+                var ChartKab = new Chart(chart_kab, {
+                    type: 'line',
+                    data: {
+                        labels: chart_date.map(el => el.format('ddd DD-MM')),
+                        datasets: [
+                            {
+                                label: 'Suspek',
+                                data: res.suspek_kab,
+                                backgroundColor: '#F2994A',
+                                borderColor: '#F2994A',
+                                pointBackgroundColor: '#F2994A',
+                                borderWidth: 1.5,
+                                pointBorderWidth: 3.5,
+                                fill: false,
+                                tension: .1
+                            },
+                            {
+                                label: 'Konfirmasi',
+                                data: res.konfirmasi_kab,
+                                backgroundColor: '#EB5757',
+                                borderColor: '#EB5757',
+                                pointBackgroundColor: '#EB5757',
+                                borderWidth: 1.5,
+                                pointBorderWidth: 3.5,
+                                fill: false,
+                                tension: .1
+                            }
+                        ]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [
+                                {
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                });
+
+                // kota
+                var chart_kota = document.getElementById('chart-kota');
+                var ChartKab = new Chart(chart_kota, {
+                    type: 'line',
+                    data: {
+                        labels: chart_date.map(el => el.format('ddd DD-MM')),
+                        datasets: [
+                            {
+                                label: 'Suspek',
+                                data: res.suspek_kota,
+                                backgroundColor: '#F2994A',
+                                borderColor: '#F2994A',
+                                pointBackgroundColor: '#F2994A',
+                                borderWidth: 1.5,
+                                pointBorderWidth: 3.5,
+                                fill: false,
+                                tension: .1
+                            },
+                            {
+                                label: 'Konfirmasi',
+                                data: res.konfirmasi_kota,
+                                backgroundColor: '#EB5757',
+                                borderColor: '#EB5757',
+                                pointBackgroundColor: '#EB5757',
+                                borderWidth: 1.5,
+                                pointBorderWidth: 3.5,
+                                fill: false,
+                                tension: .1
+                            }
+                        ]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+
+            })
+    })
+
+    // end of chart / graph ===================================================
 });

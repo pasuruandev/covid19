@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLockdownTable extends Migration
+class CreateMapTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateLockdownTable extends Migration
      */
     public function up()
     {
-        Schema::create('lockdown', function (Blueprint $table) {
+        Schema::create('map', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tipe_lokasi', 1)->comment('U => umum, J => jalan, M => masjid, G => gereja');
-            $table->string('lokasi');
-            $table->text('alamat');
-            $table->text('deskripsi')->nullable();
+            $table->string('prefix');
+            $table->integer('kecamatan_id');
+            $table->integer('suspek');
+            $table->integer('konfirmasi');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateLockdownTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lockdown');
+        Schema::dropIfExists('map');
     }
 }

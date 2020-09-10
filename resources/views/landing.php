@@ -18,6 +18,7 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="<?= url('assets/css/main.css') ?>">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800&display=swap" rel="stylesheet">
 	<script src="https://use.fontawesome.com/34566f56b4.js"></script>
 
@@ -369,9 +370,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid bg-green text-white" id="map-container">
+	<div class="container-fluid bg-green text-white">
 		<div class="row">
-			<div class="container">
+			<div class="container" id="map-container">
 				<div class="row">
 					<div class="col-md-12 col-12 text-center">
 						<span class="x-bold font-52 mob-title">Peta Sebaran Covid-19</span><br>
@@ -387,9 +388,8 @@
 									<tr>
 										<th>No.</th>
 										<th>Kecamatan</th>
-										<th>ODP</th>
-										<th>PDP</th>
-										<th>Positif</th>
+										<th>Suspek</th>
+										<th>Konfirmasi</th>
 									</tr>
 								</thead>
 								<tbody id="tabel-kecam1"></tbody>
@@ -410,9 +410,8 @@
 									<tr>
 										<th>No.</th>
 										<th>Kecamatan</th>
-										<th>ODP</th>
-										<th>PDP</th>
-										<th>Positif</th>
+										<th>Suspek</th>
+										<th>Konfirmasi</th>
 									</tr>
 								</thead>
 								<tbody id="tabel-kecam2"></tbody>
@@ -421,37 +420,21 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="container-fluid bg-green ld-list" id="lockdown" data-limit="4">
-		<div class="row">
-			<div class="container">
-				<div class="row mob-center">
-					<div class="col-md-6 col-12 text-white">
-						<span class="x-bold">Informasi</span> <br>
-						<span class="x-bold font-52 mob-title">Kawasan Physical Distancing</span>
-					</div>
-					<div class="col-md-6 col-12 text-right see-all">
-						<a href="/lockdown" class="btn btn-light btn-lg">Tampilkan Semua</a>
-					</div>
-				</div>
-				<div class="row" style="margin-top: 100px" data-content="lockdown" data-template="#template-lockdown">
-					<template class="hidden" id="template-lockdown">
-						<div class="col-md-3 col-12">
-							<div class="bg-white shadow info text-center">
-								<img src="" alt="lockdown" class="circle shadow" data-entity="img">
-								<p class="x-bold font-20" style="margin-top: 20px;" data-entity="lokasi">Ruas Jalan Pandaan</p>
-								<div class="row text-left lockdown-info">
-									<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-map-marker font-24"></i></div>
-									<div class="col-md-9 col-8"><span class="font-18" data-entity="alamat">Jl. A. Yani - Jl. RA Kartini</span></div>
-									<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-clock-o font-24"></i></div>
-									<div class="col-md-9 col-8"><span class="font-18" data-entity="waktu"></span></div>
-									<div class="col-md-1 offset-md-1 col-2 offset-1"><i class="fa fa-tag font-24"></i></div>
-									<div class="col-md-9 col-8"><span class="font-18" data-entity="deskripsi">Masih suka berkumpul? Awas ANCAMAN PIDANA.</span></div>
-								</div>
-							</div>
+			<div class="container mb-5 mt-5 p-2">
+				<div class="bg-white text-green p-2 pb-3 pt-5 rujukan ld-list" id="chart-container">
+					<div class="row">
+						<div class="col-md-12 col-12 text-center pb-1">
+							<span class="x-bold font-32 mob-title">Grafik Pertambahan Pasien</span>
 						</div>
-					</template>
+						<div class="col-md-6 col-12 p-3 pl-5 pr-5 text-center">
+							<p class="font-24 text-center">Kabupaten Pasuruan</p>
+							<canvas id="chart-kab" height="200"></canvas>
+						</div>
+						<div class="col-md-6 col-12 p-3 pl-5 pr-5 text-center">
+							<p class="font-24 text-center">Kota Pasuruan</p>
+							<canvas id="chart-kota" height="200"></canvas>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -559,6 +542,8 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha512-vBmx0N/uQOXznm/Nbkp7h0P1RfLSj0HQrFSzV8m7rOGyj30fYAOKHYvCNez+yM8IrfnW0TCodDEjRqf6fodf/Q==" crossorigin="anonymous"></script>
 	<script src="<?= url('assets/js/script.js') ?>"></script>
 
 </body>

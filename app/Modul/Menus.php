@@ -212,12 +212,18 @@ class Menus {
             // ]
         ]);
 
+        $this->add_menu("kabupaten_map", [
+            'key'   => "kabupaten_map",
+            'name'  => "MAP",
+            'icon'  => "fas fa-fw fa-map",
+            'url'   => "kabupaten.map.index"            
+        ]);
 
-        $this->add_menu("lockdown", [
-            'key'   => "lockdown",
-            'name'  => "Lockdown",
-            'icon'  => "fas fa-fw fa-cogs",
-            'url'   => "content.lockdown.index"
+        $this->add_menu("kota_map", [
+            'key'   => "kota_map",
+            'name'  => "MAP",
+            'icon'  => "fas fa-fw fa-map",
+            'url'   => "kota.map.index"            
         ]);
         
         $this->add_menu("maps", [
@@ -285,17 +291,12 @@ class Menus {
         $this->generated[] = $this->menus['dashboard'];
         $this->generated[] = [];
 
-        $lockdown = $this->cek_menu('lockdown');
         $article = $this->cek_menu('article');
-        $maps = $this->cek_menu('maps');
-        $content = ($lockdown || $article || $maps);
+        $content = ($article || $maps);
 
         if ($content) $this->generated[] = ['name' => "Content"];
-        if ($lockdown) $this->generated[] = $this->menus['lockdown'];
         if ($article) $this->generated[] = $this->menus['article'];
-        if ($maps) $this->generated[] = $this->menus['maps'];
         if ($content) $this->generated[] = [];
-        if ($lockdown) $this->generated[] = [];
 
         // $kabupaten_odp = $this->cek_menu('kabupaten_odp');
         // $kabupaten_pdp = $this->cek_menu('kabupaten_pdp');        
@@ -324,20 +325,24 @@ class Menus {
         // =============================================================
         $kabupaten_suspek = $this->cek_menu('kabupaten_suspek');
         $kabupaten_konfirmasi = $this->cek_menu('kabupaten_konfirmasi');
-        $kabupaten = ($kabupaten_suspek || $kabupaten_konfirmasi);
+        $kabupaten_map = $this->cek_menu('kabupaten_map');
+        $kabupaten = ($kabupaten_suspek || $kabupaten_konfirmasi || $kabupaten_map);
 
         if ($kabupaten) $this->generated[] = ['name' => "Kabupaten"];
         if ($kabupaten_suspek) $this->generated[] = $this->menus['kabupaten_suspek'];
         if ($kabupaten_konfirmasi) $this->generated[] = $this->menus['kabupaten_konfirmasi'];
+        if ($kabupaten_map) $this->generated[] = $this->menus['kabupaten_map'];
         if ($kabupaten) $this->generated[] = [];
 
         $kota_suspek = $this->cek_menu('kota_suspek');
         $kota_konfirmasi = $this->cek_menu('kota_konfirmasi');
-        $kota = ($kota_suspek || $kota_konfirmasi);
+        $kota_map = $this->cek_menu('kota_map');
+        $kota = ($kota_suspek || $kota_konfirmasi || $kota_map);
 
         if ($kota) $this->generated[] = ['name' => "Kota"];
         if ($kota_suspek) $this->generated[] = $this->menus['kota_suspek'];
         if ($kota_konfirmasi) $this->generated[] = $this->menus['kota_konfirmasi'];
+        if ($kota_map) $this->generated[] = $this->menus['kota_map'];
         if ($kota) $this->generated[] = [];
 
         if ($admin) $this->generated[] = ['name' => "Administrator"];
