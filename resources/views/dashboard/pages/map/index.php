@@ -33,7 +33,7 @@
                             <div class="modal-content">
                                 <form id="editForm">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="editModalLabel">Persebaran Covid <span id="namaDaerah">Purwodadi</span></h5>
+                                        <h5 class="modal-title" id="editModalLabel">Persebaran Covid <span id="namaDaerah"></span></h5>
                                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">×</span>
                                         </button>
