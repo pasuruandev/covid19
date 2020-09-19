@@ -173,6 +173,7 @@
             const modal = $('#editModal');
             $.get(ajax_get + `/${key}`)
             .done(res => {
+                modal.find('#namaDaerah').html(res.kecamatan.nama);
                 modal.find('input#edit_key').val(key);
                 modal.find('input#edit_suspek').val(res.suspek);
                 modal.find('input#edit_konfirmasi').val(res.konfirmasi);
